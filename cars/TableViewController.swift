@@ -11,16 +11,17 @@ import UIKit
 class TableViewController: UITableViewController {
     
     let data: [CarModel] = [CarModel(year: "1995", manufacturer: "BMW", model: "5", body: "E39", carImage: #imageLiteral(resourceName: "bmw-m5-e39-8")),
-                            CarModel(year: "2010", manufacturer: "Nissan", model: "Juke", body: "B", carImage: #imageLiteral(resourceName: "nissan-juke"))]
+                            CarModel(year: "2010", manufacturer: "Nissan", model: "Juke", body: "B", carImage: #imageLiteral(resourceName: "nissan-juke")),
+                            CarModel(year: "1973", manufacturer: "Volkswagen", model: "Beetle", body: "1303", carImage: #imageLiteral(resourceName: "volkswagen type 1"))]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count

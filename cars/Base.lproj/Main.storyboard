@@ -10,20 +10,20 @@
         <scene sceneID="wSP-Xu-yEO">
             <objects>
                 <tableViewController id="Obs-Z2-6DD" customClass="TableViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rhi-hF-Ku9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rhi-hF-Ku9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="mk1-yR-jEq" customClass="CustomTableViewCell" customModule="cars" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mk1-yR-jEq" id="OPS-yX-hxp">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="manufacturer model body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-MR-gqz">
-                                            <rect key="frame" x="95.5" y="6" width="219.5" height="16"/>
+                                            <rect key="frame" x="79" y="6" width="236" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="Frx-Fz-jNQ"/>
                                             </constraints>
@@ -32,13 +32,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EC-Fe-fKD">
-                                            <rect key="frame" x="4" y="4" width="81.5" height="72"/>
+                                            <rect key="frame" x="10" y="4" width="59" height="52"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="0EC-Fe-fKD" secondAttribute="height" multiplier="43:38" id="BF0-M7-Jdg"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APf-Eq-sH4">
-                                            <rect key="frame" x="95.5" y="28" width="220.5" height="16"/>
+                                            <rect key="frame" x="79" y="28" width="237" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="rGw-Ch-ggy"/>
                                             </constraints>
@@ -52,7 +52,7 @@
                                         <constraint firstItem="0EC-Fe-fKD" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="top" constant="4" id="CiW-tl-brp"/>
                                         <constraint firstAttribute="trailing" secondItem="ebr-MR-gqz" secondAttribute="trailing" constant="5" id="GoU-WY-RSP"/>
                                         <constraint firstItem="APf-Eq-sH4" firstAttribute="top" secondItem="ebr-MR-gqz" secondAttribute="bottom" constant="6" id="KsX-yN-f8l"/>
-                                        <constraint firstItem="0EC-Fe-fKD" firstAttribute="leading" secondItem="OPS-yX-hxp" secondAttribute="leading" constant="4" id="NAY-PW-hTp"/>
+                                        <constraint firstItem="0EC-Fe-fKD" firstAttribute="leading" secondItem="OPS-yX-hxp" secondAttribute="leading" constant="10" id="NAY-PW-hTp"/>
                                         <constraint firstAttribute="bottom" secondItem="0EC-Fe-fKD" secondAttribute="bottom" constant="4" id="dhr-f3-Fvd"/>
                                         <constraint firstItem="ebr-MR-gqz" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="top" constant="6" id="f9x-aG-fsK"/>
                                         <constraint firstItem="APf-Eq-sH4" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="hh3-L6-BgO"/>
