@@ -14,8 +14,6 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +29,10 @@ class TableViewController: UITableViewController {
         cell.carImageView.layer.cornerRadius = 10
         
         return cell
-    } 
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
     
 }
