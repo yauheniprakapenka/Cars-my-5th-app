@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Справочник автомобилей"
+       
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +28,7 @@ class TableViewController: UITableViewController {
         cell.manufacturerModelBodyLabel.text = car[indexPath.row].manufacturer + " \(car[indexPath.row].model)" + " \(car[indexPath.row].body)"
         cell.yearLabel.text = car[indexPath.row].year
         cell.carImageView.image = car[indexPath.row].carImage
-        cell.carImageView.layer.cornerRadius = 12
+        cell.carImageView.layer.cornerRadius = 10
         
         return cell
     } 

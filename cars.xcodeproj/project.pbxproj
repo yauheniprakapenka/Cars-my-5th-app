@@ -15,6 +15,7 @@
 		3E0DC1D22351BA4700AA4F04 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DC1D12351BA4700AA4F04 /* TableViewController.swift */; };
 		3E0DC1D42351BAC400AA4F04 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DC1D32351BAC400AA4F04 /* CustomTableViewCell.swift */; };
 		3E0DC1D62351C09700AA4F04 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DC1D52351C09700AA4F04 /* CarModel.swift */; };
+		3E0DC1DA2352109900AA4F04 /* AddCarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DC1D92352109900AA4F04 /* AddCarTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3E0DC1D12351BA4700AA4F04 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		3E0DC1D32351BAC400AA4F04 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3E0DC1D52351C09700AA4F04 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		3E0DC1D92352109900AA4F04 /* AddCarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				3E0DC1D12351BA4700AA4F04 /* TableViewController.swift */,
 				3E0DC1D52351C09700AA4F04 /* CarModel.swift */,
 				3E0DC1D32351BAC400AA4F04 /* CustomTableViewCell.swift */,
+				3E0DC1D92352109900AA4F04 /* AddCarTableViewController.swift */,
 				3E04E66C2351B692005E07B8 /* Info.plist */,
 			);
 			path = cars;
@@ -148,6 +151,7 @@
 				3E0DC1D62351C09700AA4F04 /* CarModel.swift in Sources */,
 				3E0DC1D42351BAC400AA4F04 /* CustomTableViewCell.swift in Sources */,
 				3E0DC1D22351BA4700AA4F04 /* TableViewController.swift in Sources */,
+				3E0DC1DA2352109900AA4F04 /* AddCarTableViewController.swift in Sources */,
 				3E04E6612351B691005E07B8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
