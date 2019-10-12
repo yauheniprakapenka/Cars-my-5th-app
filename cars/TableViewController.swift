@@ -16,19 +16,16 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = "Справочник автомобилей"
     }
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         cell.manufacturerModelBodyLabel.text = data[indexPath.row].manufacturer + " \(data[indexPath.row].model)" + " \(data[indexPath.row].body)"
         cell.yearLabel.text = data[indexPath.row].year
@@ -36,6 +33,6 @@ class TableViewController: UITableViewController {
         cell.carImageView.layer.cornerRadius = 12
         
         return cell
-    }
+    } 
     
 }
