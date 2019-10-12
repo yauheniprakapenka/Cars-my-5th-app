@@ -10,10 +10,19 @@ import UIKit
 
 class AddCarTableViewController: UITableViewController {
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var chooseCarImageView: UIImageView!
+    @IBOutlet weak var yearTextField: UITextField!
+    @IBOutlet weak var manufacturerTextField: UITextField!
+    @IBOutlet weak var modelTextField: UITextField!
+    @IBOutlet weak var bodyTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        saveButton.isEnabled = false
+        
+        textFieldAddTargetForEditingChanged()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -47,6 +56,13 @@ class AddCarTableViewController: UITableViewController {
         
         present(actionSheet, animated: true, completion: nil)
     }
+    
+    fileprivate func textFieldAddTargetForEditingChanged() {
+        yearTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        manufacturerTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        modelTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        bodyTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+    }
 
 }
 
@@ -55,6 +71,14 @@ extension AddCarTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @objc private func textFieldChanged() {
+        if yearTextField.text?.isEmpty == true || manufacturerTextField.text?.isEmpty == true || modelTextField.text?.isEmpty == true || bodyTextField.text?.isEmpty == true {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
     }
 }
 

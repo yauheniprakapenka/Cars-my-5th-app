@@ -286,7 +286,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Сохранить" id="O2P-En-N4W"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bodyTextField" destination="HcV-Of-hJ9" id="22i-I8-q0r"/>
                         <outlet property="chooseCarImageView" destination="qea-Gg-DGa" id="G0m-aE-Qwy"/>
+                        <outlet property="manufacturerTextField" destination="6jV-fK-zUH" id="ycc-EP-13y"/>
+                        <outlet property="modelTextField" destination="yxg-uF-k05" id="2cE-zr-6Fk"/>
+                        <outlet property="saveButton" destination="O2P-En-N4W" id="g2t-0c-1VA"/>
+                        <outlet property="yearTextField" destination="4Ne-tP-aFu" id="9UF-jJ-EIM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXj-7p-tOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
