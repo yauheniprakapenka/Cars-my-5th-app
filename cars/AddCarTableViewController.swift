@@ -10,8 +10,10 @@ import UIKit
 
 class AddCarTableViewController: UITableViewController {
     
+    var newCar: Car?
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var chooseCarImageView: UIImageView!
+    @IBOutlet weak var carImageView: UIImageView!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var manufacturerTextField: UITextField!
     @IBOutlet weak var modelTextField: UITextField!
@@ -63,6 +65,14 @@ class AddCarTableViewController: UITableViewController {
         modelTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         bodyTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
+    
+    func saveNewCar() {
+        newCar = Car(year: yearTextField.text!,
+                     manufacturer: manufacturerTextField.text!,
+                     model: modelTextField.text!,
+                     body: bodyTextField.text!,
+                     carImage: carImageView.image!)
+    }
 
 }
 
@@ -95,9 +105,9 @@ extension AddCarTableViewController: UIImagePickerControllerDelegate, UINavigati
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        chooseCarImageView.image = info[.editedImage] as? UIImage
-        chooseCarImageView.contentMode = .scaleAspectFill
-        chooseCarImageView.clipsToBounds = true
+        carImageView.image = info[.editedImage] as? UIImage
+        carImageView.contentMode = .scaleAspectFill
+        carImageView.clipsToBounds = true
         dismiss(animated: true, completion: nil)
     }
 }

@@ -124,16 +124,16 @@
                                                     <rect key="frame" x="16" y="8" width="343" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Год" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1G-m5-itl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="12"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="vZl-VO-bWH"/>
+                                                                <constraint firstAttribute="height" constant="14" id="vZl-VO-bWH"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите год" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ne-tP-aFu">
-                                                            <rect key="frame" x="0.0" y="22" width="343" height="32"/>
+                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -163,16 +163,16 @@
                                                     <rect key="frame" x="16" y="8" width="343" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Производитель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-Ri-T7x">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="12"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="XX4-mw-0UQ"/>
+                                                                <constraint firstAttribute="height" constant="14" id="XX4-mw-0UQ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите производителя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6jV-fK-zUH">
-                                                            <rect key="frame" x="0.0" y="22" width="343" height="32"/>
+                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -202,16 +202,16 @@
                                                     <rect key="frame" x="16" y="8" width="343" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Модель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRm-Aj-8N5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="12"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="vsr-cg-e3W"/>
+                                                                <constraint firstAttribute="height" constant="14" id="vsr-cg-e3W"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите модель" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxg-uF-k05">
-                                                            <rect key="frame" x="0.0" y="22" width="343" height="32"/>
+                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -241,16 +241,16 @@
                                                     <rect key="frame" x="16" y="8" width="343" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кузов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb0-qC-Yts">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="12"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="gCZ-AP-AA2"/>
+                                                                <constraint firstAttribute="height" constant="14" id="gCZ-AP-AA2"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите кузов" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-Of-hJ9">
-                                                            <rect key="frame" x="0.0" y="22" width="343" height="32"/>
+                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -283,11 +283,15 @@
                                 <action selector="cancelButton:" destination="bKs-E0-fKK" id="Erf-r8-Y6p"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="O2P-En-N4W"/>
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="O2P-En-N4W">
+                            <connections>
+                                <segue destination="Ooq-Hp-wvO" kind="unwind" unwindAction="mainVCSegue:" id="OGQ-oi-EsS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextField" destination="HcV-Of-hJ9" id="22i-I8-q0r"/>
-                        <outlet property="chooseCarImageView" destination="qea-Gg-DGa" id="G0m-aE-Qwy"/>
+                        <outlet property="carImageView" destination="qea-Gg-DGa" id="G0m-aE-Qwy"/>
                         <outlet property="manufacturerTextField" destination="6jV-fK-zUH" id="ycc-EP-13y"/>
                         <outlet property="modelTextField" destination="yxg-uF-k05" id="2cE-zr-6Fk"/>
                         <outlet property="saveButton" destination="O2P-En-N4W" id="g2t-0c-1VA"/>
@@ -295,6 +299,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXj-7p-tOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ooq-Hp-wvO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3258.4000000000001" y="116.49175412293854"/>
         </scene>

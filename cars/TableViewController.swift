@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let car = Car.getCars()
+    var car = Car.getCars()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,14 @@ class TableViewController: UITableViewController {
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    @IBAction func mainVCSegue(_ segue: UIStoryboardSegue) {
+        guard let addCarVC = segue.source as? AddCarTableViewController else { return }
+        
+        addCarVC.saveNewCar()
+        car.append(addCarVC.newCar!)
+        tableView.reloadData()
     }
     
 }
