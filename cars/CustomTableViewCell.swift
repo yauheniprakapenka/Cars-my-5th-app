@@ -12,6 +12,8 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var manufacturerLabel: UILabel!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
 
     override func awakeFromNib() {

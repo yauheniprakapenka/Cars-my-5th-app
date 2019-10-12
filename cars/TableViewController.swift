@@ -10,7 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let data: [CarModel] = [CarModel(year: "1995", manufacturer: "BMW", carImage: #imageLiteral(resourceName: "bmw-m5-e39-8")), CarModel(year: "1844", manufacturer: "dasf", carImage: #imageLiteral(resourceName: "albom-tekst-pocherk-dnevnik"))]
+    let data: [CarModel] = [CarModel(year: "1995", manufacturer: "BMW", model: "5", body: "E39", carImage: #imageLiteral(resourceName: "bmw-m5-e39-8")),
+                            CarModel(year: "1995", manufacturer: "BMW", model: "5", body: "E39", carImage: #imageLiteral(resourceName: "bmw-m5-e39-8"))]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,10 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
 
-        cell.yearLabel.text = data[indexPath.row].year
+        cell.yearLabel.text = data[indexPath.row].year + " \(data[indexPath.row].manufacturer)"
         cell.manufacturerLabel.text = data[indexPath.row].manufacturer
+        cell.modelLabel.text = data[indexPath.row].model
+        cell.bodyLabel.text = data[indexPath.row].body
         cell.carImageView.image = data[indexPath.row].carImage
         
         return cell
