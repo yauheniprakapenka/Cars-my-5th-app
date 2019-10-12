@@ -28,11 +28,9 @@ class TableViewController: UITableViewController {
         cell.carImageView.image = car[indexPath.row].carImage
         cell.carImageView.layer.cornerRadius = 10
         
+        cell.selectionStyle = .none
+        
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
     }
     
 }
