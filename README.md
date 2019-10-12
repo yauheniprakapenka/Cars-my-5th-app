@@ -13,7 +13,7 @@ Swift 5, Xcode 11.0
 
 <b>Скриншоты:</b>
 
-<a href="https://ibb.co/vmCK6TS"><img src="https://i.ibb.co/VD0Pczs/IMG-1016.png" alt="IMG-1016" width="200"></a><br/> <a href="https://ibb.co/6wNd2wH"><img src="https://i.ibb.co/zxNk1xX/IMG-1017.png" alt="IMG-1017" width="200"></a><br/> <a href="https://ibb.co/17S2Gmc"><img src="https://i.ibb.co/sbB39V7/Simulator-Screen-Shot-i-Phone-X-2019-10-12-at-22-56-06.png" alt="Simulator-Screen-Shot-i-Phone-X-2019-10-12-at-22-56-06" width="200"></a><br/>
+<a href="https://ibb.co/vmCK6TS"><img src="https://i.ibb.co/VD0Pczs/IMG-1016.png" width="200"></a>   <a href="https://ibb.co/6wNd2wH"><img src="https://i.ibb.co/zxNk1xX/IMG-1017.png" width="200"></a>   <a href="https://ibb.co/17S2Gmc"><img src="https://i.ibb.co/sbB39V7/Simulator-Screen-Shot-i-Phone-X-2019-10-12-at-22-56-06.png" width="200"></a>
 
 <b>Видео:</b>
 
