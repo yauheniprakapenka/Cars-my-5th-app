@@ -19,6 +19,11 @@ class AddCarTableViewController: UITableViewController {
     @IBOutlet weak var modelTextField: UITextField!
     @IBOutlet weak var bodyTextField: UITextField!
     
+    @IBOutlet weak var yearCheckImageView: UIImageView!
+    @IBOutlet weak var manufacturerCheckImageView: UIImageView!
+    @IBOutlet weak var modelCheckImageView: UIImageView!
+    @IBOutlet weak var bodyCheckImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,8 +94,32 @@ extension AddCarTableViewController: UITextFieldDelegate {
         } else {
             saveButton.isEnabled = true
         }
+        
+        if yearTextField.text?.isEmpty == true {
+            yearCheckImageView.image = #imageLiteral(resourceName: "checkGrey")
+        } else {
+            yearCheckImageView.image = #imageLiteral(resourceName: "checkGreen")
+        }
+        
+        if manufacturerTextField.text?.isEmpty == true {
+            manufacturerCheckImageView.image = #imageLiteral(resourceName: "checkGrey")
+        } else {
+            manufacturerCheckImageView.image = #imageLiteral(resourceName: "checkGreen")
+        }
+        
+        if modelTextField.text?.isEmpty == true {
+            modelCheckImageView.image = #imageLiteral(resourceName: "checkGrey")
+        } else {
+               modelCheckImageView.image = #imageLiteral(resourceName: "checkGreen")
+           }
+        
+        if bodyTextField.text?.isEmpty == true {
+            bodyCheckImageView.image = #imageLiteral(resourceName: "checkGrey")
+        } else {
+            bodyCheckImageView.image = #imageLiteral(resourceName: "checkGreen")
+            }
+        }
     }
-}
 
 // Работа с изображением
 extension AddCarTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

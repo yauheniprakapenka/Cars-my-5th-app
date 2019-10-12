@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="1708" y="120"/>
         </scene>
-        <!--Добавление-->
+        <!--Add Car Table View Controller-->
         <scene sceneID="EfS-5Q-83F">
             <objects>
                 <tableViewController id="bKs-E0-fKK" customClass="AddCarTableViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,10 +121,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CvC-As-yJz">
-                                                    <rect key="frame" x="16" y="8" width="343" height="54"/>
+                                                    <rect key="frame" x="16" y="8" width="309" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Год" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1G-m5-itl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="309" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="vZl-VO-bWH"/>
                                                             </constraints>
@@ -133,7 +133,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите год" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ne-tP-aFu">
-                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="24" width="309" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -143,12 +143,21 @@
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkGrey" translatesAutoresizingMaskIntoConstraints="NO" id="GJb-0x-XEb">
+                                                    <rect key="frame" x="335" y="35" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="I0h-ts-3eA"/>
+                                                        <constraint firstAttribute="height" constant="24" id="cs7-es-2UM"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="CvC-As-yJz" secondAttribute="trailing" constant="16" id="HSe-KE-aHS"/>
+                                                <constraint firstAttribute="trailing" secondItem="GJb-0x-XEb" secondAttribute="trailing" constant="16" id="Fez-FX-zka"/>
+                                                <constraint firstAttribute="trailing" secondItem="CvC-As-yJz" secondAttribute="trailing" constant="50" id="HSe-KE-aHS"/>
                                                 <constraint firstAttribute="bottom" secondItem="CvC-As-yJz" secondAttribute="bottom" constant="8" id="kJ9-sI-kAa"/>
                                                 <constraint firstItem="CvC-As-yJz" firstAttribute="leading" secondItem="dfd-Hs-hUd" secondAttribute="leading" constant="16" id="ncP-EF-M7M"/>
                                                 <constraint firstItem="CvC-As-yJz" firstAttribute="top" secondItem="dfd-Hs-hUd" secondAttribute="top" constant="8" id="tzq-Sq-AS4"/>
+                                                <constraint firstAttribute="bottom" secondItem="GJb-0x-XEb" secondAttribute="bottom" constant="11" id="u7c-EM-Nfz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -160,10 +169,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yIY-eN-Rfu">
-                                                    <rect key="frame" x="16" y="8" width="343" height="54"/>
+                                                    <rect key="frame" x="16" y="8" width="309" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Производитель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-Ri-T7x">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="309" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="XX4-mw-0UQ"/>
                                                             </constraints>
@@ -172,7 +181,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите производителя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6jV-fK-zUH">
-                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="24" width="309" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -182,12 +191,21 @@
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkGrey" translatesAutoresizingMaskIntoConstraints="NO" id="oWA-yB-1BE">
+                                                    <rect key="frame" x="335" y="35" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="Z2d-Oo-Hgf"/>
+                                                        <constraint firstAttribute="height" constant="24" id="wLC-ob-aex"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yIY-eN-Rfu" firstAttribute="leading" secondItem="X90-BA-3Pu" secondAttribute="leading" constant="16" id="0Wn-fZ-fed"/>
-                                                <constraint firstAttribute="trailing" secondItem="yIY-eN-Rfu" secondAttribute="trailing" constant="16" id="Q9j-wu-beb"/>
+                                                <constraint firstAttribute="trailing" secondItem="yIY-eN-Rfu" secondAttribute="trailing" constant="50" id="Q9j-wu-beb"/>
                                                 <constraint firstAttribute="bottom" secondItem="yIY-eN-Rfu" secondAttribute="bottom" constant="8" id="Qe8-uV-eJr"/>
+                                                <constraint firstAttribute="trailing" secondItem="oWA-yB-1BE" secondAttribute="trailing" constant="16" id="aIo-nC-uJF"/>
                                                 <constraint firstItem="yIY-eN-Rfu" firstAttribute="top" secondItem="X90-BA-3Pu" secondAttribute="top" constant="8" id="qbF-Lb-AD8"/>
+                                                <constraint firstAttribute="bottom" secondItem="oWA-yB-1BE" secondAttribute="bottom" constant="11" id="wR9-T3-0hB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -199,10 +217,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Qb-wF-LYb">
-                                                    <rect key="frame" x="16" y="8" width="343" height="54"/>
+                                                    <rect key="frame" x="16" y="8" width="309" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Модель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRm-Aj-8N5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="309" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="vsr-cg-e3W"/>
                                                             </constraints>
@@ -211,7 +229,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите модель" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxg-uF-k05">
-                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="24" width="309" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -221,10 +239,19 @@
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkGrey" translatesAutoresizingMaskIntoConstraints="NO" id="5aK-Jf-jbs">
+                                                    <rect key="frame" x="335" y="35" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="FYr-1V-KsW"/>
+                                                        <constraint firstAttribute="width" constant="24" id="vpO-Mj-nzM"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="5aK-Jf-jbs" secondAttribute="bottom" constant="11" id="JJ6-Op-irY"/>
                                                 <constraint firstItem="8Qb-wF-LYb" firstAttribute="leading" secondItem="aoC-4x-5P7" secondAttribute="leading" constant="16" id="OZS-de-2Gs"/>
-                                                <constraint firstAttribute="trailing" secondItem="8Qb-wF-LYb" secondAttribute="trailing" constant="16" id="Vx2-Vk-vcN"/>
+                                                <constraint firstAttribute="trailing" secondItem="5aK-Jf-jbs" secondAttribute="trailing" constant="16" id="Tr1-zQ-ejI"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Qb-wF-LYb" secondAttribute="trailing" constant="50" id="Vx2-Vk-vcN"/>
                                                 <constraint firstItem="8Qb-wF-LYb" firstAttribute="top" secondItem="aoC-4x-5P7" secondAttribute="top" constant="8" id="fdt-BS-p9a"/>
                                                 <constraint firstAttribute="bottom" secondItem="8Qb-wF-LYb" secondAttribute="bottom" constant="8" id="lCq-1Y-IOn"/>
                                             </constraints>
@@ -238,10 +265,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G5d-ha-fWM">
-                                                    <rect key="frame" x="16" y="8" width="343" height="54"/>
+                                                    <rect key="frame" x="16" y="8" width="309" height="54"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кузов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb0-qC-Yts">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="14"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="309" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="gCZ-AP-AA2"/>
                                                             </constraints>
@@ -250,7 +277,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите кузов" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-Of-hJ9">
-                                                            <rect key="frame" x="0.0" y="24" width="343" height="30"/>
+                                                            <rect key="frame" x="0.0" y="24" width="309" height="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -260,11 +287,20 @@
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkGrey" translatesAutoresizingMaskIntoConstraints="NO" id="Iys-D4-hfy">
+                                                    <rect key="frame" x="335" y="35" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="Apu-yl-xct"/>
+                                                        <constraint firstAttribute="width" constant="24" id="rgx-3S-h1d"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="G5d-ha-fWM" secondAttribute="trailing" constant="16" id="7Qq-f3-i28"/>
+                                                <constraint firstAttribute="trailing" secondItem="G5d-ha-fWM" secondAttribute="trailing" constant="50" id="7Qq-f3-i28"/>
                                                 <constraint firstAttribute="bottom" secondItem="G5d-ha-fWM" secondAttribute="bottom" constant="8" id="9c7-oQ-oL2"/>
+                                                <constraint firstItem="Iys-D4-hfy" firstAttribute="bottom" secondItem="WJq-pU-fC0" secondAttribute="bottomMargin" id="Vfr-54-P16"/>
                                                 <constraint firstItem="G5d-ha-fWM" firstAttribute="leading" secondItem="WJq-pU-fC0" secondAttribute="leading" constant="16" id="VuC-PN-hT3"/>
+                                                <constraint firstAttribute="trailing" secondItem="Iys-D4-hfy" secondAttribute="trailing" constant="16" id="afv-pq-UEK"/>
                                                 <constraint firstItem="G5d-ha-fWM" firstAttribute="top" secondItem="WJq-pU-fC0" secondAttribute="top" constant="8" id="kt3-HY-k6p"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -277,7 +313,7 @@
                             <outlet property="delegate" destination="bKs-E0-fKK" id="eUA-Zr-X3m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Добавление" id="4kW-Cj-KjL">
+                    <navigationItem key="navigationItem" id="4kW-Cj-KjL">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="p9f-li-O5O">
                             <connections>
                                 <action selector="cancelButton:" destination="bKs-E0-fKK" id="Erf-r8-Y6p"/>
@@ -290,11 +326,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bodyCheckImageView" destination="Iys-D4-hfy" id="P88-VS-ieX"/>
                         <outlet property="bodyTextField" destination="HcV-Of-hJ9" id="22i-I8-q0r"/>
                         <outlet property="carImageView" destination="qea-Gg-DGa" id="G0m-aE-Qwy"/>
+                        <outlet property="manufacturerCheckImageView" destination="oWA-yB-1BE" id="J1R-sK-zAt"/>
                         <outlet property="manufacturerTextField" destination="6jV-fK-zUH" id="ycc-EP-13y"/>
+                        <outlet property="modelCheckImageView" destination="5aK-Jf-jbs" id="Ojw-rW-kkg"/>
                         <outlet property="modelTextField" destination="yxg-uF-k05" id="2cE-zr-6Fk"/>
                         <outlet property="saveButton" destination="O2P-En-N4W" id="g2t-0c-1VA"/>
+                        <outlet property="yearCheckImageView" destination="GJb-0x-XEb" id="Eoz-GS-h0j"/>
                         <outlet property="yearTextField" destination="4Ne-tP-aFu" id="9UF-jJ-EIM"/>
                     </connections>
                 </tableViewController>
@@ -342,5 +382,6 @@
     </scenes>
     <resources>
         <image name="AddButtonV3" width="700" height="400"/>
+        <image name="checkGrey" width="180" height="180"/>
     </resources>
 </document>
