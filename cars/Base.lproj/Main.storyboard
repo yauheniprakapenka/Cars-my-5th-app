@@ -22,60 +22,46 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APf-Eq-sH4">
-                                            <rect key="frame" x="106.5" y="6" width="209.5" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="manufacturer model body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-MR-gqz">
-                                            <rect key="frame" x="106.5" y="26" width="209.5" height="16"/>
+                                            <rect key="frame" x="95.5" y="6" width="219.5" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="Frx-Fz-jNQ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EC-Fe-fKD">
-                                            <rect key="frame" x="10" y="6" width="86.5" height="68"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EC-Fe-fKD">
+                                            <rect key="frame" x="4" y="4" width="81.5" height="72"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="0EC-Fe-fKD" secondAttribute="height" multiplier="61:48" id="2IG-IS-9Jl"/>
+                                                <constraint firstAttribute="width" secondItem="0EC-Fe-fKD" secondAttribute="height" multiplier="43:38" id="BF0-M7-Jdg"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9a-fW-27q">
-                                            <rect key="frame" x="106.5" y="46" width="209.5" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CD-Hu-sfZ">
-                                            <rect key="frame" x="106.5" y="66" width="209.5" height="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APf-Eq-sH4">
+                                            <rect key="frame" x="95.5" y="28" width="220.5" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="rGw-Ch-ggy"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="5CD-Hu-sfZ" secondAttribute="trailing" constant="4" id="0cU-Y3-hdo"/>
-                                        <constraint firstItem="APf-Eq-sH4" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="48J-pd-XcO"/>
-                                        <constraint firstAttribute="bottom" secondItem="0EC-Fe-fKD" secondAttribute="bottom" constant="6" id="5zU-tj-Q1O"/>
-                                        <constraint firstItem="0EC-Fe-fKD" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="top" constant="6" id="6VD-7B-QNP"/>
-                                        <constraint firstAttribute="trailing" secondItem="ebr-MR-gqz" secondAttribute="trailing" constant="4" id="91p-xp-fok"/>
-                                        <constraint firstItem="u9a-fW-27q" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="Awk-7x-igs"/>
-                                        <constraint firstAttribute="trailing" secondItem="APf-Eq-sH4" secondAttribute="trailing" constant="4" id="DB5-92-P6a"/>
-                                        <constraint firstItem="u9a-fW-27q" firstAttribute="top" secondItem="ebr-MR-gqz" secondAttribute="bottom" constant="4" id="Iby-Qs-fy6"/>
-                                        <constraint firstItem="ebr-MR-gqz" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="RvR-JP-mLt"/>
-                                        <constraint firstItem="5CD-Hu-sfZ" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="ZZt-t5-4fA"/>
-                                        <constraint firstItem="0EC-Fe-fKD" firstAttribute="leading" secondItem="OPS-yX-hxp" secondAttribute="leading" constant="10" id="dHm-w2-geZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="u9a-fW-27q" secondAttribute="trailing" constant="4" id="edP-zF-r4V"/>
-                                        <constraint firstItem="ebr-MR-gqz" firstAttribute="top" secondItem="APf-Eq-sH4" secondAttribute="bottom" constant="4" id="gZm-Kz-1F5"/>
-                                        <constraint firstItem="APf-Eq-sH4" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="top" constant="6" id="iVY-gD-qrv"/>
-                                        <constraint firstItem="5CD-Hu-sfZ" firstAttribute="top" secondItem="u9a-fW-27q" secondAttribute="bottom" constant="4" id="qMI-DB-Wir"/>
+                                        <constraint firstAttribute="trailing" secondItem="APf-Eq-sH4" secondAttribute="trailing" constant="4" id="4tq-LB-PqJ"/>
+                                        <constraint firstItem="0EC-Fe-fKD" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="top" constant="4" id="CiW-tl-brp"/>
+                                        <constraint firstAttribute="trailing" secondItem="ebr-MR-gqz" secondAttribute="trailing" constant="5" id="GoU-WY-RSP"/>
+                                        <constraint firstItem="APf-Eq-sH4" firstAttribute="top" secondItem="ebr-MR-gqz" secondAttribute="bottom" constant="6" id="KsX-yN-f8l"/>
+                                        <constraint firstItem="0EC-Fe-fKD" firstAttribute="leading" secondItem="OPS-yX-hxp" secondAttribute="leading" constant="4" id="NAY-PW-hTp"/>
+                                        <constraint firstAttribute="bottom" secondItem="0EC-Fe-fKD" secondAttribute="bottom" constant="4" id="dhr-f3-Fvd"/>
+                                        <constraint firstItem="ebr-MR-gqz" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="top" constant="6" id="f9x-aG-fsK"/>
+                                        <constraint firstItem="APf-Eq-sH4" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="hh3-L6-BgO"/>
+                                        <constraint firstItem="ebr-MR-gqz" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="tbn-gw-Iao"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bodyLabel" destination="5CD-Hu-sfZ" id="54d-pd-TT8"/>
                                     <outlet property="carImageView" destination="0EC-Fe-fKD" id="Zpu-C1-5pa"/>
-                                    <outlet property="manufacturerLabel" destination="ebr-MR-gqz" id="XMf-f3-VA1"/>
-                                    <outlet property="modelLabel" destination="u9a-fW-27q" id="NSm-Yd-q7Q"/>
+                                    <outlet property="manufacturerModelBodyLabel" destination="ebr-MR-gqz" id="XMf-f3-VA1"/>
                                     <outlet property="yearLabel" destination="APf-Eq-sH4" id="uGW-Ty-AS7"/>
                                 </connections>
                             </tableViewCell>
