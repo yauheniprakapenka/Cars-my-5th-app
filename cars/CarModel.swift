@@ -8,19 +8,19 @@
 
 import UIKit
 
-class CarModel {
+struct Car {
     let year: String
     let manufacturer: String
     let model: String
     let body: String
     let carImage: UIImage
     
-    init(year: String, manufacturer: String, model: String, body: String, carImage: UIImage) {
-        self.year = year
-        self.manufacturer = manufacturer
-        self.model = model
-        self.body = body
-        self.carImage = carImage
+    static func getCars() -> [Car] {
+        let data: [Car] = [Car(year: "1995", manufacturer: "BMW", model: "5", body: "E39", carImage: #imageLiteral(resourceName: "bmw-m5-e39-8")),
+        Car(year: "2010", manufacturer: "Nissan", model: "Juke", body: "B", carImage: #imageLiteral(resourceName: "nissan-juke")),
+        Car(year: "1973", manufacturer: "Volkswagen", model: "Beetle", body: "1303", carImage: #imageLiteral(resourceName: "volkswagen type 1"))]
+        
+        return data
     }
     
 }
