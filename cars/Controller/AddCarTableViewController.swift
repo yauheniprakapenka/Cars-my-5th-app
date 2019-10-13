@@ -11,8 +11,10 @@ import UIKit
 class AddCarTableViewController: UITableViewController {
     
     var newCar: Car?
+    var networkDataFetcher = NetworkDataFetcher()
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     @IBOutlet weak var carImageView: UIImageView!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var manufacturerTextField: UITextField!
@@ -30,6 +32,8 @@ class AddCarTableViewController: UITableViewController {
         saveButton.isEnabled = false
         
         textFieldAddTargetForEditingChanged()
+        
+        setupEditScreen()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -55,11 +59,28 @@ class AddCarTableViewController: UITableViewController {
             self.chooseImagepicker(source: .camera)
         }
         
+        let automatic = UIAlertAction(title: "Автоматически", style: .default) { _ in
+            guard let manufacturerField = self.manufacturerTextField.text, manufacturerField != "" else {
+                print(" пусто ")
+                self.manufacturerTextField.shake()
+                self.manufacturerTextField.attributedPlaceholder = NSAttributedString(string: "Введите производителя", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+                return
+            }
+            self.networkDataFetcher.fetchImage(searchTerm: "\(self.manufacturerTextField.text!)") { [weak self] (searchResults) in
+                searchResults?.results.map({ (photo) in
+                    print(photo.urls["small"] as Any)
+                    let url = URL(string: photo.urls["small"]!)
+                    self!.carImageView.load(url: url!)
+                })
+            }
+        }
+        
         let cancel = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         
         actionSheet.addAction(photo)
         actionSheet.addAction(camera)
         actionSheet.addAction(cancel)
+        actionSheet.addAction(automatic)
         
         present(actionSheet, animated: true, completion: nil)
     }
@@ -77,6 +98,23 @@ class AddCarTableViewController: UITableViewController {
                      model: modelTextField.text!,
                      body: bodyTextField.text!,
                      carImage: carImageView.image!)
+    }
+    
+    private func setupEditScreen() {
+        if newCar != nil {
+            carImageView.image = newCar?.carImage
+            yearTextField.text = newCar?.year
+            manufacturerTextField.text = newCar?.manufacturer
+            modelTextField.text = newCar?.model
+            bodyTextField.text = newCar?.body
+            
+            navigationItem.leftBarButtonItem = nil
+            title = newCar?.manufacturer
+            saveButton.isEnabled = true
+            
+            let backButton = navigationController?.navigationBar.topItem
+            backButton?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
     }
 
 }
@@ -119,6 +157,7 @@ extension AddCarTableViewController: UITextFieldDelegate {
             bodyCheckImageView.image = #imageLiteral(resourceName: "checkGreen")
             }
         }
+    
     }
 
 // Работа с изображением
@@ -135,8 +174,10 @@ extension AddCarTableViewController: UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         carImageView.image = info[.editedImage] as? UIImage
-        carImageView.contentMode = .scaleAspectFill
+//        carImageView.contentMode = .scaleAspectFill
         carImageView.clipsToBounds = true
         dismiss(animated: true, completion: nil)
     }
 }
+
+
