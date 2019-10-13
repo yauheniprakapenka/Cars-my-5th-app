@@ -20,6 +20,7 @@
 		3E30802A2353011200CB0030 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3080292353011200CB0030 /* SearchResult.swift */; };
 		3E30802D2353050900CB0030 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30802C2353050900CB0030 /* NetworkDataFetcher.swift */; };
 		3E308030235310E100CB0030 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30802F235310E100CB0030 /* UIImageView.swift */; };
+		3E3080342353AC0B00CB0030 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3080332353AC0B00CB0030 /* Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3E3080292353011200CB0030 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		3E30802C2353050900CB0030 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		3E30802F235310E100CB0030 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		3E3080332353AC0B00CB0030 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				3E30802F235310E100CB0030 /* UIImageView.swift */,
+				3E3080332353AC0B00CB0030 /* Shake.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				3E04E65F2351B691005E07B8 /* AppDelegate.swift in Sources */,
 				3E308030235310E100CB0030 /* UIImageView.swift in Sources */,
 				3E0DC1D62351C09700AA4F04 /* CarModel.swift in Sources */,
+				3E3080342353AC0B00CB0030 /* Shake.swift in Sources */,
 				3E30802A2353011200CB0030 /* SearchResult.swift in Sources */,
 				3E0DC1D42351BAC400AA4F04 /* CustomTableViewCell.swift in Sources */,
 				3E0DC1D22351BA4700AA4F04 /* MainTableViewController.swift in Sources */,

@@ -29,10 +29,10 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="hZI-B2-jaO">
-                                            <rect key="frame" x="79" y="11" width="305" height="38"/>
+                                            <rect key="frame" x="79" y="11" width="156.5" height="38"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="manufacturer model body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-MR-gqz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="305" height="16"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="156.5" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="Frx-Fz-jNQ"/>
                                                     </constraints>
@@ -41,7 +41,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APf-Eq-sH4">
-                                                    <rect key="frame" x="0.0" y="22" width="305" height="16"/>
+                                                    <rect key="frame" x="0.0" y="22" width="156.5" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="rGw-Ch-ggy"/>
                                                     </constraints>
@@ -56,10 +56,9 @@
                                         <constraint firstItem="hZI-B2-jaO" firstAttribute="bottom" secondItem="OPS-yX-hxp" secondAttribute="bottomMargin" id="1uW-QU-QJQ"/>
                                         <constraint firstItem="0EC-Fe-fKD" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="top" constant="4" id="CiW-tl-brp"/>
                                         <constraint firstItem="0EC-Fe-fKD" firstAttribute="leading" secondItem="OPS-yX-hxp" secondAttribute="leading" constant="10" id="NAY-PW-hTp"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="hZI-B2-jaO" secondAttribute="trailing" constant="10" id="Nlc-MD-RfY"/>
                                         <constraint firstItem="hZI-B2-jaO" firstAttribute="top" secondItem="OPS-yX-hxp" secondAttribute="topMargin" id="bdA-Mr-6c3"/>
+                                        <constraint firstItem="hZI-B2-jaO" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="ca3-sm-yyr"/>
                                         <constraint firstAttribute="bottom" secondItem="0EC-Fe-fKD" secondAttribute="bottom" constant="4" id="dhr-f3-Fvd"/>
-                                        <constraint firstItem="hZI-B2-jaO" firstAttribute="leading" secondItem="0EC-Fe-fKD" secondAttribute="trailing" constant="10" id="vlV-Zc-dBG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

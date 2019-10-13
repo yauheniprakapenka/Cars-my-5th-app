@@ -60,6 +60,12 @@ class AddCarTableViewController: UITableViewController {
         }
         
         let automatic = UIAlertAction(title: "Автоматически", style: .default) { _ in
+            guard let manufacturerField = self.manufacturerTextField.text, manufacturerField != "" else {
+                print(" пусто ")
+                self.manufacturerTextField.shake()
+                self.manufacturerTextField.attributedPlaceholder = NSAttributedString(string: "Введите производителя", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+                return
+            }
             self.networkDataFetcher.fetchImage(searchTerm: "\(self.manufacturerTextField.text!)") { [weak self] (searchResults) in
                 searchResults?.results.map({ (photo) in
                     print(photo.urls["small"] as Any)
