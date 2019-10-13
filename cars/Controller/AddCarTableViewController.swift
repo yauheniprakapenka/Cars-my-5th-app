@@ -11,6 +11,7 @@ import UIKit
 class AddCarTableViewController: UITableViewController {
     
     var newCar: Car?
+    var networkDataFetcher = NetworkDataFetcher()
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var carImageView: UIImageView!
@@ -55,11 +56,22 @@ class AddCarTableViewController: UITableViewController {
             self.chooseImagepicker(source: .camera)
         }
         
+        let automatic = UIAlertAction(title: "Автоматически", style: .default) { _ in
+            self.networkDataFetcher.fetchImage(searchTerm: "\(self.manufacturerTextField.text!)") { [weak self] (searchResults) in
+                searchResults?.results.map({ (photo) in
+                    print(photo.urls["small"] as Any)
+                    let b = URL(string: photo.urls["small"]!)
+                    self!.carImageView.load(url: b!)
+                })
+            }
+        }
+        
         let cancel = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         
         actionSheet.addAction(photo)
         actionSheet.addAction(camera)
         actionSheet.addAction(cancel)
+        actionSheet.addAction(automatic)
         
         present(actionSheet, animated: true, completion: nil)
     }
@@ -136,8 +148,10 @@ extension AddCarTableViewController: UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         carImageView.image = info[.editedImage] as? UIImage
-        carImageView.contentMode = .scaleAspectFill
+//        carImageView.contentMode = .scaleAspectFill
         carImageView.clipsToBounds = true
         dismiss(animated: true, completion: nil)
     }
 }
+
+
