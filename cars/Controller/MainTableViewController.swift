@@ -13,6 +13,7 @@ class MainTableViewController: UITableViewController {
     var car = Car.getCars()
     var indexPathForSelectedCell = 0
     var editMode = false
+    let vibration = Vibration()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,7 @@ class MainTableViewController: UITableViewController {
             let addCarVC = segue.destination as! AddCarTableViewController
             addCarVC.newCar = currentCar
             editMode = true
+            vibration.makeVibration(style: .light)
         }
     }
     
