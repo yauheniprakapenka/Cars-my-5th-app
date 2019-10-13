@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class MainTableViewController: UITableViewController {
     
     var car = Car.getCars()
 

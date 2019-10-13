@@ -119,6 +119,7 @@ extension AddCarTableViewController: UITextFieldDelegate {
             bodyCheckImageView.image = #imageLiteral(resourceName: "checkGreen")
             }
         }
+    
     }
 
 // Работа с изображением
