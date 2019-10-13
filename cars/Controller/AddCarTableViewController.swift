@@ -60,8 +60,8 @@ class AddCarTableViewController: UITableViewController {
             self.networkDataFetcher.fetchImage(searchTerm: "\(self.manufacturerTextField.text!)") { [weak self] (searchResults) in
                 searchResults?.results.map({ (photo) in
                     print(photo.urls["small"] as Any)
-                    let b = URL(string: photo.urls["small"]!)
-                    self!.carImageView.load(url: b!)
+                    let url = URL(string: photo.urls["small"]!)
+                    self!.carImageView.load(url: url!)
                 })
             }
         }
