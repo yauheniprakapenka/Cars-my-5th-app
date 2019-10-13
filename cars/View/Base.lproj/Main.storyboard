@@ -66,6 +66,7 @@
                                     <outlet property="carImageView" destination="0EC-Fe-fKD" id="Zpu-C1-5pa"/>
                                     <outlet property="manufacturerModelBodyLabel" destination="ebr-MR-gqz" id="XMf-f3-VA1"/>
                                     <outlet property="yearLabel" destination="APf-Eq-sH4" id="uGW-Ty-AS7"/>
+                                    <segue destination="bKs-E0-fKK" kind="show" identifier="showDetail" id="LYc-WA-Hx0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -95,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Создадим новый автомобиль" id="7RD-56-Xzy">
+                            <tableViewSection id="7RD-56-Xzy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="96m-Xe-6dv">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -387,4 +388,7 @@
         <image name="AddButtonV3" width="700" height="400"/>
         <image name="checkGrey" width="180" height="180"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LYc-WA-Hx0"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@ class AddCarTableViewController: UITableViewController {
     var networkDataFetcher = NetworkDataFetcher()
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     @IBOutlet weak var carImageView: UIImageView!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var manufacturerTextField: UITextField!
@@ -31,6 +32,8 @@ class AddCarTableViewController: UITableViewController {
         saveButton.isEnabled = false
         
         textFieldAddTargetForEditingChanged()
+        
+        setupEditScreen()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,6 +92,23 @@ class AddCarTableViewController: UITableViewController {
                      model: modelTextField.text!,
                      body: bodyTextField.text!,
                      carImage: carImageView.image!)
+    }
+    
+    private func setupEditScreen() {
+        if newCar != nil {
+            carImageView.image = newCar?.carImage
+            yearTextField.text = newCar?.year
+            manufacturerTextField.text = newCar?.manufacturer
+            modelTextField.text = newCar?.model
+            bodyTextField.text = newCar?.body
+            
+            navigationItem.leftBarButtonItem = nil
+            title = newCar?.manufacturer
+            saveButton.isEnabled = true
+            
+            let backButton = navigationController?.navigationBar.topItem
+            backButton?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
     }
 
 }

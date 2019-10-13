@@ -11,6 +11,8 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     var car = Car.getCars()
+    var indexPathForSelectedCell = 0
+    var editMode = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +42,29 @@ class MainTableViewController: UITableViewController {
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexpath = tableView.indexPathForSelectedRow else { return }
+            let currentCar = car[indexpath.row]
+            indexPathForSelectedCell = indexpath.row
+            let addCarVC = segue.destination as! AddCarTableViewController
+            addCarVC.newCar = currentCar
+            editMode = true
+        }
+    }
+    
     @IBAction func mainVCSegue(_ segue: UIStoryboardSegue) {
         guard let addCarVC = segue.source as? AddCarTableViewController else { return }
         
         addCarVC.saveNewCar()
-        car.append(addCarVC.newCar!)
+        
+        if editMode {
+            car[indexPathForSelectedCell] = addCarVC.newCar!
+            editMode = false
+        } else {
+            car.append(addCarVC.newCar!)
+        }
+        
         tableView.reloadData()
     }
     
