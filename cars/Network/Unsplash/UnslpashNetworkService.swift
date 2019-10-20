@@ -1,5 +1,5 @@
 //
-//  NetworkService.swift
+//  UnslpashNetworkService.swift
 //  cars
 //
 //  Created by yauheni prakapenka on 13/10/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkService {
+class UnslpashNetworkService {
 
     // Построение запроса данных по URL
     func request(searchTerm: String, completion: @escaping (Data?, Error?) -> Void) {

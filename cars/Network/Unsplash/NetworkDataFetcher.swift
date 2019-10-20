@@ -10,9 +10,9 @@ import Foundation
 
 class NetworkDataFetcher {
     
-    let networkService = NetworkService()
+    let networkService = UnslpashNetworkService()
     
-    func fetchImage(searchTerm: String, completion: @escaping (SearchResults?) -> ()) {
+    func fetchImage(searchTerm: String, completion: @escaping (PhotoModel?) -> ()) {
         
         networkService.request(searchTerm: searchTerm) { (data, error) in
             if let error = error {
@@ -20,7 +20,7 @@ class NetworkDataFetcher {
                 completion(nil)
             }
             
-            let decode = self.decodeJSON(type: SearchResults.self, from: data)
+            let decode = self.decodeJSON(type: PhotoModel.self, from: data)
             completion(decode)
         }
     }

@@ -10,14 +10,9 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
-    var car = Car.getCars()
+    var car = CarModel.getCars()
     var indexPathForSelectedCell = 0
     var editMode = false
-    let vibration = Vibration()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return car.count
@@ -51,7 +46,6 @@ class MainTableViewController: UITableViewController {
             let addCarVC = segue.destination as! AddCarTableViewController
             addCarVC.newCar = currentCar
             editMode = true
-            vibration.makeVibration(style: .light)
         }
     }
     

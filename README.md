@@ -13,6 +13,9 @@ Swift 5, Xcode 11.1
 - Загрузка изображений через Unsplash
 - Валидация полей
 
+<b>UI Automation:</b>
+- Добавление / редактирование / удаление автомобиля
+
 <b>Архитектура:</b>
 - MVC-N
 
@@ -26,3 +29,5 @@ Swift 5, Xcode 11.1
 <b>Видео:</b>
 
 Демонстрация приложения [здесь](https://drive.google.com/open?id=1hdXyUkTDGwtKuBtEcIiu843lg4l4My5r)
+
+Демонстразция UI Automation [здесь](https://drive.google.com/open?id=1iSSHKZh0H6sB6tN18TRGS6HhugBbHVYB)

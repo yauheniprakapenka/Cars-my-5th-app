@@ -13,14 +13,4 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var manufacturerModelBodyLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
 }

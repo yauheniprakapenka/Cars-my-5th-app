@@ -1,5 +1,5 @@
 //
-//  SearchResult.swift
+//  PhotoModel.swift
 //  cars
 //
 //  Created by yauheni prakapenka on 13/10/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SearchResults: Decodable {
+struct PhotoModel: Decodable {
     let total: Int
     let results: [Unsplashphoto]
 }

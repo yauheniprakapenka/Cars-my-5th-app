@@ -10,7 +10,7 @@ import UIKit
 
 class AddCarTableViewController: UITableViewController {
     
-    var newCar: Car?
+    var newCar: CarModel?
     var networkDataFetcher = NetworkDataFetcher()
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -93,7 +93,7 @@ class AddCarTableViewController: UITableViewController {
     }
     
     func saveNewCar() {
-        newCar = Car(year: yearTextField.text!,
+        newCar = CarModel(year: yearTextField.text!,
                      manufacturer: manufacturerTextField.text!,
                      model: modelTextField.text!,
                      body: bodyTextField.text!,
