@@ -8,6 +8,7 @@ Swift 5, Xcode 11.1
 ```
 
 <b>Возможности:</b>
+- Авторизация через ключ доступа или биометрию
 - Добавление / редактирование / удаление автомобиля
 - Добавление фото через галерею, камеру или автоматически
 - Загрузка изображений через Unsplash
@@ -21,6 +22,7 @@ Swift 5, Xcode 11.1
 
 <b>Скриншоты:</b>
 
+<a href="https://ibb.co/kmbg8TR"><img src="https://i.ibb.co/2ZV7trD/Simulator-Screen-Shot-i-Phone-8-2019-10-27-at-22-38-25.png" width="200"></a>
 <a href="https://ibb.co/MDJ3MgZ"><img src="https://i.ibb.co/C5SThwm/Simulator-Screen-Shot-i-Phone-8-2019-10-13-at-22-29-35.png" width="200">></a>
 <a href="https://ibb.co/CvzdC31"><img src="https://i.ibb.co/0ZcN4RD/Simulator-Screen-Shot-i-Phone-8-2019-10-13-at-22-29-38.png" width="200"></a>
 <a href="https://ibb.co/3rbZV4j"><img src="https://i.ibb.co/cg9nRkZ/Simulator-Screen-Shot-i-Phone-8-2019-10-13-at-22-29-45.png" width="200"></a>
@@ -30,4 +32,6 @@ Swift 5, Xcode 11.1
 
 Демонстрация приложения [здесь](https://drive.google.com/open?id=1hdXyUkTDGwtKuBtEcIiu843lg4l4My5r)
 
-Демонстразция UI Automation [здесь](https://drive.google.com/open?id=1iSSHKZh0H6sB6tN18TRGS6HhugBbHVYB)
+Демонстрация авторизации [здесь](https://drive.google.com/open?id=1iCtpTxwYqeqZLg2g7ziUtJ0432rytKla)
+
+Демонстация UI Automation [здесь](https://drive.google.com/open?id=1iSSHKZh0H6sB6tN18TRGS6HhugBbHVYB)
