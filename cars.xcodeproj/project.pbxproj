@@ -23,6 +23,7 @@
 		3E3080342353AC0B00CB0030 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3080332353AC0B00CB0030 /* Shake.swift */; };
 		3E6620782363794100B59329 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6620772363794100B59329 /* LocalAuthentication.framework */; };
 		3E66207A2364834100B59329 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620792364834100B59329 /* AuthorizationViewController.swift */; };
+		3E6620802365966400B59329 /* PresentMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66207F2365966400B59329 /* PresentMainVC.swift */; };
 		3EA47408235CD62F00A2CC08 /* carsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA47407235CD62F00A2CC08 /* carsUITests.swift */; };
 		3EA47410235CDF1300A2CC08 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		3E3080332353AC0B00CB0030 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		3E6620772363794100B59329 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		3E6620792364834100B59329 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		3E66207F2365966400B59329 /* PresentMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMainVC.swift; sourceTree = "<group>"; };
 		3EA47405235CD62F00A2CC08 /* carsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA47407235CD62F00A2CC08 /* carsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carsUITests.swift; sourceTree = "<group>"; };
 		3EA47409235CD62F00A2CC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				3E0DC1D52351C09700AA4F04 /* CarModel.swift */,
 				3E0DC1D32351BAC400AA4F04 /* CustomTableViewCell.swift */,
 				3E3080292353011200CB0030 /* PhotoModel.swift */,
+				3E66207F2365966400B59329 /* PresentMainVC.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E66207A2364834100B59329 /* AuthorizationViewController.swift in Sources */,
+				3E6620802365966400B59329 /* PresentMainVC.swift in Sources */,
 				3E04E65F2351B691005E07B8 /* AppDelegate.swift in Sources */,
 				3E308030235310E100CB0030 /* UIImageView.swift in Sources */,
 				3E0DC1D62351C09700AA4F04 /* CarModel.swift in Sources */,
