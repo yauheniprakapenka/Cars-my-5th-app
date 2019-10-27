@@ -11,14 +11,20 @@ import UIKit
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    let profile = ProfileModel.getProfile()
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return profile.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCustomCell", for: indexPath) as! CustomProfileViewCell
+        
+        cell.userNameLabel?.text = profile[indexPath.row].name
+        cell.passwordLabel?.text = profile[indexPath.row].password
+        
+        cell.selectionStyle = .none
         
         return cell
     }

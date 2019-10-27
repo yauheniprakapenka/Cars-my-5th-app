@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,8 @@
 		3E6620802365966400B59329 /* PresentMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66207F2365966400B59329 /* PresentMainVC.swift */; };
 		3E6620822365E33900B59329 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620812365E33900B59329 /* ProfileViewController.swift */; };
 		3E6620842366064B00B59329 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E6620832366064B00B59329 /* GoogleService-Info.plist */; };
+		3E6620862366180100B59329 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620852366180100B59329 /* ProfileModel.swift */; };
+		3E6620882366193600B59329 /* CustomProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620872366193600B59329 /* CustomProfileViewCell.swift */; };
 		3EA47408235CD62F00A2CC08 /* carsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA47407235CD62F00A2CC08 /* carsUITests.swift */; };
 		3EA47410235CDF1300A2CC08 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */; };
 		BC6684B3EF8DAB4D09F779B4 /* Pods_carsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DD321FBDA1CDC307DD013 /* Pods_carsUITests.framework */; };
@@ -65,6 +67,8 @@
 		3E66207F2365966400B59329 /* PresentMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMainVC.swift; sourceTree = "<group>"; };
 		3E6620812365E33900B59329 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3E6620832366064B00B59329 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E6620852366180100B59329 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		3E6620872366193600B59329 /* CustomProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProfileViewCell.swift; sourceTree = "<group>"; };
 		3EA47405235CD62F00A2CC08 /* carsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA47407235CD62F00A2CC08 /* carsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carsUITests.swift; sourceTree = "<group>"; };
 		3EA47409235CD62F00A2CC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,9 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				3E0DC1D52351C09700AA4F04 /* CarModel.swift */,
-				3E0DC1D32351BAC400AA4F04 /* CustomTableViewCell.swift */,
+				3E6620852366180100B59329 /* ProfileModel.swift */,
 				3E3080292353011200CB0030 /* PhotoModel.swift */,
 				3E66207F2365966400B59329 /* PresentMainVC.swift */,
+				3E0DC1D32351BAC400AA4F04 /* CustomTableViewCell.swift */,
+				3E6620872366193600B59329 /* CustomProfileViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,7 +233,6 @@
 				80DBC939C143023C31F3F40D /* Pods-carsUITests.debug.xcconfig */,
 				88EA5145A3831027F30DABD5 /* Pods-carsUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -400,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6620862366180100B59329 /* ProfileModel.swift in Sources */,
 				3E66207A2364834100B59329 /* AuthorizationViewController.swift in Sources */,
 				3E6620802365966400B59329 /* PresentMainVC.swift in Sources */,
 				3E04E65F2351B691005E07B8 /* AppDelegate.swift in Sources */,
@@ -412,6 +418,7 @@
 				3E0DC1D22351BA4700AA4F04 /* MainTableViewController.swift in Sources */,
 				3E0DC1DA2352109900AA4F04 /* AddCarTableViewController.swift in Sources */,
 				3E30802D2353050900CB0030 /* NetworkDataFetcher.swift in Sources */,
+				3E6620882366193600B59329 /* CustomProfileViewCell.swift in Sources */,
 				3E04E6612351B691005E07B8 /* SceneDelegate.swift in Sources */,
 				3E3080272352F65F00CB0030 /* UnslpashNetworkService.swift in Sources */,
 			);

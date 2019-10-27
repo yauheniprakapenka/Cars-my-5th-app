@@ -548,13 +548,45 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="55q-bb-esF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="55q-bb-esF" customClass="CustomProfileViewCell" customModule="cars" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="55q-bb-esF" id="Y1n-ut-Soc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0R-Ji-sXS">
+                                                    <rect key="frame" x="15" y="12" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="7CF-II-y7H"/>
+                                                        <constraint firstAttribute="width" constant="45" id="QNI-jC-kgZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-8p-J4f">
+                                                    <rect key="frame" x="102" y="12" width="74" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="08n-mU-ThM"/>
+                                                        <constraint firstAttribute="width" constant="74" id="Bc1-im-eac"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DKM-8p-J4f" firstAttribute="top" secondItem="Y1n-ut-Soc" secondAttribute="topMargin" constant="1" id="F8s-Pf-1sf"/>
+                                                <constraint firstItem="s0R-Ji-sXS" firstAttribute="leading" secondItem="Y1n-ut-Soc" secondAttribute="leadingMargin" id="Ihu-Mq-g7a"/>
+                                                <constraint firstItem="DKM-8p-J4f" firstAttribute="leading" secondItem="s0R-Ji-sXS" secondAttribute="trailing" constant="42" id="Kph-bt-vkT"/>
+                                                <constraint firstItem="s0R-Ji-sXS" firstAttribute="top" secondItem="Y1n-ut-Soc" secondAttribute="topMargin" constant="1" id="P4p-Gx-zhc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="passwordLabel" destination="DKM-8p-J4f" id="zjs-P3-tzG"/>
+                                            <outlet property="userNameLabel" destination="s0R-Ji-sXS" id="vuQ-wK-TCW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -573,7 +605,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jm1-3G-Rvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560.8" y="-1278.7106446776613"/>
+            <point key="canvasLocation" x="788" y="-571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vrc-Fc-QNC">
