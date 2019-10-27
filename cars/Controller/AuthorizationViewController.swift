@@ -12,6 +12,9 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var secureCodeTextField: UITextField!
     @IBOutlet weak var leftCarConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trafficLightImageView: UIImageView!
+    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var helloTextStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(true)
         
         animateCarLeftConstraint()
+        secureCodeTextField.alpha = 0
+        enterButton.alpha = 0
     }
     
     @IBAction func verifyButtonTapped(_ sender: UIButton) {
@@ -34,8 +39,10 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         }
         
         print("Код верный")
-        UIView.animate(withDuration: 2.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options: .curveEaseOut, animations: {
-            self.leftCarConstraint.constant = UIScreen.main.bounds.width
+        UIView.animate(withDuration: 4.0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options: .curveEaseOut, animations: {
+            self.trafficLightImageView.image = UIImage(named: "Светофор-зеленый")
+            self.secureCodeTextField.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            self.leftCarConstraint.constant = UIScreen.main.bounds.width + 30
             self.view.layoutIfNeeded()
         }, completion: { (isSuccessful) in
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -57,7 +64,16 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     private func animateCarLeftConstraint() {
         UIView.animate(withDuration: 5, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 0.4, options: .curveEaseOut, animations: {
-            self.leftCarConstraint.constant = (UIScreen.main.bounds.width / 2) - 80
+            _ = Timer.scheduledTimer(withTimeInterval: 1.8, repeats: false) { (Timer) in
+                self.trafficLightImageView.image = UIImage(named: "Светофор-красный")
+                UIView.animate(withDuration: 1.3) {
+                    self.secureCodeTextField.alpha = 1
+                    self.enterButton.alpha = 1
+                }
+                
+            }
+            
+            self.leftCarConstraint.constant = (UIScreen.main.bounds.width / 2) - 140
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
