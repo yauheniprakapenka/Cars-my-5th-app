@@ -21,11 +21,9 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        secureCodeTextField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        secureCodeTextField.alpha = 0
-        enterButton.alpha = 0
-        biometricView.alpha = 0
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,6 +56,19 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         
         let newLength = text.count + string.count - range.length
         return newLength < 5
+    }
+    
+    @objc func keyboardDidShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        
+        let keyboardFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + keyboardFrameSize.height)
+        (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrameSize.height, right: 0)
+    }
+    
+    @objc func keyboardDidHide(notification: Notification) {
+        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
     }
     
     private func animateCarLeftConstraint() {
