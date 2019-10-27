@@ -383,9 +383,8 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg0-YV-kjl">
-                                <rect key="frame" x="130" y="368.5" width="115" height="30"/>
+                                <rect key="frame" x="151" y="368.5" width="73" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="LJS-Fp-4gC"/>
                                     <constraint firstAttribute="height" constant="30" id="fHw-Vy-X3l"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -396,7 +395,7 @@
                                     <action selector="verifyButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="IyZ-Ze-9bZ"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="98v-0Z-j0z">
+                            <stackView opaque="NO" alpha="0.5" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="98v-0Z-j0z">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="П" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-V8-8cd">
@@ -446,42 +445,63 @@
                                     <constraint firstAttribute="height" constant="50" id="fDg-Mz-eMH"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYO-tA-kVQ">
-                                <rect key="frame" x="0.0" y="418.5" width="375" height="18"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-K1-D5L">
+                                <rect key="frame" x="19" y="422.5" width="328" height="18"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYO-tA-kVQ">
+                                        <rect key="frame" x="7" y="0.0" width="248" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="HBh-ly-chM"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="UwY-e9-xO9"/>
+                                        </constraints>
+                                        <state key="normal" title="или войди через Face ID / Touch ID">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="biometricButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="NBs-Fk-aty"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biometric" translatesAutoresizingMaskIntoConstraints="NO" id="v3r-9D-8AI">
+                                        <rect key="frame" x="271" y="1" width="57" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="n56-Xc-T8U"/>
+                                            <constraint firstAttribute="width" constant="57" id="vOy-dM-ARg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="HBh-ly-chM"/>
+                                    <constraint firstItem="HYO-tA-kVQ" firstAttribute="top" secondItem="gNf-K1-D5L" secondAttribute="top" id="5vn-MR-tPY"/>
+                                    <constraint firstAttribute="trailing" secondItem="v3r-9D-8AI" secondAttribute="trailing" id="ALg-39-BXB"/>
+                                    <constraint firstItem="v3r-9D-8AI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HYO-tA-kVQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Af4-GF-Nzw"/>
+                                    <constraint firstAttribute="width" constant="328" id="B5f-5i-KsR"/>
+                                    <constraint firstAttribute="height" constant="18" id="Bsk-up-jsT"/>
+                                    <constraint firstItem="v3r-9D-8AI" firstAttribute="top" secondItem="gNf-K1-D5L" secondAttribute="top" constant="1" id="UDp-SE-RXa"/>
+                                    <constraint firstItem="HYO-tA-kVQ" firstAttribute="leading" secondItem="gNf-K1-D5L" secondAttribute="leading" constant="7" id="ff6-Z8-nGJ"/>
                                 </constraints>
-                                <state key="normal" title="или войди через Face ID / Touch ID">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="biometricButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="NBs-Fk-aty"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="E69-QU-coo" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" id="3Xm-Zq-jXq"/>
+                            <constraint firstItem="gNf-K1-D5L" firstAttribute="top" secondItem="Fg0-YV-kjl" secondAttribute="bottom" constant="24" id="5bY-F4-qQs"/>
                             <constraint firstItem="Fg0-YV-kjl" firstAttribute="top" secondItem="E69-QU-coo" secondAttribute="bottom" constant="20" id="6aQ-xy-7Ex"/>
-                            <constraint firstItem="fUM-dG-Gyu" firstAttribute="trailing" secondItem="E69-QU-coo" secondAttribute="trailing" id="IC6-oa-f41"/>
+                            <constraint firstItem="gNf-K1-D5L" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" constant="-4.5" id="Lnb-TQ-DrC"/>
                             <constraint firstItem="E69-QU-coo" firstAttribute="top" secondItem="DlX-cA-kBO" secondAttribute="bottom" constant="80" id="Luc-iR-KXA"/>
                             <constraint firstItem="Oxc-xd-Ery" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" multiplier="1.3" constant="-1.75" id="Lxj-lc-u9A"/>
                             <constraint firstItem="fUM-dG-Gyu" firstAttribute="trailing" secondItem="98v-0Z-j0z" secondAttribute="trailing" id="PtV-5a-aTj"/>
                             <constraint firstItem="98v-0Z-j0z" firstAttribute="top" secondItem="fUM-dG-Gyu" secondAttribute="top" constant="20" id="RU2-3h-ChD"/>
                             <constraint firstItem="Fg0-YV-kjl" firstAttribute="centerY" secondItem="l62-01-OIu" secondAttribute="centerY" multiplier="1.15" id="TAa-bD-x4A"/>
                             <constraint firstItem="E69-QU-coo" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" id="UML-W0-3xU"/>
-                            <constraint firstItem="fUM-dG-Gyu" firstAttribute="trailing" secondItem="HYO-tA-kVQ" secondAttribute="trailing" id="YW8-do-rwl"/>
                             <constraint firstItem="DlX-cA-kBO" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" constant="-100" id="co8-Kg-VGa"/>
-                            <constraint firstItem="HYO-tA-kVQ" firstAttribute="top" secondItem="Fg0-YV-kjl" secondAttribute="bottom" constant="20" id="cqQ-6n-NRM"/>
                             <constraint firstItem="Fg0-YV-kjl" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" id="f9K-im-Kg7"/>
-                            <constraint firstItem="HYO-tA-kVQ" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" id="gMz-Rd-mIl"/>
                             <constraint firstItem="98v-0Z-j0z" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" id="nyf-al-xiS"/>
                             <constraint firstItem="E69-QU-coo" firstAttribute="top" secondItem="Oxc-xd-Ery" secondAttribute="bottom" constant="95.5" id="vem-cB-MTs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fUM-dG-Gyu"/>
                     </view>
                     <connections>
-                        <outlet property="biometricButton" destination="HYO-tA-kVQ" id="BTc-ZP-IzS"/>
+                        <outlet property="biometricView" destination="gNf-K1-D5L" id="GEl-XU-1NR"/>
                         <outlet property="enterButton" destination="Fg0-YV-kjl" id="doL-L3-V1k"/>
                         <outlet property="helloTextStackView" destination="98v-0Z-j0z" id="aQ5-Qi-M4u"/>
                         <outlet property="leftCarConstraint" destination="co8-Kg-VGa" id="ccZ-gP-8Vj"/>
@@ -533,6 +553,7 @@
     </scenes>
     <resources>
         <image name="AddButtonV3" width="700" height="400"/>
+        <image name="biometric" width="348" height="104"/>
         <image name="car-red" width="710" height="229"/>
         <image name="checkGrey" width="180" height="180"/>
         <image name="Светофор-желтый" width="53" height="278"/>

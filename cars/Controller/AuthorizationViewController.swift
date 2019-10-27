@@ -16,7 +16,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var trafficLightImageView: UIImageView!
     @IBOutlet weak var helloTextStackView: UIStackView!
     @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var biometricButton: UIButton!
+    @IBOutlet weak var biometricView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         
         secureCodeTextField.alpha = 0
         enterButton.alpha = 0
-        biometricButton.alpha = 0
+        biometricView.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,17 +62,20 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     private func animateCarLeftConstraint() {
         UIView.animate(withDuration: 5, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 0.4, options: .curveEaseOut, animations: {
-            _ = Timer.scheduledTimer(withTimeInterval: 1.8, repeats: false) { (Timer) in
+            _ = Timer.scheduledTimer(withTimeInterval: 1.4, repeats: false) { (Timer) in
                 self.trafficLightImageView.image = UIImage(named: "Светофор-красный")
+            }
+            
+            _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (Timer) in
                 UIView.animate(withDuration: 1.3) {
                     self.secureCodeTextField.alpha = 1
                     self.enterButton.alpha = 1
                 }
             }
             
-            _ = Timer.scheduledTimer(withTimeInterval: 3.8, repeats: false) { (Timer) in
+            _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (Timer) in
                 UIView.animate(withDuration: 1.3) {
-                    self.biometricButton.alpha = 1
+                    self.biometricView.alpha = 1
                 }
             }
             
@@ -117,6 +120,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             self.leftCarConstraint.constant = UIScreen.main.bounds.width + 30
             self.view.layoutIfNeeded()
         }, completion: { (isSuccessful) in
+            
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let navigationController = storyBoard.instantiateViewController(withIdentifier: "mainViewControllerID")
             self.present(navigationController, animated: true, completion: nil)
