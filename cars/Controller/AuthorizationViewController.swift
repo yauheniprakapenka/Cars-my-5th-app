@@ -21,6 +21,12 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        secureCodeTextField.delegate = self
+        
+        secureCodeTextField.alpha = 0
+        enterButton.alpha = 0
+        biometricView.alpha = 0
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
