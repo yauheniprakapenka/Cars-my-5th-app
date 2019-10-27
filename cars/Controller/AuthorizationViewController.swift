@@ -118,8 +118,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         }, completion: { (isSuccessful) in
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainTableViewController = storyBoard.instantiateViewController(withIdentifier: "mainViewControllerID") as! MainTableViewController
-            self.present(mainTableViewController, animated: true, completion: nil)
+            let navigationController = storyBoard.instantiateViewController(withIdentifier: "mainViewControllerID")
+            self.present(navigationController, animated: true, completion: nil)
         })
     }
     

@@ -10,7 +10,7 @@
         <!--Справочник автомобилей-->
         <scene sceneID="wSP-Xu-yEO">
             <objects>
-                <tableViewController storyboardIdentifier="mainViewControllerID" modalPresentationStyle="fullScreen" id="Obs-Z2-6DD" customClass="MainTableViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="Obs-Z2-6DD" customClass="MainTableViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rhi-hF-Ku9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,7 +496,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5Mo-Ur-18s">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="7pz-IF-KSM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainViewControllerID" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="7pz-IF-KSM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="3JZ-kB-utC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rjr-Gx-p24">
