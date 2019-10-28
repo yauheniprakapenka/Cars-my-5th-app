@@ -38,7 +38,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         animateCarLeftConstraint()
     }
     
-    @IBAction func verifyButtonTapped(_ sender: UIButton) {
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
         guard let text = secureCodeTextField.text, text == "1111" else  {
             print("Код авторизации НЕ верный")
             secureCodeTextField.shake()
@@ -137,9 +138,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             self.leftCarConstraint.constant = UIScreen.main.bounds.width + 30
             self.view.layoutIfNeeded()
         }, completion: { (isSuccessful) in
-            
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let navigationController = storyBoard.instantiateViewController(withIdentifier: "mainViewControllerID")
+            let navigationController = storyBoard.instantiateViewController(withIdentifier: Constants.Storyboard.mainViewController)
             self.present(navigationController, animated: true, completion: nil)
         })
     }

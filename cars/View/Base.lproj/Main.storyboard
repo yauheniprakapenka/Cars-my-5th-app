@@ -447,7 +447,7 @@
                                     <color key="titleColor" red="0.41424781084060669" green="0.16994485259056091" blue="0.10585758835077286" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="verifyButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="IyZ-Ze-9bZ"/>
+                                    <action selector="loginButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="IyZ-Ze-9bZ"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-K1-D5L">
