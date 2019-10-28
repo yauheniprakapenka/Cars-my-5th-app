@@ -8,7 +8,8 @@ target 'cars' do
   # Pods for cars
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-  pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 
   target 'carsUITests' do
     inherit! :search_paths
