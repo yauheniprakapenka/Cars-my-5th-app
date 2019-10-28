@@ -8,6 +8,8 @@
 
 import UIKit
 import LocalAuthentication
+import Firebase
+import FirebaseAuth
 
 class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
@@ -40,14 +42,30 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        guard let text = secureCodeTextField.text, text == "1111" else  {
-            print("Код авторизации НЕ верный")
-            secureCodeTextField.shake()
-            secureCodeTextField.textColor = .red
-            return
+        Auth.auth().createUser(withEmail: "kitty@mail.ru", password: "12345678") { (result, err) in
+            if err != nil {
+                print("Ошибка создания пользователя")
+            } else {
+                let db = Firestore.firestore()
+                
+                db.collection("users").addDocument(data: ["firstname" : "Tom", "lastname" : "Jones", "uid" : result!.user.uid]) { (error) in
+                    if error != nil {
+                        print("Ошибка сохранения пользователя")
+                    }
+                    print("Пользователь успешно создан")
+                }
+            }
         }
-        print("Код авторизации верный")
-        presentMainVC()
+//FIXME: - Реализовать поля на UI и передавать их
+        
+//        guard let text = secureCodeTextField.text, text == "1111" else  {
+//            print("Код авторизации НЕ верный")
+//            secureCodeTextField.shake()
+//            secureCodeTextField.textColor = .red
+//            return
+//        }
+//        print("Код авторизации верный")
+//        presentMainVC()
     }
     
     @IBAction func biometricButtonTapped(_ sender: UIButton) {
