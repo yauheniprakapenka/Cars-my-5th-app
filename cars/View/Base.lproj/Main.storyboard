@@ -359,7 +359,7 @@
         <scene sceneID="zaM-nu-Lgb">
             <objects>
                 <viewController id="neq-Dd-2Iq" customClass="AuthorizationViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l62-01-OIu" customClass="UIScrollView">
+                    <view key="view" contentMode="scaleToFill" id="l62-01-OIu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -420,7 +420,7 @@
                                     <constraint firstAttribute="width" constant="20" id="tJ7-fr-KIE"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введи сюда ключ доступа" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E69-QU-coo">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E69-QU-coo">
                                 <rect key="frame" x="0.0" y="314.5" width="375" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Q1l-pr-poR"/>
@@ -437,10 +437,30 @@
                                     <constraint firstAttribute="height" constant="68" id="wwf-p0-z4G"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg0-YV-kjl">
-                                <rect key="frame" x="151" y="368.5" width="73" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-wL-Ysi">
+                                <rect key="frame" x="0.0" y="356" width="375" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fHw-Vy-X3l"/>
+                                    <constraint firstAttribute="height" constant="34" id="unk-bi-q50"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYO-tA-kVQ">
+                                <rect key="frame" x="63.5" y="509" width="248" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="R5d-XZ-q3F"/>
+                                </constraints>
+                                <state key="normal" title="или войди через Face ID / Touch ID">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="biometricButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="NBs-Fk-aty"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg0-YV-kjl">
+                                <rect key="frame" x="151" y="432" width="73" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="voz-Qi-lE4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="В О Й Т И">
@@ -450,65 +470,35 @@
                                     <action selector="loginButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="IyZ-Ze-9bZ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-K1-D5L">
-                                <rect key="frame" x="19" y="422.5" width="328" height="18"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYO-tA-kVQ">
-                                        <rect key="frame" x="40" y="0.0" width="248" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="HBh-ly-chM"/>
-                                        </constraints>
-                                        <state key="normal" title="или войди через Face ID / Touch ID">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="biometricButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="NBs-Fk-aty"/>
-                                        </connections>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biometric" translatesAutoresizingMaskIntoConstraints="NO" id="v3r-9D-8AI">
-                                        <rect key="frame" x="124" y="28" width="80" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="n56-Xc-T8U"/>
-                                            <constraint firstAttribute="width" constant="80" id="vOy-dM-ARg"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="v3r-9D-8AI" firstAttribute="top" secondItem="HYO-tA-kVQ" secondAttribute="bottom" constant="10" id="1lW-6P-ba5"/>
-                                    <constraint firstItem="HYO-tA-kVQ" firstAttribute="top" secondItem="gNf-K1-D5L" secondAttribute="top" id="5vn-MR-tPY"/>
-                                    <constraint firstAttribute="width" constant="328" id="B5f-5i-KsR"/>
-                                    <constraint firstAttribute="height" constant="18" id="Bsk-up-jsT"/>
-                                    <constraint firstItem="v3r-9D-8AI" firstAttribute="centerX" secondItem="gNf-K1-D5L" secondAttribute="centerX" id="tba-yv-Ur3"/>
-                                    <constraint firstItem="HYO-tA-kVQ" firstAttribute="centerX" secondItem="gNf-K1-D5L" secondAttribute="centerX" id="xIK-sH-bau"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="E69-QU-coo" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" id="3Xm-Zq-jXq"/>
-                            <constraint firstItem="gNf-K1-D5L" firstAttribute="top" secondItem="Fg0-YV-kjl" secondAttribute="bottom" constant="24" id="5bY-F4-qQs"/>
-                            <constraint firstItem="Fg0-YV-kjl" firstAttribute="top" secondItem="E69-QU-coo" secondAttribute="bottom" constant="20" id="6aQ-xy-7Ex"/>
-                            <constraint firstItem="gNf-K1-D5L" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" constant="-4.5" id="Lnb-TQ-DrC"/>
-                            <constraint firstItem="E69-QU-coo" firstAttribute="top" secondItem="DlX-cA-kBO" secondAttribute="bottom" constant="80" id="Luc-iR-KXA"/>
+                            <constraint firstItem="fUM-dG-Gyu" firstAttribute="trailing" secondItem="e6F-wL-Ysi" secondAttribute="trailing" id="02G-j8-YA8"/>
+                            <constraint firstItem="DlX-cA-kBO" firstAttribute="top" secondItem="98v-0Z-j0z" secondAttribute="bottom" constant="96.5" id="4ly-DP-q0y"/>
+                            <constraint firstItem="Fg0-YV-kjl" firstAttribute="top" secondItem="e6F-wL-Ysi" secondAttribute="bottom" constant="42" id="7Tu-Ms-eIP"/>
                             <constraint firstItem="Oxc-xd-Ery" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" multiplier="1.3" constant="-1.75" id="Lxj-lc-u9A"/>
+                            <constraint firstItem="e6F-wL-Ysi" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" id="OhZ-Fu-8vy"/>
                             <constraint firstItem="fUM-dG-Gyu" firstAttribute="trailing" secondItem="98v-0Z-j0z" secondAttribute="trailing" id="PtV-5a-aTj"/>
+                            <constraint firstItem="HYO-tA-kVQ" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" id="Qfn-lA-4fZ"/>
                             <constraint firstItem="98v-0Z-j0z" firstAttribute="top" secondItem="fUM-dG-Gyu" secondAttribute="top" constant="20" id="RU2-3h-ChD"/>
-                            <constraint firstItem="Fg0-YV-kjl" firstAttribute="centerY" secondItem="l62-01-OIu" secondAttribute="centerY" multiplier="1.15" id="TAa-bD-x4A"/>
+                            <constraint firstItem="HYO-tA-kVQ" firstAttribute="top" secondItem="Fg0-YV-kjl" secondAttribute="bottom" constant="47" id="Tbh-kp-dAD"/>
                             <constraint firstItem="E69-QU-coo" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" id="UML-W0-3xU"/>
+                            <constraint firstItem="E69-QU-coo" firstAttribute="top" secondItem="Oxc-xd-Ery" secondAttribute="bottom" constant="95.5" id="YC4-Me-8Eo"/>
                             <constraint firstItem="DlX-cA-kBO" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" constant="-100" id="co8-Kg-VGa"/>
-                            <constraint firstItem="Fg0-YV-kjl" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" id="f9K-im-Kg7"/>
+                            <constraint firstItem="Oxc-xd-Ery" firstAttribute="top" secondItem="98v-0Z-j0z" secondAttribute="bottom" constant="41" id="dHg-nd-7TH"/>
                             <constraint firstItem="98v-0Z-j0z" firstAttribute="leading" secondItem="fUM-dG-Gyu" secondAttribute="leading" id="nyf-al-xiS"/>
-                            <constraint firstItem="E69-QU-coo" firstAttribute="top" secondItem="Oxc-xd-Ery" secondAttribute="bottom" constant="95.5" id="vem-cB-MTs"/>
+                            <constraint firstItem="e6F-wL-Ysi" firstAttribute="top" secondItem="E69-QU-coo" secondAttribute="bottom" constant="7.5" id="piw-mi-l0I"/>
+                            <constraint firstItem="fUM-dG-Gyu" firstAttribute="trailing" secondItem="E69-QU-coo" secondAttribute="trailing" id="vas-kn-31w"/>
+                            <constraint firstItem="Fg0-YV-kjl" firstAttribute="centerX" secondItem="l62-01-OIu" secondAttribute="centerX" id="yP2-lb-bxs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fUM-dG-Gyu"/>
                     </view>
                     <connections>
-                        <outlet property="biometricView" destination="gNf-K1-D5L" id="GEl-XU-1NR"/>
+                        <outlet property="emailTextField" destination="E69-QU-coo" id="NRK-S7-4CR"/>
                         <outlet property="enterButton" destination="Fg0-YV-kjl" id="doL-L3-V1k"/>
                         <outlet property="helloTextStackView" destination="98v-0Z-j0z" id="aQ5-Qi-M4u"/>
                         <outlet property="leftCarConstraint" destination="co8-Kg-VGa" id="ccZ-gP-8Vj"/>
-                        <outlet property="secureCodeTextField" destination="E69-QU-coo" id="NRK-S7-4CR"/>
+                        <outlet property="loginTextField" destination="e6F-wL-Ysi" id="9N5-h0-cmJ"/>
                         <outlet property="trafficLightImageView" destination="Oxc-xd-Ery" id="q5E-SJ-uuH"/>
                     </connections>
                 </viewController>
@@ -645,7 +635,6 @@
     </scenes>
     <resources>
         <image name="AddButtonV3" width="700" height="400"/>
-        <image name="biometric" width="348" height="104"/>
         <image name="car-red" width="710" height="229"/>
         <image name="checkGrey" width="180" height="180"/>
         <image name="Светофор-желтый" width="53" height="278"/>
