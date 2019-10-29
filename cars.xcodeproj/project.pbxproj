@@ -23,6 +23,7 @@
 		3E3080342353AC0B00CB0030 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3080332353AC0B00CB0030 /* Shake.swift */; };
 		3E4814DF23677BC900D38A72 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4814DE23677BC900D38A72 /* Constants.swift */; };
 		3E4814E12368A57500D38A72 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4814E02368A57500D38A72 /* HideKeyboard.swift */; };
+		3E4814E32368BEA400D38A72 /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4814E22368BEA400D38A72 /* NewProfileViewController.swift */; };
 		3E6620782363794100B59329 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6620772363794100B59329 /* LocalAuthentication.framework */; };
 		3E66207A2364834100B59329 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620792364834100B59329 /* AuthorizationViewController.swift */; };
 		3E6620802365966400B59329 /* PresentMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66207F2365966400B59329 /* PresentMainVC.swift */; };
@@ -66,6 +67,7 @@
 		3E3080332353AC0B00CB0030 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		3E4814DE23677BC900D38A72 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3E4814E02368A57500D38A72 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		3E4814E22368BEA400D38A72 /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
 		3E6620772363794100B59329 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		3E6620792364834100B59329 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3E66207F2365966400B59329 /* PresentMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMainVC.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				3E0DC1D12351BA4700AA4F04 /* MainTableViewController.swift */,
 				3E0DC1D92352109900AA4F04 /* AddCarTableViewController.swift */,
 				3E6620812365E33900B59329 /* ProfileViewController.swift */,
+				3E4814E22368BEA400D38A72 /* NewProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				3E30802A2353011200CB0030 /* PhotoModel.swift in Sources */,
 				3E0DC1D42351BAC400AA4F04 /* CustomTableViewCell.swift in Sources */,
 				3E0DC1D22351BA4700AA4F04 /* MainTableViewController.swift in Sources */,
+				3E4814E32368BEA400D38A72 /* NewProfileViewController.swift in Sources */,
 				3E0DC1DA2352109900AA4F04 /* AddCarTableViewController.swift in Sources */,
 				3E30802D2353050900CB0030 /* NetworkDataFetcher.swift in Sources */,
 				3E6620882366193600B59329 /* CustomProfileViewCell.swift in Sources */,

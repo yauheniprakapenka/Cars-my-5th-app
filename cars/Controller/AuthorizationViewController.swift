@@ -8,13 +8,11 @@
 
 import UIKit
 import LocalAuthentication
-import Firebase
-import FirebaseAuth
 
 class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var leftCarConstraint: NSLayoutConstraint!
     @IBOutlet weak var trafficLightImageView: UIImageView!
     @IBOutlet weak var helloTextStackView: UIStackView!
@@ -26,7 +24,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         
         emailTextField.alpha = 0
-        loginTextField.alpha = 0
+        passwordTextField.alpha = 0
         enterButton.alpha = 0
 
         NotificationCenter.default.addObserver(self, selector: #selector(AuthorizationViewController.keyboardDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -43,20 +41,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        Auth.auth().createUser(withEmail: "kitty1@mail.ru", password: "12345678") { (result, err) in
-            if err != nil {
-                print("Ошибка создания пользователя")
-            } else {
-                let db = Firestore.firestore()
-                
-                db.collection("users").addDocument(data: ["firstname" : "Tom", "lastname" : "Jones", "uid" : result!.user.uid]) { (error) in
-                    if error != nil {
-                        print("Ошибка сохранения пользователя")
-                    }
-                    print("Пользователь успешно создан")
-                }
-            }
-        }
+        
 //FIXME: - Реализовать поля на UI и передавать их
         
 //        guard let text = secureCodeTextField.text, text == "1111" else  {
@@ -81,7 +66,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         }
         
         let newLength = text.count + string.count - range.length
-        return newLength < 5
+        return newLength < 20
     }
     
     @objc func keyboardDidShow(notification: Notification) {
@@ -111,7 +96,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (Timer) in
                 UIView.animate(withDuration: 1.3) {
                     self.emailTextField.alpha = 1
-                    self.loginTextField.alpha = 1
+                    self.passwordTextField.alpha = 1
                     self.enterButton.alpha = 1
                 }
             }
