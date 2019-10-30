@@ -27,9 +27,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.alpha = 0
         enterButton.alpha = 0
 
-        NotificationCenter.default.addObserver(self, selector: #selector(AuthorizationViewController.keyboardDidShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AuthorizationViewController.keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
-        
         self.hideKeyboard()
     }
     
@@ -58,7 +55,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         authenticationWithTouchID()
     }
     
-    // Валидация на 4 символа
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         emailTextField.textColor = .black
         guard let text = emailTextField.text else {
@@ -67,24 +63,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         
         let newLength = text.count + string.count - range.length
         return newLength < 20
-    }
-    
-    @objc func keyboardDidShow(notification: Notification) {
-        guard let userInfo = notification.userInfo else { return }
-        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
-            return
-        }
-        
-        let keyboardFrame = keyboardSize.cgRectValue
-        if self.view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= keyboardFrame.height
-        }
-    }
-    
-    @objc func keyboardDidHide(notification: Notification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
     }
     
     private func animateCarLeftConstraint() {
