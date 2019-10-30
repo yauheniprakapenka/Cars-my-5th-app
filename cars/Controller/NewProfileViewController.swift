@@ -61,12 +61,13 @@ class NewProfileViewController: UIViewController {
         activityIndicator.alpha = 1
         activityIndicator.startAnimating()
         
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, err) in
-            if err != nil {
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+            if error != nil {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
                 self.showErrorMessage(message: "\(Constants.Error.userCreationError)")
                 self.createButton.alpha = 1
+                print("\(error!.localizedDescription)")
                 print("\(Constants.Error.userCreationError)")
             } else {
                 let db = Firestore.firestore()
@@ -74,6 +75,7 @@ class NewProfileViewController: UIViewController {
                 db.collection("users").addDocument(data: ["firstname" : self.firstNameTextField.text!, "lastname" : self.lastNameTextField.text!, "uid" : result!.user.uid]) { (error) in
                     if error != nil {
                         print("Ошибка сохранения пользователя")
+                        print("\(error!.localizedDescription)")
                     }
                     print("Пользователь успешно создан")
                     

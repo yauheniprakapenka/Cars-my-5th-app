@@ -11,21 +11,21 @@ import LocalAuthentication
 
 class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var leftCarConstraint: NSLayoutConstraint!
     @IBOutlet weak var trafficLightImageView: UIImageView!
     @IBOutlet weak var helloTextStackView: UIStackView!
-    @IBOutlet weak var enterButton: UIButton!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var newProfilerButton: UIButton!
+    @IBOutlet weak var biometricButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailTextField.delegate = self
-        
-        emailTextField.alpha = 0
-        passwordTextField.alpha = 0
-        enterButton.alpha = 0
+        loginButton.alpha = 0
+        newProfilerButton.alpha = 0
+        biometricButton.alpha = 0
 
         self.hideKeyboard()
     }
@@ -36,9 +36,9 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         animateCarLeftConstraint()
     }
     
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
-        
-        
+    
+    
+    
 //FIXME: - Реализовать поля на UI и передавать их
         
 //        guard let text = secureCodeTextField.text, text == "1111" else  {
@@ -49,20 +49,9 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 //        }
 //        print("Код авторизации верный")
 //        presentMainVC()
-    }
     
     @IBAction func biometricButtonTapped(_ sender: UIButton) {
         authenticationWithTouchID()
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        emailTextField.textColor = .black
-        guard let text = emailTextField.text else {
-            return true
-        }
-        
-        let newLength = text.count + string.count - range.length
-        return newLength < 20
     }
     
     private func animateCarLeftConstraint() {
@@ -71,16 +60,21 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
                 self.trafficLightImageView.image = UIImage(named: "Светофор-красный")
             }
             
-            _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (Timer) in
-                UIView.animate(withDuration: 1.3) {
-                    self.emailTextField.alpha = 1
-                    self.passwordTextField.alpha = 1
-                    self.enterButton.alpha = 1
+            _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (Timer) in
+                UIView.animate(withDuration: 1.5) {
+                    self.loginButton.alpha = 1
                 }
             }
             
             _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (Timer) in
-                UIView.animate(withDuration: 1.3) {
+                UIView.animate(withDuration: 1.5) {
+                    self.newProfilerButton.alpha = 1
+                }
+            }
+            
+            _ = Timer.scheduledTimer(withTimeInterval: 5.5, repeats: false) { (Timer) in
+                UIView.animate(withDuration: 1.5) {
+                    self.biometricButton.alpha = 1
                 }
             }
             
@@ -121,7 +115,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         
         UIView.animate(withDuration: 4.0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options: .curveEaseOut, animations: {
             self.trafficLightImageView.image = UIImage(named: "Светофор-зеленый")
-            self.emailTextField.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             self.leftCarConstraint.constant = UIScreen.main.bounds.width + 30
             self.view.layoutIfNeeded()
         }, completion: { (isSuccessful) in
