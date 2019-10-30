@@ -97,10 +97,6 @@ class NewProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     private func showErrorMessage(message: String) {
         result.alpha = 1
         result.text = "\(message)"
