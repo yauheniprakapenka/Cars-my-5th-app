@@ -18,18 +18,18 @@ class NewProfileViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var createButton: UIButton!
-    @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         activityIndicator.alpha = 0
-        result.alpha = 0
+        resultLabel.alpha = 0
         self.hideKeyboard()
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        result.alpha = 0
+        resultLabel.alpha = 0
         
         guard let email = emailTextField.text, !email.isEmpty else {
             emailTextField.shake()
@@ -62,17 +62,16 @@ class NewProfileViewController: UIViewController {
         activityIndicator.startAnimating()
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
-            if error != nil {
+            
+            if let error = error {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
                 self.showErrorMessage(message: "\(Constants.Error.userCreationError)")
                 self.createButton.alpha = 1
-                print("\(error!.localizedDescription)")
-                print("\(Constants.Error.userCreationError)")
-            } else {
+                self.resultLabel.text = "\(error.localizedDescription)"
+            } else if let result = result {
                 let db = Firestore.firestore()
-                
-                db.collection("users").addDocument(data: ["firstname" : self.firstNameTextField.text!, "lastname" : self.lastNameTextField.text!, "uid" : result!.user.uid]) { (error) in
+                db.collection("users").addDocument(data: ["firstname" : self.firstNameTextField.text!, "lastname" : self.lastNameTextField.text!, "uid" : result.user.uid]) { (error) in
                     if error != nil {
                         print("Ошибка сохранения пользователя")
                         print("\(error!.localizedDescription)")
@@ -83,9 +82,9 @@ class NewProfileViewController: UIViewController {
                     self.activityIndicator.alpha = 0
                     
                     _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { [weak self] (Timer) in
-                        self?.result.alpha = 1
-                        self?.result.text = "Успешно"
-                        self?.result.textColor = .green
+                        self?.resultLabel.alpha = 1
+                        self?.resultLabel.text = "Успешно"
+                        self?.resultLabel.textColor = .green
                     })
                     
                     _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { [weak self] (Timer) in
@@ -100,9 +99,15 @@ class NewProfileViewController: UIViewController {
     }
     
     private func showErrorMessage(message: String) {
-        result.alpha = 1
-        result.text = "\(message)"
-        result.textColor = .red
+        resultLabel.alpha = 1
+        resultLabel.text = "\(message)"
+        resultLabel.textColor = .red
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

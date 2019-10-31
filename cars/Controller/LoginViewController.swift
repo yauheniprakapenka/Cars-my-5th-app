@@ -13,14 +13,14 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var errorMessageLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        errorMessageLabel.alpha = 0
+        resultLabel.alpha = 0
         activityIndicator.alpha = 0
         
         self.hideKeyboard()
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         activityIndicator.alpha = 1
         activityIndicator.startAnimating()
-        errorMessageLabel.alpha = 0
+        resultLabel.alpha = 0
         
         self.loginButton.alpha = 0
         
@@ -42,18 +42,20 @@ class LoginViewController: UIViewController {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
                 
-                self.errorMessageLabel.alpha = 1
-                self.errorMessageLabel.textColor = Constants.Color.redColor
-                self.errorMessageLabel.text = "\(error!.localizedDescription)"
+                self.resultLabel.alpha = 1
+                self.resultLabel.textColor = Constants.Color.redColor
+                self.resultLabel.text = "\(error!.localizedDescription)"
                 print("\(error!.localizedDescription)")
+                
+                
             } else {
                 self.loginButton.alpha = 0
-                self.errorMessageLabel.alpha = 1
+                self.resultLabel.alpha = 1
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
                 
-                self.errorMessageLabel.textColor = Constants.Color.greenColor
-                self.errorMessageLabel.text = "Авторизация успешна"
+                self.resultLabel.textColor = Constants.Color.greenColor
+                self.resultLabel.text = "Авторизация успешна"
                 
                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (Timer) in
                     self.dismiss(animated: true, completion: nil)

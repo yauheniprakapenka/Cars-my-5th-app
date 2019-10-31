@@ -34,6 +34,7 @@
 		3EA47408235CD62F00A2CC08 /* carsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA47407235CD62F00A2CC08 /* carsUITests.swift */; };
 		3EA47410235CDF1300A2CC08 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */; };
 		3ECF979F236A00110001A43C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF979E236A00110001A43C /* LoginViewController.swift */; };
+		3ECF97A1236B487E0001A43C /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF97A0236B487E0001A43C /* CheckInternet.swift */; };
 		BC6684B3EF8DAB4D09F779B4 /* Pods_carsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DD321FBDA1CDC307DD013 /* Pods_carsUITests.framework */; };
 		D965944B6BFD967C4648DF97 /* Pods_cars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04683C3547CC2F5C942EE6D /* Pods_cars.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		3EA47409235CD62F00A2CC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
 		3ECF979E236A00110001A43C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3ECF97A0236B487E0001A43C /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		80DBC939C143023C31F3F40D /* Pods-carsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carsUITests.debug.xcconfig"; path = "Target Support Files/Pods-carsUITests/Pods-carsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		88EA5145A3831027F30DABD5 /* Pods-carsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carsUITests.release.xcconfig"; path = "Target Support Files/Pods-carsUITests/Pods-carsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1599CBF9395B6EBFFA67E40 /* Pods-cars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cars.release.xcconfig"; path = "Target Support Files/Pods-cars/Pods-cars.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				3E4814DE23677BC900D38A72 /* Constants.swift */,
+				3ECF97A0236B487E0001A43C /* CheckInternet.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				3E04E65F2351B691005E07B8 /* AppDelegate.swift in Sources */,
 				3E308030235310E100CB0030 /* ImageViewFromURL.swift in Sources */,
 				3E6620822365E33900B59329 /* ProfileViewController.swift in Sources */,
+				3ECF97A1236B487E0001A43C /* CheckInternet.swift in Sources */,
 				3E0DC1D62351C09700AA4F04 /* CarModel.swift in Sources */,
 				3ECF979F236A00110001A43C /* LoginViewController.swift in Sources */,
 				3E3080342353AC0B00CB0030 /* Shake.swift in Sources */,
