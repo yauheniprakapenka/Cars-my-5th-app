@@ -35,6 +35,7 @@
 		3EA47410235CDF1300A2CC08 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */; };
 		3ECF979F236A00110001A43C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF979E236A00110001A43C /* LoginViewController.swift */; };
 		3ECF97A1236B487E0001A43C /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF97A0236B487E0001A43C /* CheckInternet.swift */; };
+		3ECF97A5236B5A430001A43C /* Alert+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF97A4236B5A430001A43C /* Alert+Image.swift */; };
 		BC6684B3EF8DAB4D09F779B4 /* Pods_carsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DD321FBDA1CDC307DD013 /* Pods_carsUITests.framework */; };
 		D965944B6BFD967C4648DF97 /* Pods_cars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04683C3547CC2F5C942EE6D /* Pods_cars.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
 		3ECF979E236A00110001A43C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3ECF97A0236B487E0001A43C /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		3ECF97A4236B5A430001A43C /* Alert+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Image.swift"; sourceTree = "<group>"; };
 		80DBC939C143023C31F3F40D /* Pods-carsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carsUITests.debug.xcconfig"; path = "Target Support Files/Pods-carsUITests/Pods-carsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		88EA5145A3831027F30DABD5 /* Pods-carsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carsUITests.release.xcconfig"; path = "Target Support Files/Pods-carsUITests/Pods-carsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1599CBF9395B6EBFFA67E40 /* Pods-cars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cars.release.xcconfig"; path = "Target Support Files/Pods-cars/Pods-cars.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		3E04E65D2351B691005E07B8 /* cars */ = {
 			isa = PBXGroup;
 			children = (
+				3ECF97A6236B5ED20001A43C /* Utilities */,
 				3E4814DD23677BB800D38A72 /* Helpers */,
 				3E30802E235310D000CB0030 /* Extension */,
 				3E3080222352EE4000CB0030 /* Model */,
@@ -215,6 +218,7 @@
 				3E30802F235310E100CB0030 /* ImageViewFromURL.swift */,
 				3E4814E02368A57500D38A72 /* HideKeyboard.swift */,
 				3E3080332353AC0B00CB0030 /* Shake.swift */,
+				3ECF97A4236B5A430001A43C /* Alert+Image.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -223,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				3E4814DE23677BC900D38A72 /* Constants.swift */,
-				3ECF97A0236B487E0001A43C /* CheckInternet.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 				3EA47409235CD62F00A2CC08 /* Info.plist */,
 			);
 			path = carsUITests;
+			sourceTree = "<group>";
+		};
+		3ECF97A6236B5ED20001A43C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3ECF97A0236B487E0001A43C /* CheckInternet.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D6E4DA5DB50FA572C45B7170 /* Pods */ = {
@@ -446,6 +457,7 @@
 				3E0DC1DA2352109900AA4F04 /* AddCarTableViewController.swift in Sources */,
 				3E30802D2353050900CB0030 /* NetworkDataFetcher.swift in Sources */,
 				3E6620882366193600B59329 /* CustomProfileViewCell.swift in Sources */,
+				3ECF97A5236B5A430001A43C /* Alert+Image.swift in Sources */,
 				3E04E6612351B691005E07B8 /* SceneDelegate.swift in Sources */,
 				3E4814E12368A57500D38A72 /* HideKeyboard.swift in Sources */,
 				3E3080272352F65F00CB0030 /* UnslpashNetworkService.swift in Sources */,

@@ -25,12 +25,17 @@ class NewProfileViewController: UIViewController {
         
         activityIndicator.alpha = 0
         resultLabel.alpha = 0
-        self.hideKeyboard()
+        hideKeyboard()
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
         resultLabel.alpha = 0
         
+        guard CheckInternet.Connection() else {
+            showAlert(title: "Нет связи с сервером", message: "Проверьте подключение к интернету и повторите снова")
+            return
+        }
+
         guard let email = emailTextField.text, !email.isEmpty else {
             emailTextField.shake()
             return
@@ -102,12 +107,6 @@ class NewProfileViewController: UIViewController {
         resultLabel.alpha = 1
         resultLabel.text = "\(message)"
         resultLabel.textColor = .red
-    }
-    
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
 }
