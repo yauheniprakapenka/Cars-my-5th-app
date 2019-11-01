@@ -15,7 +15,7 @@ extension UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let imageView = UIImageView(frame: CGRect(x: 15, y: 90, width: 240, height: 100))
-        imageView.image = #imageLiteral(resourceName: "no-internet")
+        imageView.image = #imageLiteral(resourceName: "no-internet2")
         imageView.contentMode = .scaleAspectFit
         alert.view.addSubview(imageView)
         

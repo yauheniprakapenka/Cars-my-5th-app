@@ -32,7 +32,7 @@ class NewProfileViewController: UIViewController {
         resultLabel.alpha = 0
         
         guard CheckInternet.Connection() else {
-            showAlert(title: "Нет связи с сервером", message: "Проверьте подключение к интернету и повторите снова")
+            showAlert(title: "No internet connection", message: "Try turning on your Wifi or Mobile Data for useing this app")
             return
         }
 

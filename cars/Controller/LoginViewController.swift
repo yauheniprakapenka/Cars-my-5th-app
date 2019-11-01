@@ -27,16 +27,22 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        activityIndicator.alpha = 1
-        activityIndicator.startAnimating()
         resultLabel.alpha = 0
         
-        self.loginButton.alpha = 0
+        guard CheckInternet.Connection() else {
+            showAlert(title: "Нет связи с сервером", message: "Проверьте подключение к интернету и повторите снова")
+            return
+        }
+        
+        activityIndicator.alpha = 1
+        activityIndicator.startAnimating()
+        loginButton.alpha = 0
         
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
             if error != nil {
                 self.loginButton.alpha = 1
                 self.activityIndicator.alpha = 0
@@ -64,5 +70,5 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
 }
