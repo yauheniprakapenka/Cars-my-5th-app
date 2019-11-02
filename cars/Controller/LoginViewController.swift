@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         resultLabel.alpha = 0
         activityIndicator.alpha = 0
         
-        self.hideKeyboard()
+        hideKeyboard()
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
                 self.resultLabel.textColor = Constants.Color.greenColor
                 self.resultLabel.text = "Авторизация успешна"
                 
-                emailText = "123123"
+                Constants.userInfo.emailText = self.emailTextField.text!
                 
                 self.dismiss(animated: true, completion: { [weak self] in
                     self?.delegate?.presentMainVC()

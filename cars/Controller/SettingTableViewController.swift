@@ -8,7 +8,7 @@
 
 import UIKit
 
-var emailText = ""
+//var emailText = ""
 
 class SettingTableViewController: UITableViewController {
 
@@ -17,7 +17,7 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailLabel.text = emailText
+        emailLabel.text = "\(Constants.userInfo.emailText)"
     }
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
