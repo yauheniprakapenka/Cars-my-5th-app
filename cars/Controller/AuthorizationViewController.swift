@@ -119,7 +119,7 @@ extension AuthorizationViewController: AnimateCar {
             self.view.layoutIfNeeded()
         }, completion: { (isSuccessful) in
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let navigationController = storyBoard.instantiateViewController(withIdentifier: Constants.Storyboard.mainViewController)
+            let navigationController = storyBoard.instantiateViewController(withIdentifier: Constants.Storyboard.MainViewController)
             self.present(navigationController, animated: true, completion: nil)
         })
     }

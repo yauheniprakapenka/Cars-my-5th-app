@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 
                 self.resultLabel.alpha = 1
-                self.resultLabel.textColor = Constants.Color.redColor
+                self.resultLabel.textColor = Constants.Color.RedColor
                 self.resultLabel.text = "\(error!.localizedDescription)"
                 print("\(error!.localizedDescription)")
             } else {
@@ -60,10 +60,10 @@ class LoginViewController: UIViewController {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
                 
-                self.resultLabel.textColor = Constants.Color.greenColor
+                self.resultLabel.textColor = Constants.Color.GreenColor
                 self.resultLabel.text = "Авторизация успешна"
                 
-                Constants.userInfo.emailText = self.emailTextField.text!
+                Constants.userInfo.EmailText = self.emailTextField.text!
                 
                 self.dismiss(animated: true, completion: { [weak self] in
                     self?.delegate?.presentMainVC()

@@ -17,7 +17,7 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailLabel.text = "\(Constants.userInfo.emailText)"
+        emailLabel.text = "\(Constants.userInfo.EmailText)"
     }
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
@@ -38,7 +38,7 @@ class SettingTableViewController: UITableViewController {
                                       style: UIAlertAction.Style.default,
                                       handler: { (_: UIAlertAction!) in
                                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                        let vc = storyboard.instantiateViewController(identifier: Constants.Storyboard.authorizeController)
+                                        let vc = storyboard.instantiateViewController(identifier: Constants.Storyboard.AuthorizationViewController)
                                         self.present(vc, animated: true)
         }))
         self.present(alert, animated: true, completion: nil)

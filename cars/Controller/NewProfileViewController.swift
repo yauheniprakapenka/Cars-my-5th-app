@@ -48,7 +48,7 @@ class NewProfileViewController: UIViewController {
         
         if passwordTextField.text!.count < 6 {
             passwordTextField.shake()
-            showErrorMessage(message: "\(Constants.Error.passwordValidationError)")
+            showErrorMessage(message: "\(Constants.Error.PasswordValidationError)")
             return
         }
         
@@ -71,7 +71,7 @@ class NewProfileViewController: UIViewController {
             if let error = error {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
-                self.showErrorMessage(message: "\(Constants.Error.userCreationError)")
+                self.showErrorMessage(message: "\(Constants.Error.UserCreationError)")
                 self.createButton.alpha = 1
                 self.resultLabel.text = "\(error.localizedDescription)"
             } else if let result = result {
@@ -94,7 +94,7 @@ class NewProfileViewController: UIViewController {
                     
                     _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { [weak self] (Timer) in
                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let authorizeVC = storyBoard.instantiateViewController(withIdentifier: Constants.Storyboard.authorizeController)
+                        let authorizeVC = storyBoard.instantiateViewController(withIdentifier: Constants.Storyboard.AuthorizationViewController)
                         self!.present(authorizeVC, animated: true, completion: nil)
                     })
                     
