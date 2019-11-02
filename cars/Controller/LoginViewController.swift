@@ -63,6 +63,8 @@ class LoginViewController: UIViewController {
                 self.resultLabel.textColor = Constants.Color.greenColor
                 self.resultLabel.text = "Авторизация успешна"
                 
+                emailText = "123123"
+                
                 self.dismiss(animated: true, completion: { [weak self] in
                     self?.delegate?.presentMainVC()
                 })

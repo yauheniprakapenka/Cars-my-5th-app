@@ -56,20 +56,20 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
                 self.trafficLightImageView.image = UIImage(named: "Светофор-красный")
             }
             
-            _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (Timer) in
-                UIView.animate(withDuration: 1.5) {
+            _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (Timer) in
+                UIView.animate(withDuration: 1.1) {
                     self.loginButton.alpha = 1
                 }
             }
             
-            _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (Timer) in
-                UIView.animate(withDuration: 1.5) {
+            _ = Timer.scheduledTimer(withTimeInterval: 2.7, repeats: false) { (Timer) in
+                UIView.animate(withDuration: 1.1) {
                     self.newProfilerButton.alpha = 1
                 }
             }
             
-            _ = Timer.scheduledTimer(withTimeInterval: 5.5, repeats: false) { (Timer) in
-                UIView.animate(withDuration: 1.5) {
+            _ = Timer.scheduledTimer(withTimeInterval: 3.4, repeats: false) { (Timer) in
+                UIView.animate(withDuration: 1.1) {
                     self.biometricButton.alpha = 1
                 }
             }

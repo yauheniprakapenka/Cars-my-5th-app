@@ -14,6 +14,7 @@ struct Constants {
         static let authorizeController = "AuthorizationVC"
         static let mainViewController = "MainVC"
         static let LoginViewController = "LoginVC"
+        static let SettingViewController = "SettingVC"
     }
     
     struct Error {
