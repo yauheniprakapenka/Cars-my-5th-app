@@ -52,8 +52,6 @@ class LoginViewController: UIViewController {
                 self.resultLabel.textColor = Constants.Color.redColor
                 self.resultLabel.text = "\(error!.localizedDescription)"
                 print("\(error!.localizedDescription)")
-                
-                
             } else {
                 self.loginButton.alpha = 0
                 self.resultLabel.alpha = 1
@@ -62,11 +60,6 @@ class LoginViewController: UIViewController {
                 
                 self.resultLabel.textColor = Constants.Color.greenColor
                 self.resultLabel.text = "Авторизация успешна"
-                
-                _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (Timer) in
-                    self.dismiss(animated: true, completion: nil)
-                })
-                
             }
         }
     }

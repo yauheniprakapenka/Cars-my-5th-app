@@ -19,7 +19,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newProfilerButton: UIButton!
     @IBOutlet weak var biometricButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +26,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         newProfilerButton.alpha = 0
         biometricButton.alpha = 0
 
-        self.hideKeyboard()
+        hideKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,20 +34,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         
         animateCarLeftConstraint()
     }
-    
-    
-    
-    
-//FIXME: - Реализовать поля на UI и передавать их
-        
-//        guard let text = secureCodeTextField.text, text == "1111" else  {
-//            print("Код авторизации НЕ верный")
-//            secureCodeTextField.shake()
-//            secureCodeTextField.textColor = .red
-//            return
-//        }
-//        print("Код авторизации верный")
-//        presentMainVC()
     
     @IBAction func biometricButtonTapped(_ sender: UIButton) {
         authenticationWithTouchID()
@@ -60,7 +45,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
                 self.trafficLightImageView.image = UIImage(named: "Светофор-красный")
             }
             
-            _ = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (Timer) in
+            _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (Timer) in
                 UIView.animate(withDuration: 1.5) {
                     self.loginButton.alpha = 1
                 }
@@ -111,7 +96,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func presentMainVC() {
+    func presentMainVC() {
         
         UIView.animate(withDuration: 4.0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options: .curveEaseOut, animations: {
             self.trafficLightImageView.image = UIImage(named: "Светофор-зеленый")

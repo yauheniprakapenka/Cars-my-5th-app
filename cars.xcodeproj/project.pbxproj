@@ -144,7 +144,6 @@
 				3E3080212352EE1800CB0030 /* Controller */,
 				3E3080252352F64200CB0030 /* Network */,
 				3E3080202352EBF500CB0030 /* SupportFiles */,
-				3E04E66C2351B692005E07B8 /* Info.plist */,
 			);
 			path = cars;
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 				3E04E65E2351B691005E07B8 /* AppDelegate.swift */,
 				3E04E6672351B692005E07B8 /* Assets.xcassets */,
 				3E6620832366064B00B59329 /* GoogleService-Info.plist */,
+				3E04E66C2351B692005E07B8 /* Info.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -626,7 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = cars/Info.plist;
+				INFOPLIST_FILE = cars/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -646,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = cars/Info.plist;
+				INFOPLIST_FILE = cars/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,7 +665,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = carsUITests/Info.plist;
+				INFOPLIST_FILE = carsUITests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,7 +685,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = carsUITests/Info.plist;
+				INFOPLIST_FILE = carsUITests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
