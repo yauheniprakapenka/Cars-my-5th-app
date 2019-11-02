@@ -21,15 +21,19 @@
 		3E30802D2353050900CB0030 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30802C2353050900CB0030 /* NetworkDataFetcher.swift */; };
 		3E308030235310E100CB0030 /* ImageViewFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30802F235310E100CB0030 /* ImageViewFromURL.swift */; };
 		3E3080342353AC0B00CB0030 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3080332353AC0B00CB0030 /* Shake.swift */; };
+		3E4814DF23677BC900D38A72 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4814DE23677BC900D38A72 /* Constants.swift */; };
+		3E4814E12368A57500D38A72 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4814E02368A57500D38A72 /* HideKeyboard.swift */; };
+		3E4814E32368BEA400D38A72 /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4814E22368BEA400D38A72 /* NewProfileViewController.swift */; };
 		3E6620782363794100B59329 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6620772363794100B59329 /* LocalAuthentication.framework */; };
 		3E66207A2364834100B59329 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620792364834100B59329 /* AuthorizationViewController.swift */; };
 		3E6620802365966400B59329 /* PresentMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66207F2365966400B59329 /* PresentMainVC.swift */; };
-		3E6620822365E33900B59329 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620812365E33900B59329 /* ProfileViewController.swift */; };
 		3E6620842366064B00B59329 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E6620832366064B00B59329 /* GoogleService-Info.plist */; };
-		3E6620862366180100B59329 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620852366180100B59329 /* ProfileModel.swift */; };
-		3E6620882366193600B59329 /* CustomProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620872366193600B59329 /* CustomProfileViewCell.swift */; };
 		3EA47408235CD62F00A2CC08 /* carsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA47407235CD62F00A2CC08 /* carsUITests.swift */; };
 		3EA47410235CDF1300A2CC08 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */; };
+		3ECF979F236A00110001A43C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF979E236A00110001A43C /* LoginViewController.swift */; };
+		3ECF97A1236B487E0001A43C /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF97A0236B487E0001A43C /* CheckInternet.swift */; };
+		3ECF97A5236B5A430001A43C /* Alert+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF97A4236B5A430001A43C /* Alert+Image.swift */; };
+		3ED13DAA236DB522000C340E /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED13DA9236DB522000C340E /* SettingTableViewController.swift */; };
 		BC6684B3EF8DAB4D09F779B4 /* Pods_carsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63DD321FBDA1CDC307DD013 /* Pods_carsUITests.framework */; };
 		D965944B6BFD967C4648DF97 /* Pods_cars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04683C3547CC2F5C942EE6D /* Pods_cars.framework */; };
 /* End PBXBuildFile section */
@@ -62,17 +66,21 @@
 		3E30802C2353050900CB0030 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		3E30802F235310E100CB0030 /* ImageViewFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewFromURL.swift; sourceTree = "<group>"; };
 		3E3080332353AC0B00CB0030 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		3E4814DE23677BC900D38A72 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3E4814E02368A57500D38A72 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		3E4814E22368BEA400D38A72 /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
 		3E6620772363794100B59329 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		3E6620792364834100B59329 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3E66207F2365966400B59329 /* PresentMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMainVC.swift; sourceTree = "<group>"; };
-		3E6620812365E33900B59329 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3E6620832366064B00B59329 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3E6620852366180100B59329 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		3E6620872366193600B59329 /* CustomProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProfileViewCell.swift; sourceTree = "<group>"; };
 		3EA47405235CD62F00A2CC08 /* carsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA47407235CD62F00A2CC08 /* carsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carsUITests.swift; sourceTree = "<group>"; };
 		3EA47409235CD62F00A2CC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
+		3ECF979E236A00110001A43C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3ECF97A0236B487E0001A43C /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		3ECF97A4236B5A430001A43C /* Alert+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Image.swift"; sourceTree = "<group>"; };
+		3ED13DA9236DB522000C340E /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		80DBC939C143023C31F3F40D /* Pods-carsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carsUITests.debug.xcconfig"; path = "Target Support Files/Pods-carsUITests/Pods-carsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		88EA5145A3831027F30DABD5 /* Pods-carsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carsUITests.release.xcconfig"; path = "Target Support Files/Pods-carsUITests/Pods-carsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1599CBF9395B6EBFFA67E40 /* Pods-cars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cars.release.xcconfig"; path = "Target Support Files/Pods-cars/Pods-cars.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,13 +132,14 @@
 		3E04E65D2351B691005E07B8 /* cars */ = {
 			isa = PBXGroup;
 			children = (
+				3ECF97A6236B5ED20001A43C /* Utilities */,
+				3E4814DD23677BB800D38A72 /* Helpers */,
 				3E30802E235310D000CB0030 /* Extension */,
 				3E3080222352EE4000CB0030 /* Model */,
 				3E30801F2352EB9900CB0030 /* View */,
 				3E3080212352EE1800CB0030 /* Controller */,
 				3E3080252352F64200CB0030 /* Network */,
 				3E3080202352EBF500CB0030 /* SupportFiles */,
-				3E04E66C2351B692005E07B8 /* Info.plist */,
 			);
 			path = cars;
 			sourceTree = "<group>";
@@ -151,6 +160,7 @@
 				3E04E65E2351B691005E07B8 /* AppDelegate.swift */,
 				3E04E6672351B692005E07B8 /* Assets.xcassets */,
 				3E6620832366064B00B59329 /* GoogleService-Info.plist */,
+				3E04E66C2351B692005E07B8 /* Info.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -161,7 +171,9 @@
 				3E6620792364834100B59329 /* AuthorizationViewController.swift */,
 				3E0DC1D12351BA4700AA4F04 /* MainTableViewController.swift */,
 				3E0DC1D92352109900AA4F04 /* AddCarTableViewController.swift */,
-				3E6620812365E33900B59329 /* ProfileViewController.swift */,
+				3E4814E22368BEA400D38A72 /* NewProfileViewController.swift */,
+				3ECF979E236A00110001A43C /* LoginViewController.swift */,
+				3ED13DA9236DB522000C340E /* SettingTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,11 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				3E0DC1D52351C09700AA4F04 /* CarModel.swift */,
-				3E6620852366180100B59329 /* ProfileModel.swift */,
 				3E3080292353011200CB0030 /* PhotoModel.swift */,
 				3E66207F2365966400B59329 /* PresentMainVC.swift */,
 				3E0DC1D32351BAC400AA4F04 /* CustomTableViewCell.swift */,
-				3E6620872366193600B59329 /* CustomProfileViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,9 +210,19 @@
 			isa = PBXGroup;
 			children = (
 				3E30802F235310E100CB0030 /* ImageViewFromURL.swift */,
+				3E4814E02368A57500D38A72 /* HideKeyboard.swift */,
 				3E3080332353AC0B00CB0030 /* Shake.swift */,
+				3ECF97A4236B5A430001A43C /* Alert+Image.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3E4814DD23677BB800D38A72 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3E4814DE23677BC900D38A72 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3E6620762363794000B59329 /* Frameworks */ = {
@@ -223,6 +243,14 @@
 				3EA47409235CD62F00A2CC08 /* Info.plist */,
 			);
 			path = carsUITests;
+			sourceTree = "<group>";
+		};
+		3ECF97A6236B5ED20001A43C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3ECF97A0236B487E0001A43C /* CheckInternet.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D6E4DA5DB50FA572C45B7170 /* Pods */ = {
@@ -405,21 +433,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E6620862366180100B59329 /* ProfileModel.swift in Sources */,
+				3E4814DF23677BC900D38A72 /* Constants.swift in Sources */,
 				3E66207A2364834100B59329 /* AuthorizationViewController.swift in Sources */,
 				3E6620802365966400B59329 /* PresentMainVC.swift in Sources */,
 				3E04E65F2351B691005E07B8 /* AppDelegate.swift in Sources */,
 				3E308030235310E100CB0030 /* ImageViewFromURL.swift in Sources */,
-				3E6620822365E33900B59329 /* ProfileViewController.swift in Sources */,
+				3ECF97A1236B487E0001A43C /* CheckInternet.swift in Sources */,
 				3E0DC1D62351C09700AA4F04 /* CarModel.swift in Sources */,
+				3ECF979F236A00110001A43C /* LoginViewController.swift in Sources */,
 				3E3080342353AC0B00CB0030 /* Shake.swift in Sources */,
 				3E30802A2353011200CB0030 /* PhotoModel.swift in Sources */,
 				3E0DC1D42351BAC400AA4F04 /* CustomTableViewCell.swift in Sources */,
 				3E0DC1D22351BA4700AA4F04 /* MainTableViewController.swift in Sources */,
+				3E4814E32368BEA400D38A72 /* NewProfileViewController.swift in Sources */,
+				3ED13DAA236DB522000C340E /* SettingTableViewController.swift in Sources */,
 				3E0DC1DA2352109900AA4F04 /* AddCarTableViewController.swift in Sources */,
 				3E30802D2353050900CB0030 /* NetworkDataFetcher.swift in Sources */,
-				3E6620882366193600B59329 /* CustomProfileViewCell.swift in Sources */,
+				3ECF97A5236B5A430001A43C /* Alert+Image.swift in Sources */,
 				3E04E6612351B691005E07B8 /* SceneDelegate.swift in Sources */,
+				3E4814E12368A57500D38A72 /* HideKeyboard.swift in Sources */,
 				3E3080272352F65F00CB0030 /* UnslpashNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,13 +545,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -567,12 +600,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -584,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = cars/Info.plist;
+				INFOPLIST_FILE = cars/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -604,7 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = cars/Info.plist;
+				INFOPLIST_FILE = cars/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -623,7 +657,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = carsUITests/Info.plist;
+				INFOPLIST_FILE = carsUITests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,7 +677,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = carsUITests/Info.plist;
+				INFOPLIST_FILE = carsUITests/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
