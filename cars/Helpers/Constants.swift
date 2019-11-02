@@ -11,8 +11,9 @@ import UIKit
 struct Constants {
     
     struct Storyboard {
-        static let authorizeController = "authorizeViewCOntrollerID"
-        static let mainViewController = "mainViewControllerID"
+        static let authorizeController = "AuthorizationVC"
+        static let mainViewController = "MainVC"
+        static let LoginViewController = "LoginVC"
     }
     
     struct Error {

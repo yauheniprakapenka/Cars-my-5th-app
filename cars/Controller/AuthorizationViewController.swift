@@ -9,6 +9,10 @@
 import UIKit
 import LocalAuthentication
 
+protocol AnimateCar {
+    func presentMainVC()
+}
+
 class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var leftCarConstraint: NSLayoutConstraint!
@@ -33,6 +37,13 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(true)
         
         animateCarLeftConstraint()
+    }
+    
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: Constants.Storyboard.LoginViewController) as? LoginViewController else { return }
+        vc.delegate = self
+        present(vc, animated: true)
     }
     
     @IBAction func biometricButtonTapped(_ sender: UIButton) {
@@ -96,7 +107,11 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+}
+
+extension AuthorizationViewController: AnimateCar {
     func presentMainVC() {
+        print("Test")
         
         UIView.animate(withDuration: 4.0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options: .curveEaseOut, animations: {
             self.trafficLightImageView.image = UIImage(named: "Светофор-зеленый")
@@ -108,5 +123,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             self.present(navigationController, animated: true, completion: nil)
         })
     }
-    
 }
+
+
+

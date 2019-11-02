@@ -358,7 +358,7 @@
         <!--Authorization View Controller-->
         <scene sceneID="zaM-nu-Lgb">
             <objects>
-                <viewController storyboardIdentifier="authorizeViewCOntrollerID" modalPresentationStyle="fullScreen" id="neq-Dd-2Iq" customClass="AuthorizationViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorizationVC" modalPresentationStyle="fullScreen" id="neq-Dd-2Iq" customClass="AuthorizationViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l62-01-OIu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -449,7 +449,7 @@
                                     <color key="titleColor" red="0.4142478108" green="0.1699448526" blue="0.10585758839999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PSQ-pu-5Kr" kind="show" id="ixi-Xx-ncm"/>
+                                    <action selector="loginButtonTapped:" destination="neq-Dd-2Iq" eventType="touchUpInside" id="oDR-A7-1cv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGW-Ka-Ra6">
@@ -499,7 +499,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5Mo-Ur-18s">
             <objects>
-                <navigationController storyboardIdentifier="mainViewControllerID" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="7pz-IF-KSM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainVC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="7pz-IF-KSM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="3JZ-kB-utC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rjr-Gx-p24">
@@ -649,9 +649,9 @@
         <!--Login View Controller-->
         <scene sceneID="DE7-oh-509">
             <objects>
-                <viewController id="PSQ-pu-5Kr" customClass="LoginViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="PSQ-pu-5Kr" customClass="LoginViewController" customModule="cars" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gdf-Pt-uZE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey5-sg-5FQ">

@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    var delegate: AnimateCar?
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
@@ -60,6 +62,10 @@ class LoginViewController: UIViewController {
                 
                 self.resultLabel.textColor = Constants.Color.greenColor
                 self.resultLabel.text = "Авторизация успешна"
+                
+                self.dismiss(animated: true, completion: { [weak self] in
+                    self?.delegate?.presentMainVC()
+                })
             }
         }
     }
