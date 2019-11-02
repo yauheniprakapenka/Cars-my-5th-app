@@ -8,8 +8,6 @@
 
 import UIKit
 
-//var emailText = ""
-
 class SettingTableViewController: UITableViewController {
 
     @IBOutlet weak var emailLabel: UILabel!
