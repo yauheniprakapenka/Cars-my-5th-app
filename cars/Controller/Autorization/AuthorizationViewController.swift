@@ -41,7 +41,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: Constants.Storyboard.LoginViewController) as? LoginViewController else { return }
+        guard let vc = storyboard.instantiateViewController(identifier: Constants.Storyboard.LoginViewController) as? SignInViewController else { return }
         vc.delegate = self
         present(vc, animated: true)
     }

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class NewProfileViewController: UIViewController {
+class CreateUserViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -67,7 +67,6 @@ class NewProfileViewController: UIViewController {
         activityIndicator.startAnimating()
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
-            
             if let error = error {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()

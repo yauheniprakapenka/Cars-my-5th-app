@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
     
     var delegate: AnimateCar?
     
@@ -44,7 +44,6 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            
             if error != nil {
                 self.loginButton.alpha = 1
                 self.activityIndicator.alpha = 0

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class MainViewController: UITableViewController {
     
     var car = CarModel.getCars()
     var indexPathForSelectedCell = 0
