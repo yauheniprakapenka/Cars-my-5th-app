@@ -18,7 +18,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var leftCarConstraint: NSLayoutConstraint!
     @IBOutlet weak var trafficLightImageView: UIImageView!
     @IBOutlet weak var helloTextStackView: UIStackView!
-    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var newProfilerButton: UIButton!
     @IBOutlet weak var biometricButton: UIButton!
@@ -124,6 +123,3 @@ extension AuthorizationViewController: AnimateCar {
         })
     }
 }
-
-
-

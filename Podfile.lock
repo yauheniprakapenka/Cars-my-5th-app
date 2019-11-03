@@ -8,6 +8,7 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
   - CocoaAsyncSocket (7.6.3)
+  - CodableFirebase (0.2.1)
   - Firebase/Analytics (6.8.1):
     - Firebase/Core
   - Firebase/Auth (6.8.1):
@@ -129,6 +130,7 @@ PODS:
 
 DEPENDENCIES:
   - Bagel (~> 1.3.2)
+  - CodableFirebase
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -160,12 +162,14 @@ SPEC REPOS:
   trunk:
     - Bagel
     - CocoaAsyncSocket
+    - CodableFirebase
     - FirebaseDatabase
 
 SPEC CHECKSUMS:
   Bagel: 199e0105ac694d6eee9db54dd006c940da6ce81b
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   Firebase: 9cbe4e5b5eaafa05dc932be58b7c8c3820d71e88
   FirebaseAnalytics: 843c7f64a8f9c79f0d03281197ebe7bb1d58d477
   FirebaseAuth: e7f86c2dfc57281cd01f7da5e4b40e01e4510a4a
@@ -187,6 +191,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 67fb42ba613def994e61854de2b3164f13790cc4
 
-PODFILE CHECKSUM: af40769b771421c74b159431f9e6b0f1c1afcc15
+PODFILE CHECKSUM: ee2dc2c71ec09dd29415187998a633234290775e
 
 COCOAPODS: 1.8.4

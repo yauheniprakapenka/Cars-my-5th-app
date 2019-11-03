@@ -11,6 +11,7 @@ target 'cars' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Database'
+  pod 'CodableFirebase'
 
   pod 'Bagel', '~>  1.3.2'
 

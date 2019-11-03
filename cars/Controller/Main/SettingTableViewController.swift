@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import CodableFirebase
 
 class SettingTableViewController: UITableViewController {
 
@@ -16,10 +18,24 @@ class SettingTableViewController: UITableViewController {
         super.viewDidLoad()
         
         emailLabel.text = "\(Constants.userInfo.EmailText)"
+        
+        getUser()
     }
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
         showSignoutAlert()
+    }
+    
+    private func getUser() {
+        Firestore.firestore().collection("users").document("mouse@mouse.by").getDocument { document, error in
+            if let document = document {
+                let model = try! FirestoreDecoder().decode(FirebaseUserModel.self, from: document.data()!)
+                print("Model: \(model.firstname)")
+                print("Model: \(model.lastname)")
+            } else {
+                print("Document does not exist")
+            }
+        }
     }
     
     private func showSignoutAlert() {
