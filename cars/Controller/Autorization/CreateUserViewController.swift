@@ -8,10 +8,9 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
 
 class CreateUserViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -75,7 +74,10 @@ class CreateUserViewController: UIViewController {
                 self.resultLabel.text = "\(error.localizedDescription)"
             } else if let result = result {
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["firstname" : self.firstNameTextField.text!, "lastname" : self.lastNameTextField.text!, "uid" : result.user.uid]) { (error) in
+                
+                db.collection("users").document("\(self.emailTextField.text!)").setData(["firstname" : self.firstNameTextField.text!,
+                                                                                         "lastname" : self.lastNameTextField.text!,
+                                                                                         "uid" : result.user.uid]) { (error) in
                     if error != nil {
                         print("Ошибка сохранения пользователя")
                         print("\(error!.localizedDescription)")
@@ -96,7 +98,6 @@ class CreateUserViewController: UIViewController {
                         let authorizeVC = storyBoard.instantiateViewController(withIdentifier: Constants.Storyboard.AuthorizationViewController)
                         self!.present(authorizeVC, animated: true, completion: nil)
                     })
-                    
                 }
             }
         }
