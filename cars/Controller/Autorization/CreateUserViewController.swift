@@ -13,8 +13,7 @@ class CreateUserViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
@@ -51,13 +50,8 @@ class CreateUserViewController: UIViewController {
             return
         }
         
-        guard let firstName = firstNameTextField.text, !firstName.isEmpty else {
-            firstNameTextField.shake()
-            return
-        }
-        
-        guard let lastName = lastNameTextField.text, !lastName.isEmpty else {
-            lastNameTextField.shake()
+        guard let name = nameTextField.text, !name.isEmpty else {
+            nameTextField.shake()
             return
         }
         
@@ -75,8 +69,8 @@ class CreateUserViewController: UIViewController {
             } else if let result = result {
                 let db = Firestore.firestore()
                 
-                db.collection("users").document("\(self.emailTextField.text!)").setData(["firstname" : self.firstNameTextField.text!,
-                                                                                         "lastname" : self.lastNameTextField.text!,
+                db.collection("users").document("\(self.emailTextField.text!)").setData(["name" : self.nameTextField.text!,
+                                                                                         "email" : self.emailTextField.text!,
                                                                                          "uid" : result.user.uid]) { (error) in
                     if error != nil {
                         print("Ошибка сохранения пользователя")

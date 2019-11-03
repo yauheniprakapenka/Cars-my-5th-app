@@ -23,12 +23,12 @@ struct Constants {
     }
     
     struct Color {
-        static let RedColor = #colorLiteral(red: 1, green: 0, blue: 0.3377115726, alpha: 1)
-        static let GreenColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        static let Red = #colorLiteral(red: 1, green: 0, blue: 0.3377115726, alpha: 1)
+        static let Green = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
     }
     
-    struct userInfo {
-        static var EmailText = ""
+    struct UserInfo {
+        static var Email = ""
     }
     
 }

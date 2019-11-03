@@ -17,7 +17,7 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailLabel.text = "\(Constants.userInfo.EmailText)"
+        emailLabel.text = "\(Constants.UserInfo.Email)"
         
         getUser()
     }
@@ -27,11 +27,10 @@ class SettingTableViewController: UITableViewController {
     }
     
     private func getUser() {
-        Firestore.firestore().collection("users").document("mouse@mouse.by").getDocument { document, error in
+        Firestore.firestore().collection("users").document("\(Constants.UserInfo.Email)").getDocument { document, error in
             if let document = document {
                 let model = try! FirestoreDecoder().decode(FirebaseUserModel.self, from: document.data()!)
-                print("Model: \(model.firstname)")
-                print("Model: \(model.lastname)")
+                print("\nProfile Information:\nname: \(model.name)\nemail: \(model.email)\nuid: \(model.uid)")
             } else {
                 print("Document does not exist")
             }

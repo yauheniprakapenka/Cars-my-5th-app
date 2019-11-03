@@ -110,8 +110,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
 extension AuthorizationViewController: AnimateCar {
     func presentMainVC() {
-        print("Test")
-        
         UIView.animate(withDuration: 4.0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options: .curveEaseOut, animations: {
             self.trafficLightImageView.image = UIImage(named: "Светофор-зеленый")
             self.leftCarConstraint.constant = UIScreen.main.bounds.width + 30

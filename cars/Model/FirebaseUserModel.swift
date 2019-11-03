@@ -9,6 +9,8 @@
 import Foundation
 
 struct FirebaseUserModel: Codable {
-    let firstname: String
-    let lastname: String
+    let email: String
+    let name: String
+    let uid: String
 }
+
