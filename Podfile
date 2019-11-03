@@ -11,6 +11,8 @@ target 'cars' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
 
+  pod 'Bagel', '~>  1.3.2'
+
   target 'carsUITests' do
     inherit! :search_paths
     # Pods for testing
