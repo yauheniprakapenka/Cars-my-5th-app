@@ -28,16 +28,16 @@ class AvatarViewController: UIViewController {
         return cv
     }()
     
-    private let backButton: UIButton = {
-        let button: UIButton = UIButton(type: UIButton.ButtonType.system)
-        button.frame = CGRect(x: 20, y: 60, width: 100, height: 40)
+    private let selectButton: UIButton = {
+        let button: UIButton = UIButton(type: .system)
         button.backgroundColor = UIColor.white
         button.layer.cornerRadius = 13
         button.layer.borderWidth = 1
         button.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        button.setTitle("Назад", for: UIControl.State.normal)
-        button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: UIControl.State.normal)
+        button.setTitle("Назад", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -47,9 +47,10 @@ class AvatarViewController: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(collectionView)
-        view.addSubview(backButton)
+        view.addSubview(selectButton)
         
         setupLayout()
+        setupButtonControl()
     }
     
     private func setupLayout() {
@@ -61,11 +62,15 @@ class AvatarViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-//
-//        backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
-//        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
-//        backButton.widthAnchor.constraint(equalToConstant: 400).isActive = true
-//        backButton.heightAnchor.constraint(equalToConstant: 400).isActive = true
+    }
+    
+    private func setupButtonControl() {
+        NSLayoutConstraint.activate([
+            selectButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            selectButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            selectButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            selectButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 }
 
