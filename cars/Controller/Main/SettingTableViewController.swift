@@ -30,7 +30,11 @@ class SettingTableViewController: UITableViewController {
             if let document = document {
                 let model = try! FirestoreDecoder().decode(FirebaseUserModel.self, from: document.data()!)
                 print("\nProfile Information:\nname: \(model.name)\nemail: \(model.email)\nuid: \(model.uid)")
+                
                 Constants.UserInfo.Name = "\(model.name)"
+                Constants.UserInfo.Email = "\(model.email)"
+                Constants.UserInfo.UID = "\(model.uid)"
+                Constants.UserInfo.Avatar = "\(model.avatar)"
                 
                 self.emailLabel.text = "\(Constants.UserInfo.Email)"
                 self.nameLabel.text = "\(Constants.UserInfo.Name)"

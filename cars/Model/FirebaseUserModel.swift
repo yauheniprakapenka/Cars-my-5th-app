@@ -12,5 +12,6 @@ struct FirebaseUserModel: Codable {
     let email: String
     let name: String
     let uid: String
+    let avatar: String
 }
 
