@@ -13,11 +13,10 @@ import CodableFirebase
 class SettingTableViewController: UITableViewController {
 
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        emailLabel.text = "\(Constants.UserInfo.Email)"
         
         getUser()
     }
@@ -31,6 +30,11 @@ class SettingTableViewController: UITableViewController {
             if let document = document {
                 let model = try! FirestoreDecoder().decode(FirebaseUserModel.self, from: document.data()!)
                 print("\nProfile Information:\nname: \(model.name)\nemail: \(model.email)\nuid: \(model.uid)")
+                Constants.UserInfo.Name = "\(model.name)"
+                
+                self.emailLabel.text = "\(Constants.UserInfo.Email)"
+                self.nameLabel.text = "\(Constants.UserInfo.Name)"
+                self.tableView.reloadData()
             } else {
                 print("Document does not exist")
             }

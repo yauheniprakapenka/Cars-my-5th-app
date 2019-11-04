@@ -22,6 +22,13 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newProfilerButton: UIButton!
     @IBOutlet weak var biometricButton: UIButton!
     
+    @IBAction func фываф(_ sender: Any) {
+        print("Есть")
+        let avatarVC = AvatarViewController()
+        avatarVC.modalPresentationStyle = .fullScreen
+        present(avatarVC, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

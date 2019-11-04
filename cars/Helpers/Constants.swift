@@ -29,6 +29,7 @@ struct Constants {
     
     struct UserInfo {
         static var Email = ""
+        static var Name = ""
     }
     
 }

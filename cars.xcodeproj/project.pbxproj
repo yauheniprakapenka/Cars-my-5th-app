@@ -31,6 +31,7 @@
 		3EA47410235CDF1300A2CC08 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */; };
 		3EB3CA1F236F249D00291C0D /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3CA1E236F249C00291C0D /* CreateUserViewController.swift */; };
 		3EB3CA21236F5F5400291C0D /* FirebaseUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3CA20236F5F5400291C0D /* FirebaseUserModel.swift */; };
+		3EB3CAAA237071E200291C0D /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB3CAA9237071E200291C0D /* AvatarViewController.swift */; };
 		3ECF979F236A00110001A43C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF979E236A00110001A43C /* SignInViewController.swift */; };
 		3ECF97A1236B487E0001A43C /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF97A0236B487E0001A43C /* CheckInternet.swift */; };
 		3ECF97A5236B5A430001A43C /* Alert+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF97A4236B5A430001A43C /* Alert+Image.swift */; };
@@ -79,6 +80,7 @@
 		3EA4740F235CDF1300A2CC08 /* UITestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
 		3EB3CA1E236F249C00291C0D /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		3EB3CA20236F5F5400291C0D /* FirebaseUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserModel.swift; sourceTree = "<group>"; };
+		3EB3CAA9237071E200291C0D /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 		3ECF979E236A00110001A43C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3ECF97A0236B487E0001A43C /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		3ECF97A4236B5A430001A43C /* Alert+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Image.swift"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				3E0DC1D12351BA4700AA4F04 /* MainViewController.swift */,
 				3E0DC1D92352109900AA4F04 /* AddCarTableViewController.swift */,
 				3ED13DA9236DB522000C340E /* SettingTableViewController.swift */,
+				3EB3CAA9237071E200291C0D /* AvatarViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E4814DF23677BC900D38A72 /* Constants.swift in Sources */,
+				3EB3CAAA237071E200291C0D /* AvatarViewController.swift in Sources */,
 				3E66207A2364834100B59329 /* AuthorizationViewController.swift in Sources */,
 				3E6620802365966400B59329 /* PresentMainVC.swift in Sources */,
 				3E04E65F2351B691005E07B8 /* AppDelegate.swift in Sources */,
