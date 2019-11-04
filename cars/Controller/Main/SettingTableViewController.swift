@@ -25,6 +25,21 @@ class SettingTableViewController: UITableViewController {
         showSignoutAlert()
     }
     
+    @IBAction func avatarButtonTapped(_ sender: Any) {
+        print("Есть")
+        let avatarVC = AvatarViewController()
+        avatarVC.modalPresentationStyle = .fullScreen
+        present(avatarVC, animated: true)
+        
+        print("""
+        \nСейчас в константе содержится:
+        name: \(Constants.UserInfo.Name)
+        email: \(Constants.UserInfo.Email)
+        uid: \(Constants.UserInfo.UID)
+        avatar: \(Constants.UserInfo.Avatar)
+        """)
+    }
+    
     private func getUser() {
         Firestore.firestore().collection("users").document("\(Constants.UserInfo.Email)").getDocument { document, error in
             if let document = document {

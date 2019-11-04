@@ -35,8 +35,26 @@ class AvatarViewController: UIViewController {
         return button
     }()
     
+    private let backButton: UIButton = {
+        let button: UIButton = UIButton(type: .system)
+        button.backgroundColor = UIColor.white
+        button.layer.cornerRadius = 13
+        button.layer.borderWidth = 1
+        button.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        button.setTitle("Назад", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
+        return button
+    }()
+    
     @objc private func handleSelect() {
-        print("dsfsadfas")
+        
+    }
+    
+    @objc private func handleBack() {
+        dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -46,6 +64,7 @@ class AvatarViewController: UIViewController {
         
         view.addSubview(collectionView)
         view.addSubview(selectButton)
+        view.addSubview(backButton)
         
         setupLayout()
         setupButtonControl()
@@ -67,7 +86,12 @@ class AvatarViewController: UIViewController {
             selectButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
             selectButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             selectButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            selectButton.heightAnchor.constraint(equalToConstant: 50)
+            selectButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            backButton.widthAnchor.constraint(equalToConstant: 150),
+            backButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
