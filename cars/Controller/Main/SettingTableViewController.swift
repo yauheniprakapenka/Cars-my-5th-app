@@ -15,10 +15,14 @@ class SettingTableViewController: UITableViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getUser()
+        _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { (Timer) in
+            self.getUser()
+        })
     }
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
@@ -44,7 +48,8 @@ class SettingTableViewController: UITableViewController {
         Firestore.firestore().collection("users").document("\(Constants.UserInfo.Email)").getDocument { document, error in
             if let document = document {
                 let model = try! FirestoreDecoder().decode(FirebaseUserModel.self, from: document.data()!)
-                print("\nProfile Information:\nname: \(model.name)\nemail: \(model.email)\nuid: \(model.uid)")
+                
+                print("\nProfile Information:\nname: \(model.name)\nemail: \(model.email)\nuid: \(model.uid)\navatar: \(model.avatar)")
                 
                 Constants.UserInfo.Name = "\(model.name)"
                 Constants.UserInfo.Email = "\(model.email)"
@@ -53,6 +58,9 @@ class SettingTableViewController: UITableViewController {
                 
                 self.emailLabel.text = "\(Constants.UserInfo.Email)"
                 self.nameLabel.text = "\(Constants.UserInfo.Name)"
+                
+                self.avatarImageView.image = UIImage(named: "\(Constants.UserInfo.Avatar)")
+                
                 self.tableView.reloadData()
             } else {
                 print("Document does not exist")
