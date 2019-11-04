@@ -8,18 +8,10 @@
 
 import UIKit
 
-struct AvatarModel {
-    var avatar: String
-    var image: UIImage
-}
-
 class AvatarViewController: UIViewController {
     
-    let avatarData = [AvatarModel(avatar: "0", image: #imageLiteral(resourceName: "girl-2")),
-                      AvatarModel(avatar: "1", image: #imageLiteral(resourceName: "boy-1")),
-                      AvatarModel(avatar: "2", image: #imageLiteral(resourceName: "girl-1")),
-                      AvatarModel(avatar: "3", image: #imageLiteral(resourceName: "boy-2"))]
-
+    var avatar = AvatarModel.getAvatars()
+    
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -87,12 +79,12 @@ extension AvatarViewController: UICollectionViewDelegateFlowLayout, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return avatarData.count
+        return avatar.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
-        cell.data = self.avatarData[indexPath.row]
+        cell.data = self.avatar[indexPath.row]
         return cell
     }
     
