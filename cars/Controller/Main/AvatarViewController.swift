@@ -109,6 +109,7 @@ extension AvatarViewController: UICollectionViewDelegateFlowLayout, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
         cell.data = self.avatar[indexPath.row]
+        cell.backgroundColor = .white
         return cell
     }
     

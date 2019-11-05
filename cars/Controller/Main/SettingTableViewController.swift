@@ -20,7 +20,7 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { (Timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (Timer) in
             self.getUser()
         })
     }
