@@ -36,12 +36,16 @@ class SettingTableViewController: UITableViewController {
         present(avatarVC, animated: true)
         
         print("""
-        \nСейчас в константе содержится:
+        \nСейчас в константе находится:
         name: \(Constants.UserInfo.Name)
         email: \(Constants.UserInfo.Email)
         uid: \(Constants.UserInfo.UID)
         avatar: \(Constants.UserInfo.Avatar)
         """)
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     private func getUser() {

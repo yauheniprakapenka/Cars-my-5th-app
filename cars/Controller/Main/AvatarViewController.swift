@@ -53,7 +53,7 @@ class AvatarViewController: UIViewController {
     
     @objc private func handleSelect() {
         let db = Firestore.firestore()
-        db.collection("users").document("tom@farr.by").updateData(["avatar" : "\(userSelectedNewAvatar)"])
+        db.collection("users").document("\(Constants.UserInfo.Email)").updateData(["avatar" : "\(userSelectedNewAvatar)"])
         dismiss(animated: true, completion: nil)
     }
     
