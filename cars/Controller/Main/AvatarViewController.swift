@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class AvatarViewController: UIViewController {
     
     var avatar = AvatarModel.getAvatars()
+    var userSelectedNewAvatar = ""
     
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -50,7 +52,9 @@ class AvatarViewController: UIViewController {
     }()
     
     @objc private func handleSelect() {
-        
+        let db = Firestore.firestore()
+        db.collection("users").document("tom@farr.by").updateData(["avatar" : "\(userSelectedNewAvatar)"])
+        dismiss(animated: true, completion: nil)
     }
     
     @objc private func handleBack() {
@@ -114,7 +118,7 @@ extension AvatarViewController: UICollectionViewDelegateFlowLayout, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        userSelectedNewAvatar = "\(avatar[indexPath.row].nameAvatar)"
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
     }

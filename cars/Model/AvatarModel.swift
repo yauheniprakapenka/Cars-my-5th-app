@@ -9,14 +9,14 @@
 import UIKit
 
 struct AvatarModel {
-    var avatar: String
+    var nameAvatar: String
     var image: UIImage
     
     static func getAvatars() -> [AvatarModel] {
-        let data: [AvatarModel] = [AvatarModel(avatar: "0", image: #imageLiteral(resourceName: "girl-2")),
-                                   AvatarModel(avatar: "1", image: #imageLiteral(resourceName: "boy-1")),
-                                   AvatarModel(avatar: "2", image: #imageLiteral(resourceName: "girl-1")),
-                                   AvatarModel(avatar: "3", image: #imageLiteral(resourceName: "boy-2"))]
+        let data: [AvatarModel] = [AvatarModel(nameAvatar: "girl-2", image: #imageLiteral(resourceName: "girl-2")),
+                                   AvatarModel(nameAvatar: "boy-1", image: #imageLiteral(resourceName: "boy-1")),
+                                   AvatarModel(nameAvatar: "girl-1", image: #imageLiteral(resourceName: "girl-1")),
+                                   AvatarModel(nameAvatar: "boy-2", image: #imageLiteral(resourceName: "boy-2"))]
         return data
     }
     
