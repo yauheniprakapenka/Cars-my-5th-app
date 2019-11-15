@@ -4,14 +4,14 @@
 
 Swift 5, iOS 13.2, Xcode 11.2
 ```diff
-! В разработке
+Разработка остановлена
 ```
 
 <b>Возможности:</b>
-- Создание профиля через Firebase
+- Firebase: создание профиля / авторизация / изменение аватарки
 - Вход через профиль Firebase или Face ID / Touch ID
 - Проверка на отсутсвующий интернет
-- Настройки отображают email пользователя и выход из профиля
+- Отображение профиля пользователя
 - Добавление / редактирование / удаление автомобиля
 - Добавление фото через галерею, камеру или автоматически
 - Загрузка изображений через Unsplash
@@ -32,14 +32,12 @@ Swift 5, iOS 13.2, Xcode 11.2
 <a href="https://ibb.co/JzC5vQM"><img src="https://i.ibb.co/hKCDBft/Simulator-Screen-Shot-i-Phone-8-2019-10-13-at-22-30-06.png" width="200"></a>
 <a href="https://ibb.co/7YXYYFY"><img src="https://i.ibb.co/YR3RRGR/Simulator-Screen-Shot-i-Phone-11-2019-11-02-at-17-43-45.png" alt="Simulator-Screen-Shot-i-Phone-11-2019-11-02-at-17-43-45" width="200"></a>
 
-<b>Видео:</b>
+<b>Демонстрация приложения:</b>
 
-Демонстрация приложения [здесь](https://drive.google.com/open?id=1hdXyUkTDGwtKuBtEcIiu843lg4l4My5r)
+Сохранение автомобиля [здесь](https://drive.google.com/open?id=1hdXyUkTDGwtKuBtEcIiu843lg4l4My5r)
 
-Демонстрация авторизации [здесь](https://drive.google.com/open?id=17PkMaPp59qEJORHRs1JvaW7QWgoS-c7O)
+Авторизация [здесь](https://drive.google.com/open?id=17PkMaPp59qEJORHRs1JvaW7QWgoS-c7O)
 
-Демонстация UI Automation [здесь](https://drive.google.com/open?id=1iSSHKZh0H6sB6tN18TRGS6HhugBbHVYB)
+UI Automation [здесь](https://drive.google.com/open?id=1iSSHKZh0H6sB6tN18TRGS6HhugBbHVYB)
 
-<b>Backlog:</b>
-- Сделать новые UI автотесты под новый UI
-- Хранить и получать данные пользователя в Firebase
+Изменение аватарки [здесь](https://drive.google.com/open?id=1e4ockYkgyTAMm_6mHVzLVItm8995pyAl)

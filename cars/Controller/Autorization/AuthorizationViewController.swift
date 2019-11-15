@@ -18,7 +18,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var leftCarConstraint: NSLayoutConstraint!
     @IBOutlet weak var trafficLightImageView: UIImageView!
     @IBOutlet weak var helloTextStackView: UIStackView!
-    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var newProfilerButton: UIButton!
     @IBOutlet weak var biometricButton: UIButton!
@@ -41,7 +40,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: Constants.Storyboard.LoginViewController) as? LoginViewController else { return }
+        guard let vc = storyboard.instantiateViewController(identifier: Constants.Storyboard.LoginViewController) as? SignInViewController else { return }
         vc.delegate = self
         present(vc, animated: true)
     }
@@ -111,8 +110,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
 extension AuthorizationViewController: AnimateCar {
     func presentMainVC() {
-        print("Test")
-        
         UIView.animate(withDuration: 4.0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options: .curveEaseOut, animations: {
             self.trafficLightImageView.image = UIImage(named: "Светофор-зеленый")
             self.leftCarConstraint.constant = UIScreen.main.bounds.width + 30
@@ -124,6 +121,3 @@ extension AuthorizationViewController: AnimateCar {
         })
     }
 }
-
-
-

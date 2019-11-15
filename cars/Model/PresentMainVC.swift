@@ -12,7 +12,7 @@ class PresentMainVC: UIViewController {
     
     func presentMainVC() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTableViewController = storyBoard.instantiateViewController(withIdentifier: "mainViewControllerID") as! MainTableViewController
+        let mainTableViewController = storyBoard.instantiateViewController(withIdentifier: "mainViewControllerID") as! MainViewController
         self.present(mainTableViewController, animated: true, completion: nil)
     }
     

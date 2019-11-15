@@ -10,6 +10,10 @@ target 'cars' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+  pod 'CodableFirebase'
+
+  pod 'Bagel', '~>  1.3.2'
 
   target 'carsUITests' do
     inherit! :search_paths

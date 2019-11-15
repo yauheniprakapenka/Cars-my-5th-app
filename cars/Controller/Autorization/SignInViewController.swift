@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
     
     var delegate: AnimateCar?
     
@@ -44,14 +44,13 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            
             if error != nil {
                 self.loginButton.alpha = 1
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
                 
                 self.resultLabel.alpha = 1
-                self.resultLabel.textColor = Constants.Color.RedColor
+                self.resultLabel.textColor = Constants.Color.Red
                 self.resultLabel.text = "\(error!.localizedDescription)"
                 print("\(error!.localizedDescription)")
             } else {
@@ -60,10 +59,10 @@ class LoginViewController: UIViewController {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
                 
-                self.resultLabel.textColor = Constants.Color.GreenColor
+                self.resultLabel.textColor = Constants.Color.Green
                 self.resultLabel.text = "Авторизация успешна"
                 
-                Constants.userInfo.EmailText = self.emailTextField.text!
+                Constants.UserInfo.Email = self.emailTextField.text!
                 
                 self.dismiss(animated: true, completion: { [weak self] in
                     self?.delegate?.presentMainVC()

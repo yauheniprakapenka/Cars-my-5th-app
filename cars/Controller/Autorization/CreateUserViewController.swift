@@ -8,14 +8,12 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
 
-class NewProfileViewController: UIViewController {
-
+class CreateUserViewController: UIViewController {
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
@@ -52,13 +50,8 @@ class NewProfileViewController: UIViewController {
             return
         }
         
-        guard let firstName = firstNameTextField.text, !firstName.isEmpty else {
-            firstNameTextField.shake()
-            return
-        }
-        
-        guard let lastName = lastNameTextField.text, !lastName.isEmpty else {
-            lastNameTextField.shake()
+        guard let name = nameTextField.text, !name.isEmpty else {
+            nameTextField.shake()
             return
         }
         
@@ -67,7 +60,6 @@ class NewProfileViewController: UIViewController {
         activityIndicator.startAnimating()
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
-            
             if let error = error {
                 self.activityIndicator.alpha = 0
                 self.activityIndicator.stopAnimating()
@@ -76,7 +68,10 @@ class NewProfileViewController: UIViewController {
                 self.resultLabel.text = "\(error.localizedDescription)"
             } else if let result = result {
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["firstname" : self.firstNameTextField.text!, "lastname" : self.lastNameTextField.text!, "uid" : result.user.uid]) { (error) in
+                
+                db.collection("users").document("\(self.emailTextField.text!)").setData(["name" : self.nameTextField.text!,
+                                                                                         "email" : self.emailTextField.text!,
+                                                                                         "uid" : result.user.uid]) { (error) in
                     if error != nil {
                         print("Ошибка сохранения пользователя")
                         print("\(error!.localizedDescription)")
@@ -97,7 +92,6 @@ class NewProfileViewController: UIViewController {
                         let authorizeVC = storyBoard.instantiateViewController(withIdentifier: Constants.Storyboard.AuthorizationViewController)
                         self!.present(authorizeVC, animated: true, completion: nil)
                     })
-                    
                 }
             }
         }
