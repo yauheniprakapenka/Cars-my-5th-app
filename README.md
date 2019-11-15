@@ -4,7 +4,7 @@
 
 Swift 5, iOS 13.2, Xcode 11.2
 ```diff
-! В разработке
+Разработка остановлена
 ```
 
 <b>Возможности:</b>
@@ -39,7 +39,3 @@ Swift 5, iOS 13.2, Xcode 11.2
 Демонстрация авторизации [здесь](https://drive.google.com/open?id=17PkMaPp59qEJORHRs1JvaW7QWgoS-c7O)
 
 Демонстация UI Automation [здесь](https://drive.google.com/open?id=1iSSHKZh0H6sB6tN18TRGS6HhugBbHVYB)
-
-<b>Backlog:</b>
-- Внедрить A/B тестирование
-- Написать новые UI автотесты
