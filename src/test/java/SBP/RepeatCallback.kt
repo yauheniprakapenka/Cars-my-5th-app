@@ -1,4 +1,4 @@
-package api.apiScript
+package SBP
 
 import khttp.post
 import org.junit.Test
