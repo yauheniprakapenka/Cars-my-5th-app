@@ -7,7 +7,8 @@ import java.time.format.DateTimeFormatter
 
 class RepeatCallback {
 
-    private val baseUrl = "https://rbc-test.intervale.ru"
+//    private val baseUrl = "https://rbc-test.intervale.ru" - старый вариант
+    private val baseUrl = "https://rbc-test.intervale.ru/RU_SBP_ATLAS"
 
     private val headerData = mapOf(
             "Content-Type" to "application/json;charset=utf-8",
@@ -16,11 +17,11 @@ class RepeatCallback {
             "Accept-Encoding" to "gzip,deflate",
             "Connection" to "Keep-Alive"
     )
-
+    //04fec5da-17aa-7d2c-1111-111111111111
     private val bodyData = "{\n" +
             "  \"callback\": \"notify\",\n" +
             "  \"order\": {\n" +
-            "    \"id\": \"04fec5da-17aa-7d2c-1111-111111111111\",\n" +
+            "    \"id\": \"df2f7d60-ec4a-45a2-90d4-a344a1ff4593\",\n" +
             "    \"status\": \"NEW\"\n" +
             "  },\n" +
             "  \"balance\": 4800000,\n" +
@@ -33,7 +34,7 @@ class RepeatCallback {
 
         var sleep: Long = 1000
 
-        for (i in 0..7) {
+        for (i in 0..1) {
             Thread.sleep(sleep)
 
             val current = LocalDateTime.now()
@@ -44,7 +45,7 @@ class RepeatCallback {
             val json = response.statusCode
 
             println("[$formatted] Попытка $i. Cтатус-код: $json")
-            sleep += 50000
+//            sleep += 50000
         }
     }
 
