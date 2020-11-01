@@ -1,4 +1,4 @@
-package SBP
+package sbp.Callback
 
 import khttp.post
 import org.junit.Test
@@ -11,17 +11,13 @@ class RepeatCallback {
     private val baseUrl = "https://rbc-test.intervale.ru/RU_SBP_ATLAS"
 
     private val headerData = mapOf(
-            "Content-Type" to "application/json;charset=utf-8",
-            "Content-Encoding" to "UTF-8",
-            "User-Agent" to "Apache-HttpClient/4.5.1 (Java/1.8.0_231)",
-            "Accept-Encoding" to "gzip,deflate",
-            "Connection" to "Keep-Alive"
+            "Content-Type" to "application/json; charset=UTF-8"
     )
-    //04fec5da-17aa-7d2c-1111-111111111111
+
     private val bodyData = "{\n" +
             "  \"callback\": \"notify\",\n" +
             "  \"order\": {\n" +
-            "    \"id\": \"df2f7d60-ec4a-45a2-90d4-a344a1ff4593\",\n" +
+            "    \"id\": \"df145931-f7c3-7281-913a-f76800a39301\",\n" +
             "    \"status\": \"NEW\"\n" +
             "  },\n" +
             "  \"balance\": 4800000,\n" +
