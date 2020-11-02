@@ -13,7 +13,7 @@ private data class TokenModel(
 
 class ApiToken {
 
-    fun getToken() {
+    fun fetchToken() {
         val response = post(ApiURLConstants.token, headers = mapOf("X-IV-Authorization" to "Session ${ProfileObject.sessionId}"), data = mapOf("test" to "test"))
         assertTrue(response.statusCode == 200)
 

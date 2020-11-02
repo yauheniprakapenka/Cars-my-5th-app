@@ -15,28 +15,28 @@ class ApiScriptAuthorizeToProfile {
     // MARK: - Methods
 
     @Step("api_script_authorize_to_profile")
-    fun authorizeToProfile(profile: String) {
+    fun authorize(profile: String) {
         ProfileObject.profile = profile
 
-        when (val statusCode = profileRegistrationStart.api_profile_registration_start(ProfileObject.profile)) {
+        when (val statusCode = profileRegistrationStart.fetchProfileRegistrationStart(ProfileObject.profile)) {
             200 -> api_start_new_profile()
             400 -> api_profile_already_registered()
             else -> {
-                error("$statusCode статус не обрабатывается")
+                error("$statusCode статус не обрабатывается в классе ApiScriptAuthorizeToProfile")
             }
         }
     }
 
     @Step("api_start_new_profile")
     private fun api_start_new_profile() {
-        profileRegistrationVerifyotp.api_profile_registration_verify_otp(ProfileObject.profile)
+        profileRegistrationVerifyotp.fetchProfileRegistrationVerifyOtp(ProfileObject.profile)
         profileRegistrationConfirm.api_profile_registration_confirm(ProfileObject.profile)
     }
 
     @Step("api_profile_already_registered")
     private fun api_profile_already_registered() {
-        sessionStart2fa.apiSessionStart2fa(ProfileObject.profile)
-        sessionConfirm2fa.apiSessionConfirm2fa(ProfileObject.profile)
+        sessionStart2fa.fetchSessionStart2fa(ProfileObject.profile)
+        sessionConfirm2fa.fetchSessionConfirm2fa(ProfileObject.profile)
     }
 
 }

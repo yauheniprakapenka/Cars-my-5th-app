@@ -6,7 +6,7 @@ import khttp.get
 import org.junit.Assert
 
 class ApiSbpBank {
-    fun sbpBank() {
+    fun fetchBank() {
         val response = get(ApiURLConstants.sbpBank, headers = mapOf("X-IV-Authorization" to "Session ${ProfileObject.sessionId}"))
         Assert.assertTrue(response.statusCode == 200)
 

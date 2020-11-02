@@ -3,8 +3,10 @@ package tests
 import `object`.ProfileObject
 import api.apiRequests.*
 import api.apiScript.ApiScriptAuthorizeToProfile
-import constants.SBPConstants
-import constants.SMSConstants
+import constants.AmountConstant
+import constants.BankConstant
+import constants.PhoneConstant
+import constants.SMSConstant
 import org.junit.Test
 
 /*
@@ -13,17 +15,17 @@ import org.junit.Test
         2. Если для профиля будет два счета, то для 17_199 разные счета поменять, а не один и тот же
         3. Добавить парсинг ошибки 32_186
  */
-class TransStroyBank {
+class TIVTransStroyBank {
 
     // MARK: - 2_216, 6_210 Необходимо добавить клиента Legkova-Roma Svetlana, используя реальный номер телефона
     @Test
     fun isProfile70009010197Exist() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
         val apiSbpCustomerAccount = ApiSbpCustomerAccount()
-        apiSbpCustomerAccount.customerAccount()
+        apiSbpCustomerAccount.fetchCustomerAccount()
 
         // Ожидание: "name":"Legkova-Roma Svetlana ", два счета, тестируемый банк
     }
@@ -33,11 +35,11 @@ class TransStroyBank {
     @Test
     fun isProfileExist70004210197() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_421_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_421_0197)
         print(ProfileObject.profileObject)
 
         val apiSbpCustomerAccount = ApiSbpCustomerAccount()
-        apiSbpCustomerAccount.customerAccount()
+        apiSbpCustomerAccount.fetchCustomerAccount()
 
         // Ожидание: в профиле 1 счет с тестируемым банком для Иванов Иван Иванович
     }
@@ -47,11 +49,11 @@ class TransStroyBank {
     @Test
     fun isUmBankExist() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
         val apiSbpBank = ApiSbpBank()
-        apiSbpBank.sbpBank()
+        apiSbpBank.fetchBank()
 
         // "id":"1crt88888886","name":"УМ Банк"
         // id":"1crt88888881","name":"ПИР Банк","alias":"pirbank"
@@ -63,11 +65,11 @@ class TransStroyBank {
     @Test
     fun changeAccount() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
         val apiSbpCustomerDefaultAccountSet = ApiSbpCustomerDefaultAccountSet()
-        apiSbpCustomerDefaultAccountSet.defaultAccountSet()
+        apiSbpCustomerDefaultAccountSet.fetchDefaultAccountSet()
     }
 
     // MARK: - 32_186 Необходимо дождаться истечения трех минут с момента получения А22 и продолжить операцию отправив неверный OTP из приложения.
@@ -76,7 +78,7 @@ class TransStroyBank {
     @Test
     fun bankDefaultTimeout3Minutes() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
         val apiSbpCustomerDefaultBankStartModification = ApiSbpCustomerDefaultBankStartModification()
@@ -85,7 +87,7 @@ class TransStroyBank {
         // ожидаем 3 минуты 20 секунд
         Thread.sleep(200000)
         val apiSbpCustomerDefaultBankConfirmModification = ApiSbpCustomerDefaultBankConfirmModification()
-        apiSbpCustomerDefaultBankConfirmModification.defaultBankConfirmModification(SMSConstants.sms123456)
+        apiSbpCustomerDefaultBankConfirmModification.fetchDefaultBankConfirmModification(SMSConstant.sms123456)
 
         // ожидание {"error":"OTP_EXPIRED"}
     }
@@ -94,7 +96,7 @@ class TransStroyBank {
     @Test
     fun bankDefaultWrong3Times() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
         val apiSbpCustomerDefaultBankStartModification = ApiSbpCustomerDefaultBankStartModification()
@@ -102,7 +104,7 @@ class TransStroyBank {
 
         val apiSbpCustomerDefaultBankConfirmModification = ApiSbpCustomerDefaultBankConfirmModification()
         for (i in 1..3) {
-            apiSbpCustomerDefaultBankConfirmModification.defaultBankConfirmModification(SMSConstants.sms123456)
+            apiSbpCustomerDefaultBankConfirmModification.fetchDefaultBankConfirmModification(SMSConstant.sms123456)
         }
 
         // ожидание {"error":"OTP_BLOCKED"}
@@ -112,14 +114,14 @@ class TransStroyBank {
     @Test
     fun successfulSetDefaultBank() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
         val apiSbpCustomerDefaultBankStartModification = ApiSbpCustomerDefaultBankStartModification()
         apiSbpCustomerDefaultBankStartModification.defaultBankStartModification()
 
         val apiSbpCustomerDefaultBankConfirmModification = ApiSbpCustomerDefaultBankConfirmModification()
-        apiSbpCustomerDefaultBankConfirmModification.defaultBankConfirmModification(SMSConstants.sms888888)
+        apiSbpCustomerDefaultBankConfirmModification.fetchDefaultBankConfirmModification(SMSConstant.sms888888)
 
         // ожидание статус код 200
     }
@@ -130,19 +132,19 @@ class TransStroyBank {
     @Test
     fun recipientNotFound() {
        val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-       apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+       apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
 
        val apiSbpFindRecipient = ApiSbpFindRecipient()
-       apiSbpFindRecipient.sbpFindRecipient(recipient = SBPConstants.recipient_7_000_951_0197)
+       apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient_7_000_951_0197)
 
         val apiToken = ApiToken()
-        apiToken.getToken()
+        apiToken.fetchToken()
 
         val apiSbpTransferTokenStart = ApiSbpTransferTokenStart()
-        apiSbpTransferTokenStart.apiSbpTransferTokenStart(
-                recipientBankId = SBPConstants.pirBank1crt88888881,
-                recipientMsisdn = SBPConstants.recipient_7_000_951_0197,
-                amount = SBPConstants.amount1600698,
+        apiSbpTransferTokenStart.fetchTransferTokenStart(
+                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientMsisdn = PhoneConstant.recipient_7_000_951_0197,
+                amount = AmountConstant.amount1600698,
                 comment = "не найден получатель")
 
         // Ожидание: "result":{"status":"FAILED","extendedCode":"DECLINED_BY_RECIPIENT_BANK"},
@@ -154,19 +156,19 @@ class TransStroyBank {
     @Test
     fun timeoutAfterContinueButton() {
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
 
         val apiSbpFindRecipient = ApiSbpFindRecipient()
-        apiSbpFindRecipient.sbpFindRecipient(recipient = SBPConstants.recipient_7_000_961_0197)
+        apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient_7_000_961_0197)
 
         val apiToken = ApiToken()
-        apiToken.getToken()
+        apiToken.fetchToken()
 
         val apiSbpTransferTokenStart = ApiSbpTransferTokenStart()
-        apiSbpTransferTokenStart.apiSbpTransferTokenStart(
-                recipientBankId = SBPConstants.pirBank1crt88888881,
-                recipientMsisdn = SBPConstants.recipient_7_000_961_0197,
-                amount = SBPConstants.amount1600698,
+        apiSbpTransferTokenStart.fetchTransferTokenStart(
+                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientMsisdn = PhoneConstant.recipient_7_000_961_0197,
+                amount = AmountConstant.amount1600698,
                 comment = "Таймаут после нажатия продолжить")
 
         // Ожидание: от рбс "message":"OPKC_TIMEOUT"
@@ -178,85 +180,85 @@ class TransStroyBank {
     fun returningFromTheDataControlScreenToChangeDetails() {
 
         val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
-        apiScriptAuthorizeToProfile.authorizeToProfile(SBPConstants.tsb_7_000_901_0197)
+        apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
 
         val apiSbpFindRecipient = ApiSbpFindRecipient()
-        apiSbpFindRecipient.sbpFindRecipient(recipient = SBPConstants.recipient7_000_531_0197)
+        apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_531_0197)
 
         val apiToken = ApiToken()
-        apiToken.getToken()
+        apiToken.fetchToken()
 
 
         println("170_46 Заполнить данные для операции Быстрый платеж, телефон 00700053{далее по маске} УМ Банк, сумма 16006,98 руб.\n")
         println("174_42 Дойти до Экрана контроля уже нередактируемых данных\n")
         val apiSbpTransferTokenStart = ApiSbpTransferTokenStart()
-        apiSbpTransferTokenStart.apiSbpTransferTokenStart(
-                recipientBankId = SBPConstants.umBank1crt88888886,
-                recipientMsisdn = SBPConstants.recipient7_000_531_0197,
-                amount = SBPConstants.amount1600698,
+        apiSbpTransferTokenStart.fetchTransferTokenStart(
+                recipientBankId = BankConstant.umBank1crt88888886,
+                recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
+                amount = AmountConstant.amount1600698,
                 comment = null)
 
 
         println("175_41 С экрана нередактируемых данных вернуться к изменению Банка.\n")
-        apiSbpFindRecipient.sbpFindRecipient(recipient = SBPConstants.recipient7_000_531_0197)
-        apiToken.getToken()
+        apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_531_0197)
+        apiToken.fetchToken()
 
 
         println("176_40 Заменить на ПИР Банк\n")
         println("177_39 Дойти до Экрана контроля уже нередактируемых данных\n")
-        apiSbpTransferTokenStart.apiSbpTransferTokenStart(
-                recipientBankId = SBPConstants.pirBank1crt88888881,
-                recipientMsisdn = SBPConstants.recipient7_000_531_0197,
-                amount = SBPConstants.amount1600698,
+        apiSbpTransferTokenStart.fetchTransferTokenStart(
+                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
+                amount = AmountConstant.amount1600698,
                 comment = null)
 
 
         println("179_38 Доходим до экрана нередактируемых данных и возвращаемся чтобы изменить сумму на 16005,98\n")
-        apiSbpFindRecipient.sbpFindRecipient(recipient = SBPConstants.recipient7_000_531_0197)
-        apiToken.getToken()
-        apiSbpTransferTokenStart.apiSbpTransferTokenStart(
-                recipientBankId = SBPConstants.pirBank1crt88888881,
-                recipientMsisdn = SBPConstants.recipient7_000_531_0197,
-                amount = SBPConstants.amount1600598,
+        apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_531_0197)
+        apiToken.fetchToken()
+        apiSbpTransferTokenStart.fetchTransferTokenStart(
+                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
+                amount = AmountConstant.amount1600598,
                 comment = null)
 
 
         println("179_37 С экрана нередактируемых данных возвращаемся к изменению Назначения платежа\n")
-        apiSbpFindRecipient.sbpFindRecipient(recipient = SBPConstants.recipient7_000_531_0197)
-        apiToken.getToken()
-        apiSbpTransferTokenStart.apiSbpTransferTokenStart(
-                recipientBankId = SBPConstants.pirBank1crt88888881,
-                recipientMsisdn = SBPConstants.recipient7_000_531_0197,
-                amount = SBPConstants.amount1600598,
+        apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_531_0197)
+        apiToken.fetchToken()
+        apiSbpTransferTokenStart.fetchTransferTokenStart(
+                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
+                amount = AmountConstant.amount1600598,
                 comment = "Тест 98")
 
 
         println("180_37 С экрана нередактируемых данных возвращаемся к изменению Телефона.\n")
         println("180_36 Заменить телефон на 00700098{далее по маске}\n")
         println("181_35 Дойти до Экрана контроля уже нередактируемых данных с реквизитами: ПИР Банк 000700098{далее по маске}  16005,98 \n")
-        apiSbpFindRecipient.sbpFindRecipient(recipient = SBPConstants.recipient7_000_981_0197)
-        apiToken.getToken()
-        apiSbpTransferTokenStart.apiSbpTransferTokenStart(
-                recipientBankId = SBPConstants.pirBank1crt88888881,
-                recipientMsisdn = SBPConstants.recipient7_000_981_0197,
-                amount = SBPConstants.amount1600598,
+        apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_981_0197)
+        apiToken.fetchToken()
+        apiSbpTransferTokenStart.fetchTransferTokenStart(
+                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientMsisdn = PhoneConstant.recipient7_000_981_0197,
+                amount = AmountConstant.amount1600598,
                 comment = "Тест 98")
 
 
         println("183_33 Совершить Перевод\n")
         val apiSbpTransferTokenAccept = ApiSbpTransferTokenAccept()
-        apiSbpTransferTokenAccept.sbpTransferTokenAccept()
+        apiSbpTransferTokenAccept.fetchTransferTokenAccept()
 
         println("ввести смс 1111\n")
         val apiSbpTransferTokenAuthenticationConfirm = ApiSbpTransferTokenAuthenticationConfirm()
-        apiSbpTransferTokenAuthenticationConfirm.sbpTransferTokenAuthenticationConfirm()
+        apiSbpTransferTokenAuthenticationConfirm.fetchTransferTokenAuthenticationConfirm()
 
         println("Хардкод ожидание\n")
         Thread.sleep(5000)
 
         println("Запрос статуса перевода\n")
         val apiSbpTransferToken = ApiSbpTransferToken()
-        apiSbpTransferToken.apiSbpTransferToken()
+        apiSbpTransferToken.fetchTransferToken()
 
         // ожидание "result":{"status":"SUCCESS","extendedCode":"OK"}
         // в истории будут переводы в обработке - так как они не были завершены

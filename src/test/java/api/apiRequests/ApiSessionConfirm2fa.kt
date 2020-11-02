@@ -1,7 +1,7 @@
 package api.apiRequests
 
 import com.google.gson.Gson
-import constants.SMSConstants
+import constants.SMSConstant
 import api.apiConfigure.ApiURLConstants
 import io.qameta.allure.Step
 import khttp.post
@@ -16,8 +16,8 @@ private data class SessionConfirm2faModel(
 class ApiSessionConfirm2fa {
 
     @Step("apiSessionConfirm2fa")
-    fun apiSessionConfirm2fa(profileNumber: String) {
-        val response = post(ApiURLConstants.sessionConfirm2fa, data = mapOf("msisdn" to profileNumber, "deviceId" to ProfileObject.deviceId, "otp" to SMSConstants.sms1111))
+    fun fetchSessionConfirm2fa(profileNumber: String) {
+        val response = post(ApiURLConstants.sessionConfirm2fa, data = mapOf("msisdn" to profileNumber, "deviceId" to ProfileObject.deviceId, "otp" to SMSConstant.sms1111))
         assertTrue(response.statusCode == 200)
 
         val json = response.text

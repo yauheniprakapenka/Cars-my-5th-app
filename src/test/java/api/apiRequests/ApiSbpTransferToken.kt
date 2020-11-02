@@ -8,7 +8,7 @@ import org.junit.Assert
 // получить результат платежа
 class ApiSbpTransferToken {
 
-    fun apiSbpTransferToken() {
+    fun fetchTransferToken() {
         val response = get(ApiURLConstants.sbpTransferToken, headers = mapOf("X-IV-Authorization" to "Session ${ProfileObject.sessionId}"))
         Assert.assertTrue(response.statusCode == 200)
 

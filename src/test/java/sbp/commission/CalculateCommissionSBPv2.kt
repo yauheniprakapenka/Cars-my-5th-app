@@ -22,9 +22,9 @@
         @Test
         fun cacl() {
     //        fun cacl(args: Array<String>) {rangeRules.keys.sorted().forEach
-            val amount = 99999_00
+            val amount = 1000//99999_00
             val totalSum = 926_00L
-            val totalSumLimit = 100_000_00L
+            val totalSumLimit = 0L//100_000_00L
 
             val commissionRules = CommissionRulesDTO(
                     totalSum = totalSum,
@@ -43,13 +43,23 @@
                                     )
                             ),
                             CommissionRuleDTO(
-                                    minAmount = 1,
-                                    maxAmount = 300_000_00,
+                                    minAmount = 0,
+                                    maxAmount = 100_000_00,
                                     commission = CommissionDTO(
-                                            percent = 0.5,
-                                            min = 0,
-                                            max = 1500_00,
-                                            fixed = 0
+                                            percent = 4.0,
+                                            min = 5000,
+                                            max = 40000,
+                                            fixed = 1000
+                                    )
+                            ),
+                            CommissionRuleDTO(
+                                    minAmount = 100_000_01,
+                                    maxAmount = 600_000_00,
+                                    commission = CommissionDTO(
+                                            percent = 0.7,
+                                            min = 10000,
+                                            max = 100000,
+                                            fixed = 5000
                                     )
                             )
                     )

@@ -1,7 +1,7 @@
 package api.apiRequests
 
 import com.google.gson.Gson
-import constants.SMSConstants
+import constants.SMSConstant
 import api.apiConfigure.ApiURLConstants
 import io.qameta.allure.Step
 import khttp.post
@@ -18,7 +18,7 @@ class ApiProfileRegistrationConfirm {
 
     @Step("apiProfileRegistrationConfirm")
     fun api_profile_registration_confirm(profileNumber: String) {
-        val response = post(ApiURLConstants.profileRegistrationConfirm, data = mapOf("msisdn" to profileNumber, "otp" to SMSConstants.sms1111))
+        val response = post(ApiURLConstants.profileRegistrationConfirm, data = mapOf("msisdn" to profileNumber, "otp" to SMSConstant.sms1111))
         assertTrue(response.statusCode == 200)
 
         val json = response.text

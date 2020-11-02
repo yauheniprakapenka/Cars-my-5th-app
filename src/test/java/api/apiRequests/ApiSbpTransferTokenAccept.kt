@@ -7,7 +7,7 @@ import org.junit.Assert
 
 class ApiSbpTransferTokenAccept {
 
-    fun sbpTransferTokenAccept() {
+    fun fetchTransferTokenAccept() {
         val response = post(ApiURLConstants.sbpTransferTokenAccept, headers = mapOf("X-IV-Authorization" to "Session ${ProfileObject.sessionId}"), data = mapOf("test" to "test"))
         Assert.assertTrue(response.statusCode == 200)
 

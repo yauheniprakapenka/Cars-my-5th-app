@@ -3,7 +3,7 @@ package api.apiRequests
 import `object`.ProfileObject
 import com.google.gson.Gson
 import api.apiConfigure.ApiURLConstants
-import constants.SBPConstants
+import constants.BankConstant
 import khttp.post
 import org.junit.Assert
 
@@ -15,7 +15,7 @@ private data class ApiDefaultBankStartModificationModel(
 class ApiSbpCustomerDefaultBankStartModification {
 
     fun defaultBankStartModification() {
-        val response = post(ApiURLConstants.sbpCustomerDefaultBankStartModification, headers = mapOf("X-IV-Authorization" to "Session ${ProfileObject.sessionId}"), data = mapOf("bankId" to SBPConstants.bankId10197))
+        val response = post(ApiURLConstants.sbpCustomerDefaultBankStartModification, headers = mapOf("X-IV-Authorization" to "Session ${ProfileObject.sessionId}"), data = mapOf("bankId" to BankConstant.transstroybank100000000197))
 
         val json = response.text
         println("\n${json}\n")

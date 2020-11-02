@@ -13,8 +13,8 @@ private data class SessionStart2faModel(
 
 class ApiSessionStart2fa {
 
-    @Step("apiSessionStart2fa")
-    fun apiSessionStart2fa(profileNumber: String) {
+    @Step("fetchSessionStart2fa")
+    fun fetchSessionStart2fa(profileNumber: String) {
         val response = post(ApiURLConstants.sessionStart2fa, data = mapOf("msisdn" to profileNumber))
         assertTrue(response.statusCode == 200)
 
