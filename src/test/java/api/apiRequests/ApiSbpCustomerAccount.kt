@@ -8,10 +8,10 @@ import org.junit.Assert
 
 data class CustomerAccountModel(
         val name: String,
-        val banks: Array<BanksModel>
+        val banks: Array<AccountBanksModel>
 )
 
-data class BanksModel(
+data class AccountBanksModel(
         val id: String,
         val isDefault: Boolean,
         val accounts: Array<AccountsModel>
@@ -33,7 +33,10 @@ data class BalanceModel(
 
 class ApiSbpCustomerAccount {
     fun fetchCustomerAccount(): CustomerAccountModel {
-        val response = get(ApiURLConstants.sbpCustomerAccount, headers = mapOf("X-IV-Authorization" to "Session ${ProfileObject.sessionId}"))
+        val headers = mapOf(
+                "X-IV-Authorization" to "Session ${ProfileObject.sessionId}"
+        )
+        val response = get(ApiURLConstants.sbpCustomerAccount, headers = headers)
         Assert.assertTrue(response.statusCode == 200)
 
         val json = response.text

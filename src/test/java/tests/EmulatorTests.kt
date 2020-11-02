@@ -16,12 +16,10 @@
             apiScriptAuthorizeToProfile.authorize(PhoneConstant.garantInvest_7_000_901_01_12)
 
             val apiSbpCustomerAccount = ApiSbpCustomerAccount()
-            val fetchedAccount = apiSbpCustomerAccount.fetchCustomerAccount()
+            val fetchedAccount = apiSbpCustomerAccount.fetchCustomerAccount() // отправляется здесь, чтобы переиспользовать ответ
 
-            // Asserts
-            val assertMethods = AssertMethods()
-            assertMethods.checkName(fetchedAccount = fetchedAccount)
-            assertMethods.checkBankAccounts(fetchedAccount = fetchedAccount)
+            AssertMethods.checkName(fetchedAccount = fetchedAccount)
+            AssertMethods.checkBankAccounts(fetchedAccount = fetchedAccount)
         }
 
         @Test
@@ -29,9 +27,12 @@
             val apiScriptAuthorizeToProfile = ApiScriptAuthorizeToProfile()
             apiScriptAuthorizeToProfile.authorize(PhoneConstant.garantInvest_7_000_901_01_12)
 
-            // Asserts
-            val assertMethods = AssertMethods()
-            assertMethods.setDefaultAccountSuccess()
+            AssertMethods.setDefaultAccountSuccess()
+        }
+
+        @Test
+        fun checkBanks() {
+            AssertMethods.checkBanksReference()
         }
     }
 
