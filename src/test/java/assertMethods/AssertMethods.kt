@@ -1,5 +1,6 @@
 package assertMethods
 
+import api.apiRequests.ApiSbpCustomerDefaultAccountSet
 import api.apiRequests.CustomerAccountModel
 import constants.BankConstant
 import org.junit.Assert
@@ -41,5 +42,11 @@ class AssertMethods {
                 }
             }
         }
+    }
+
+    fun setDefaultAccountSuccess() {
+        val apiSbpCustomerDefaultAccountSet = ApiSbpCustomerDefaultAccountSet()
+        val statusCode = apiSbpCustomerDefaultAccountSet.fetchDefaultAccountSet()
+        Assert.assertTrue(statusCode == 200)
     }
 }
