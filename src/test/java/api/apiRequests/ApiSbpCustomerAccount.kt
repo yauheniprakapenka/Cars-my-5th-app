@@ -5,6 +5,7 @@ import api.apiConfigure.ApiURLConstants
 import com.google.gson.Gson
 import khttp.get
 import org.junit.Assert
+import utils.PrintResponse
 
 data class CustomerAccountModel(
         val name: String,
@@ -31,16 +32,23 @@ data class BalanceModel(
         val date: String
 )
 
-class ApiSbpCustomerAccount {
-    fun fetchCustomerAccount(): CustomerAccountModel {
+object ApiSbpCustomerAccount {
+    fun fetch(): CustomerAccountModel {
         val headers = mapOf(
                 "X-IV-Authorization" to "Session ${ProfileObject.sessionId}"
         )
         val response = get(ApiURLConstants.sbpCustomerAccount, headers = headers)
-        Assert.assertTrue(response.statusCode == 200)
-
         val json = response.text
-        println("\n\n${json}\n")
+
+        when (response.statusCode) {
+            200 -> {
+                Assert.assertTrue(true)
+            }
+            else -> {
+                PrintResponse.print(response = response)
+                Assert.assertTrue(false)
+            }
+        }
 
         val gson = Gson()
         val account = gson.fromJson(json, CustomerAccountModel::class.java)

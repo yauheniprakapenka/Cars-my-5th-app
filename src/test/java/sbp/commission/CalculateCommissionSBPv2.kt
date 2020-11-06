@@ -22,44 +22,44 @@
         @Test
         fun cacl() {
     //        fun cacl(args: Array<String>) {rangeRules.keys.sorted().forEach
-            val amount = 1000//99999_00
-            val totalSum = 926_00L
-            val totalSumLimit = 0L//100_000_00L
+            val amount = 50_000_00//99999_00
+            val totalSum = 50_000_00L
+            val totalSumLimit = 10000000L//100_000_00L
 
             val commissionRules = CommissionRulesDTO(
                     totalSum = totalSum,
-                    limit = LimitDTO(maxAmount = 600_000_00L),
+                    limit = LimitDTO(maxAmount = 500_000_00L),
 
                     rules = listOf<CommissionRuleDTO>(
                             CommissionRuleDTO(
                                     totalSumLimit = totalSumLimit,
-                                    minAmount = 0,
-                                    maxAmount = 0,
+                                    minAmount = 100_00,
+                                    maxAmount = 100_000_00,
                                     commission = CommissionDTO(
-                                            percent = 0.0,
-                                            min = 0,
-                                            max = 0,
-                                            fixed = 0
+                                            percent = 5.0,
+                                            min = 11100,
+                                            max = 22200,
+                                            fixed = 3300
+                                    )
+                            ),
+                            CommissionRuleDTO(
+                                    minAmount = 100_000_01,
+                                    maxAmount = 500_000_00,
+                                    commission = CommissionDTO(
+                                            percent = 10.0,
+                                            min = 44400,
+                                            max = 55500,
+                                            fixed = 6600
                                     )
                             ),
                             CommissionRuleDTO(
                                     minAmount = 0,
                                     maxAmount = 100_000_00,
                                     commission = CommissionDTO(
-                                            percent = 4.0,
-                                            min = 5000,
-                                            max = 40000,
-                                            fixed = 1000
-                                    )
-                            ),
-                            CommissionRuleDTO(
-                                    minAmount = 100_000_01,
-                                    maxAmount = 600_000_00,
-                                    commission = CommissionDTO(
-                                            percent = 0.7,
-                                            min = 10000,
-                                            max = 100000,
-                                            fixed = 5000
+                                            percent = 15.0,
+                                            min = 77700,
+                                            max = 88800,
+                                            fixed = 9900
                                     )
                             )
                     )

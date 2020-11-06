@@ -4,7 +4,7 @@ import `object`.ProfileObject
 import api.apiRequests.*
 import api.apiScript.ApiScriptAuthorizeToProfile
 import constants.AmountConstant
-import constants.BankConstant
+import constants.BanksIdConstant
 import constants.PhoneConstant
 import constants.SMSConstant
 import org.junit.Test
@@ -24,9 +24,7 @@ class TIVTransStroyBank {
         apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
-        val apiSbpCustomerAccount = ApiSbpCustomerAccount()
-        apiSbpCustomerAccount.fetchCustomerAccount()
-
+        ApiSbpCustomerAccount.fetch()
         // Ожидание: "name":"Legkova-Roma Svetlana ", два счета, тестируемый банк
     }
 
@@ -38,8 +36,7 @@ class TIVTransStroyBank {
         apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_421_0197)
         print(ProfileObject.profileObject)
 
-        val apiSbpCustomerAccount = ApiSbpCustomerAccount()
-        apiSbpCustomerAccount.fetchCustomerAccount()
+        ApiSbpCustomerAccount.fetch()
 
         // Ожидание: в профиле 1 счет с тестируемым банком для Иванов Иван Иванович
     }
@@ -52,8 +49,7 @@ class TIVTransStroyBank {
         apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
-        val apiSbpBank = ApiSbpBank()
-        apiSbpBank.fetchBank()
+        ApiSbpBank.fetchBank()
 
         // "id":"1crt88888886","name":"УМ Банк"
         // id":"1crt88888881","name":"ПИР Банк","alias":"pirbank"
@@ -142,7 +138,7 @@ class TIVTransStroyBank {
 
         val apiSbpTransferTokenStart = ApiSbpTransferTokenStart()
         apiSbpTransferTokenStart.fetchTransferTokenStart(
-                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientBankId = BanksIdConstant.pirBank1crt88888881,
                 recipientMsisdn = PhoneConstant.recipient_7_000_951_0197,
                 amount = AmountConstant.amount1600698,
                 comment = "не найден получатель")
@@ -166,7 +162,7 @@ class TIVTransStroyBank {
 
         val apiSbpTransferTokenStart = ApiSbpTransferTokenStart()
         apiSbpTransferTokenStart.fetchTransferTokenStart(
-                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientBankId = BanksIdConstant.pirBank1crt88888881,
                 recipientMsisdn = PhoneConstant.recipient_7_000_961_0197,
                 amount = AmountConstant.amount1600698,
                 comment = "Таймаут после нажатия продолжить")
@@ -193,7 +189,7 @@ class TIVTransStroyBank {
         println("174_42 Дойти до Экрана контроля уже нередактируемых данных\n")
         val apiSbpTransferTokenStart = ApiSbpTransferTokenStart()
         apiSbpTransferTokenStart.fetchTransferTokenStart(
-                recipientBankId = BankConstant.umBank1crt88888886,
+                recipientBankId = BanksIdConstant.umBank1crt88888886,
                 recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
                 amount = AmountConstant.amount1600698,
                 comment = null)
@@ -207,7 +203,7 @@ class TIVTransStroyBank {
         println("176_40 Заменить на ПИР Банк\n")
         println("177_39 Дойти до Экрана контроля уже нередактируемых данных\n")
         apiSbpTransferTokenStart.fetchTransferTokenStart(
-                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientBankId = BanksIdConstant.pirBank1crt88888881,
                 recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
                 amount = AmountConstant.amount1600698,
                 comment = null)
@@ -217,7 +213,7 @@ class TIVTransStroyBank {
         apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_531_0197)
         apiToken.fetchToken()
         apiSbpTransferTokenStart.fetchTransferTokenStart(
-                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientBankId = BanksIdConstant.pirBank1crt88888881,
                 recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
                 amount = AmountConstant.amount1600598,
                 comment = null)
@@ -227,7 +223,7 @@ class TIVTransStroyBank {
         apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_531_0197)
         apiToken.fetchToken()
         apiSbpTransferTokenStart.fetchTransferTokenStart(
-                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientBankId = BanksIdConstant.pirBank1crt88888881,
                 recipientMsisdn = PhoneConstant.recipient7_000_531_0197,
                 amount = AmountConstant.amount1600598,
                 comment = "Тест 98")
@@ -239,7 +235,7 @@ class TIVTransStroyBank {
         apiSbpFindRecipient.fetchFindRecipient(recipient = PhoneConstant.recipient7_000_981_0197)
         apiToken.fetchToken()
         apiSbpTransferTokenStart.fetchTransferTokenStart(
-                recipientBankId = BankConstant.pirBank1crt88888881,
+                recipientBankId = BanksIdConstant.pirBank1crt88888881,
                 recipientMsisdn = PhoneConstant.recipient7_000_981_0197,
                 amount = AmountConstant.amount1600598,
                 comment = "Тест 98")

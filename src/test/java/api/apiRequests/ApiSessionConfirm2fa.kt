@@ -21,7 +21,7 @@ class ApiSessionConfirm2fa {
         assertTrue(response.statusCode == 200)
 
         val json = response.text
-        println("\n${json}\n")
+//        println("\n${json}\n")
 
         val gson = Gson()
         val sessionConfirm2faModel = gson.fromJson(json, SessionConfirm2faModel::class.java)

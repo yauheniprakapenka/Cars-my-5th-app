@@ -2,9 +2,8 @@ package api.apiRequests
 
 import `object`.ProfileObject
 import api.apiConfigure.ApiURLConstants
-import constants.BankConstant
+import constants.BanksIdConstant
 import khttp.post
-import org.junit.Assert
 
 class ApiSbpCustomerDefaultAccountSet {
 
@@ -13,8 +12,8 @@ class ApiSbpCustomerDefaultAccountSet {
                 "X-IV-Authorization" to "Session ${ProfileObject.sessionId}"
         )
         val data = mapOf(
-                "account" to BankConstant.account,
-                "bankId" to BankConstant.transstroybank100000000197
+                "account" to BanksIdConstant.account,
+                "bankId" to BanksIdConstant.transstroybank100000000197
         )
         val response = post(
                 ApiURLConstants.sbpCustomerDefaultAccountSet,

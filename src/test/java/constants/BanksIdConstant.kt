@@ -1,6 +1,6 @@
 package constants
 
-object BankConstant {
+object BanksIdConstant {
     const val umBank1crt88888886  = "1crt88888886"
     const val pirBank1crt88888881 = "1crt88888881"
     const val transstroybank100000000197 = "100000000197"

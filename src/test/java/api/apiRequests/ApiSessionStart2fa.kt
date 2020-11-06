@@ -19,7 +19,7 @@ class ApiSessionStart2fa {
         assertTrue(response.statusCode == 200)
 
         val json = response.text
-        println("\n${json}\n")
+//        println("\n${json}\n")
 
         val gson = Gson()
         val sessionStart2faModel = gson.fromJson(json, SessionStart2faModel::class.java)
