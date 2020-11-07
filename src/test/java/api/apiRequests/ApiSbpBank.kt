@@ -10,7 +10,7 @@ import utils.PrintResponse
 data class BanksModel(
         val id: String,
         val name: String,
-        val alias: String
+        val alias: String?
 )
 
 object ApiSbpBank {
