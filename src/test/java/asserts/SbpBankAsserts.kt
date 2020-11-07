@@ -28,14 +28,11 @@ object SbpBankAsserts {
     private var leftFetchedBanksNameList = mutableListOf<String>()
 
     fun verify() {
-
-        // Expected banks
         val expectedBanksCount = expectedBanksModel.count()
         for (index in 0 until expectedBanksCount) {
             expectedBanksNameList.add(expectedBanksModel[index].name)
         }
 
-        // Fetched banks
         val fetchedBanksCount = fetchedBanksModel.count()
         for (index in 0 until fetchedBanksCount) {
             fetchedBanksNameList.add(fetchedBanksModel[index].name)
@@ -44,27 +41,18 @@ object SbpBankAsserts {
         leftExpectedBanksNameList = expectedBanksNameList.toMutableList()
         leftFetchedBanksNameList = fetchedBanksNameList.toMutableList()
 
-        // Left banks
-
         when (expectedBanksCount == fetchedBanksCount) {
             true -> {
-                // Count
-                val count = expectedBanksCount
-
-                // Filtering
-                for (index in 0 until count) {
+                for (index in 0 until expectedBanksCount) {
                     val bank = expectedBanksNameList[index]
                     leftExpectedBanksNameList.remove(bank)
                     leftFetchedBanksNameList.remove(bank)
                 }
 
-                // Verifying
                 val leftExpectedBanksNameListIsEmpty = leftExpectedBanksNameList.isEmpty()
                 val leftFetchedBanksNameListIsEmpty = leftFetchedBanksNameList.isEmpty()
 
-                val bothListAreEmpty = leftExpectedBanksNameListIsEmpty && leftFetchedBanksNameListIsEmpty
-
-                when (bothListAreEmpty) {
+                when (leftExpectedBanksNameListIsEmpty && leftFetchedBanksNameListIsEmpty) {
                     true -> {
                         println("Successful: banks reference match")
                         Assert.assertTrue((true))
@@ -77,32 +65,26 @@ object SbpBankAsserts {
                 }
             }
             false -> {
-                // Count
-                var count = 0
+                val isExpectedBanksLessThanFetched = expectedBanksCount < fetchedBanksCount
+                val count = if (isExpectedBanksLessThanFetched) expectedBanksCount else fetchedBanksCount
 
-
-                if (expectedBanksCount < fetchedBanksCount) {
-                    println("expectedBanksCount < fetchedBanksCount")
-                    count = expectedBanksCount
-                    println("count $count")
-                    for (index in 0 until count) {
-                        val bank = expectedBanksNameList[index]
-                        leftExpectedBanksNameList.remove(bank)
-                        leftFetchedBanksNameList.remove(bank)
+                when (isExpectedBanksLessThanFetched) {
+                    true -> {
+                        for (index in 0 until count) {
+                            val bank = expectedBanksNameList[index]
+                            leftExpectedBanksNameList.remove(bank)
+                            leftFetchedBanksNameList.remove(bank)
+                        }
                     }
-                } else if (expectedBanksCount > fetchedBanksCount) {
-                    println("expectedBanksCount > fetchedBanksCount")
-                    println("count $count")
-                    count = fetchedBanksCount
-                    for (index in 0 until count) {
-                        val bank = fetchedBanksNameList[index]
-                        leftExpectedBanksNameList.remove(bank)
-                        leftFetchedBanksNameList.remove(bank)
+                    false -> {
+                        for (index in 0 until count) {
+                            val bank = fetchedBanksNameList[index]
+                            leftExpectedBanksNameList.remove(bank)
+                            leftFetchedBanksNameList.remove(bank)
+                        }
                     }
                 }
 
-
-                // Result
                 println("Error: Bank reference is different")
                 println("expectedBanksModel $expectedBanksCount\nfetchedBanksCount $fetchedBanksCount")
                 printLeftBanksList()
