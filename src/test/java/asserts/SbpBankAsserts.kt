@@ -56,7 +56,7 @@ object SbpBankAsserts {
 
                 when (leftExpectedBanksNameListIsEmpty && leftFetchedBanksNameListIsEmpty) {
                     true -> {
-                        println("Successful: banks reference match")
+                        println("Success: banks reference match")
                         Assert.assertTrue((true))
                     }
                     false -> {

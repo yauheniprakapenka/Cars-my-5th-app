@@ -4,10 +4,11 @@ import `object`.ProfileObject
 import api.apiConfigure.ApiURLConstants
 import constants.BanksIdConstant
 import khttp.post
+import khttp.responses.Response
 
-class ApiSbpCustomerDefaultAccountSet {
+object ApiSbpCustomerDefaultAccountSet {
 
-    fun fetchDefaultAccountSet(): Int {
+    fun set(): Response {
         val header = mapOf(
                 "X-IV-Authorization" to "Session ${ProfileObject.sessionId}"
         )
@@ -20,10 +21,6 @@ class ApiSbpCustomerDefaultAccountSet {
                 headers = header,
                 data = data)
 
-        val json = response.text
-        println("\n${json}\n")
-
-        println("\n" + response.statusCode + " Счет успешно установлен\n")
-        return response.statusCode
+        return response
     }
 }

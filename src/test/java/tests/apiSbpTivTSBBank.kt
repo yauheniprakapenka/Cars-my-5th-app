@@ -15,7 +15,7 @@ import org.junit.Test
         2. Если для профиля будет два счета, то для 17_199 разные счета поменять, а не один и тот же
         3. Добавить парсинг ошибки 32_186
  */
-class TIVTransStroyBank {
+class apiSbpTivTSBBank {
 
     // MARK: - 2_216, 6_210 Необходимо добавить клиента Legkova-Roma Svetlana, используя реальный номер телефона
     @Test
@@ -64,8 +64,7 @@ class TIVTransStroyBank {
         apiScriptAuthorizeToProfile.authorize(PhoneConstant.tsb_7_000_901_0197)
         print(ProfileObject.profileObject)
 
-        val apiSbpCustomerDefaultAccountSet = ApiSbpCustomerDefaultAccountSet()
-        apiSbpCustomerDefaultAccountSet.fetchDefaultAccountSet()
+        ApiSbpCustomerDefaultAccountSet.set()
     }
 
     // MARK: - 32_186 Необходимо дождаться истечения трех минут с момента получения А22 и продолжить операцию отправив неверный OTP из приложения.
