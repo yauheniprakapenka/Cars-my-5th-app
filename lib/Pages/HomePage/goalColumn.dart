@@ -14,7 +14,7 @@ class GoalColumn extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text("${gameModel.target}",
-              style: TargetTextStyle.bodyText1(context)),
+              style: TargetTextStyle.headline3(context)),
         )
       ],
     );
