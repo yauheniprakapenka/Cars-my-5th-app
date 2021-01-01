@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidAutomation.iml" filepath="$PROJECT_DIR$/AndroidAutomation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bullseye.iml" filepath="$PROJECT_DIR$/bullseye.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/bullseye_android.iml" filepath="$PROJECT_DIR$/android/bullseye_android.iml" />
     </modules>
   </component>
 </project>
