@@ -7,16 +7,19 @@ import 'ContinueAlertDialogButton.dart';
 
 class ResultAlertDialog {
   showAlert(
-      BuildContext context, int scoreForRound, Function() onContinuePressed) {
+      {Key key,
+      BuildContext context,
+      int scoreForRound,
+      Function() onContinuePressed}) {
     showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
               title: Text("${TitleResult.get(scoreForRound)}"),
               content: Text(
-                "Slider ${gameModel.sliderCurrent}" +
-                    " : ${gameModel.target} Target" +
-                    "\n\nYour score is ${ScoreForRound.get()}",
+                "На слайдере ${gameModel.sliderCurrent}" +
+                    " , Ваша цель ${gameModel.target}" +
+                    "\n\Заработано ${ScoreForRound.get()} очков",
                 textAlign: TextAlign.center,
               ),
               actions: [

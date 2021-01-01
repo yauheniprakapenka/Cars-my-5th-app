@@ -54,17 +54,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   _hitmeButtonPressed() {
+    final int scoreForRound = ScoreForRound.get();
     setState(() {
       gameModel.currentRound += 1;
-      gameModel.currentTotalScore += ScoreForRound.get();
+      gameModel.currentTotalScore += scoreForRound;
     });
-    final a = ResultAlertDialog();
-    a.showAlert(context, 11, () {
-      Navigator.of(context).pop();
-      setState(() {
-        gameModel.target = TargetNumberGenerator.generate();
-      });
-    });
+    ResultAlertDialog().showAlert(
+        context: context,
+        scoreForRound: scoreForRound,
+        onContinuePressed: () {
+          Navigator.of(context).pop();
+          setState(() {
+            gameModel.target = TargetNumberGenerator.generate();
+          });
+        });
   }
 
   _newgameButtonPressed() {
