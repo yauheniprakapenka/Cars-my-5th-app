@@ -1,11 +1,8 @@
-import 'package:BullsEye/Pages/Model/gameModel.dart';
-import 'package:BullsEye/Pages/Theme/textstyles.dart';
+import 'package:BullsEye/Model/gameModel.dart';
+import 'package:BullsEye/Theme/textstyles.dart';
 import 'package:flutter/material.dart';
 
 class SliderControl extends StatefulWidget {
-  // SliderControl({Key key, @required this.model}) : super(key: key);
-  // final GameModel model;
-
   @override
   _SliderControlState createState() => _SliderControlState();
 }

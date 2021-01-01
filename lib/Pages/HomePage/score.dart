@@ -1,7 +1,7 @@
-import 'package:BullsEye/Pages/Pages/AboutPage/aboutPage.dart';
-import 'package:BullsEye/Pages/Controls/circleButton.dart';
-import 'package:BullsEye/Pages/Theme/textstyles.dart';
-import 'package:BullsEye/Pages/Model/gameModel.dart';
+import 'package:BullsEye/Controls/circleButton.dart';
+import 'package:BullsEye/Model/gameModel.dart';
+import 'package:BullsEye/Pages/AboutPage/aboutPage.dart';
+import 'package:BullsEye/Theme/textstyles.dart';
 import 'package:flutter/material.dart';
 
 class Score extends StatelessWidget {

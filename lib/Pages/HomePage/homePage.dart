@@ -1,6 +1,6 @@
-import 'package:BullsEye/Pages/Controls/hitmeButton.dart';
-import 'package:BullsEye/Pages/Model/gameModel.dart';
-import 'package:BullsEye/Pages/Views/alertDialog.dart';
+import 'package:BullsEye/Controls/hitmeButton.dart';
+import 'package:BullsEye/Model/gameModel.dart';
+import 'package:BullsEye/Views/alertDialog.dart';
 import 'package:BullsEye/utils/randomNumberGenerator.dart';
 import 'package:flutter/material.dart';
 

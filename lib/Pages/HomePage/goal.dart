@@ -1,5 +1,5 @@
-import 'package:BullsEye/Pages/Model/gameModel.dart';
-import 'package:BullsEye/Pages/Theme/textstyles.dart';
+import 'package:BullsEye/Model/gameModel.dart';
+import 'package:BullsEye/Theme/textstyles.dart';
 import 'package:flutter/material.dart';
 
 class Goal extends StatelessWidget {
