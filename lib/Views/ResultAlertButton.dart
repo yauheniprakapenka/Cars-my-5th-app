@@ -7,10 +7,7 @@ import 'ContinueAlertDialogButton.dart';
 
 class ResultAlertDialog {
   showAlert(
-      {Key key,
-      BuildContext context,
-      int scoreForRound,
-      Function() onContinuePressed}) {
+      {BuildContext context, int scoreForRound, Function() onContinuePressed}) {
     showDialog(
         context: context,
         builder: (BuildContext context) {

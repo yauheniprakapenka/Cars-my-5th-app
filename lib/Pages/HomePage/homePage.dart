@@ -7,7 +7,7 @@ import 'package:BullsEye/Views/ResultAlertButton.dart';
 import 'package:flutter/material.dart';
 
 import 'goal.dart';
-import 'score.dart';
+import 'scoreRaw.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              Score(onStartOver: _newgameButtonPressed)
+              ScoreRaw(onStartOver: _newgameButtonPressed)
             ],
           ),
         ),

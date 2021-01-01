@@ -4,8 +4,8 @@ import 'package:BullsEye/Pages/AboutPage/aboutPage.dart';
 import 'package:BullsEye/Theme/textstyles.dart';
 import 'package:flutter/material.dart';
 
-class Score extends StatelessWidget {
-  Score({Key key, @required this.onStartOver}) : super(key: key);
+class ScoreRaw extends StatelessWidget {
+  ScoreRaw({Key key, @required this.onStartOver}) : super(key: key);
 
   final VoidCallback onStartOver;
 
