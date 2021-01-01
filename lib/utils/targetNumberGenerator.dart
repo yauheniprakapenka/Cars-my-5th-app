@@ -1,6 +1,6 @@
 import 'dart:math';
 
-class RandomNumberGenerator {
+class TargetNumberGenerator {
   static generate() {
     return Random().nextInt(100) + 1;
   }
