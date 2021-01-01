@@ -1,16 +1,17 @@
-# bullseye
+# Flutter Bull`s eye
 
-A new Flutter project.
+> **UI toolkit:** Flutter v1.22.5<br>
+**Язык:** Dart v2.10.4<br>
+**Платформа:** Android, iOS<br>
 
-## Getting Started
+Целью игры является переместить слайдер как можно ближе к указанной цели. Чем точнее значение со слайдера совпадает со значением цели, тем больше будет заработано очков.
 
-This project is a starting point for a Flutter application.
+<img src="https://user-images.githubusercontent.com/47568606/103446466-13bc2b80-4c91-11eb-9845-911e711598f1.png" width="260"></a>
+<img src="https://user-images.githubusercontent.com/47568606/103446474-2fbfcd00-4c91-11eb-8dc0-db0d625ebc64.png" width="260"></a>
+<img src="https://user-images.githubusercontent.com/47568606/103446492-49611480-4c91-11eb-9ee4-2acc20ad1d25.png" width="260"></a>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<b>Возможности:</b>
+- При сравнении значения на слайдере и цели отображается окно с результатом
+- Каждый последующий раунд суммирует заработанные очки и раунд
+- Начать новую игру
+- Экран об игре
