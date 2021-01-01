@@ -1,5 +1,5 @@
 import 'package:BullsEye/Controls/targetSlider.dart';
-import 'package:BullsEye/Theme/textstyles.dart';
+import 'package:BullsEye/Theme/textStyle.dart';
 import 'package:flutter/material.dart';
 
 class SliderRow extends StatefulWidget {

@@ -1,13 +1,13 @@
 import 'package:BullsEye/Controls/circleButton.dart';
 import 'package:BullsEye/Model/gameModel.dart';
 import 'package:BullsEye/Pages/AboutPage/aboutPage.dart';
-import 'package:BullsEye/Theme/textstyles.dart';
+import 'package:BullsEye/Theme/textStyle.dart';
 import 'package:flutter/material.dart';
 
 class ScoreRaw extends StatelessWidget {
   ScoreRaw({Key key, @required this.onStartOver}) : super(key: key);
 
-  final VoidCallback onStartOver;
+  final GestureTapCallback onStartOver;
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +17,10 @@ class ScoreRaw extends StatelessWidget {
         _makeStartOverButton(context),
         Padding(
             padding: EdgeInsets.only(left: 32),
-            child:
-                _makeText(context, "Score:\n${gameModel.currentTotalScore}")),
+            child: _makeText(context, "Очки:\n${gameModel.currentTotalScore}")),
         Padding(
             padding: EdgeInsets.only(left: 32),
-            child: _makeText(context, "Round:\n${gameModel.currentRound}")),
+            child: _makeText(context, "Раунд:\n${gameModel.currentRound}")),
         _makeInfoButton(context)
       ],
     );
@@ -42,7 +41,7 @@ class ScoreRaw extends StatelessWidget {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => AboutPage()));
         },
-        icon: Icons.info);
+        icon: Icons.info_outline);
   }
 
   _makeText(BuildContext context, String text) {

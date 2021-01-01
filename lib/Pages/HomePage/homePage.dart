@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.all(16.0),
                 child: HitmeButton(
-                  text: "Hit me!",
+                  text: "Проверить!",
                   onPressed: () {
                     _hitmeButtonPressed();
                   },

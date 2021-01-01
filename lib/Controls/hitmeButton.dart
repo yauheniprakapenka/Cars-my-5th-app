@@ -1,3 +1,4 @@
+import 'package:BullsEye/Theme/colorStyle.dart';
 import 'package:flutter/material.dart';
 
 class HitmeButton extends StatelessWidget {
@@ -11,7 +12,7 @@ class HitmeButton extends StatelessWidget {
     return RawMaterialButton(
       constraints: BoxConstraints(minWidth: 160),
       onPressed: onPressed,
-      fillColor: Colors.red,
+      fillColor: ColorStyle.primaryColor,
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Text(

@@ -1,5 +1,5 @@
 import 'package:BullsEye/Model/gameModel.dart';
-import 'package:BullsEye/Theme/textstyles.dart';
+import 'package:BullsEye/Theme/textStyle.dart';
 import 'package:flutter/material.dart';
 
 class GoalColumn extends StatelessWidget {
@@ -8,7 +8,7 @@ class GoalColumn extends StatelessWidget {
     return Column(
       children: <Widget>[
         Text(
-          "Put the bullseye as close as you can to",
+          "Переместите слайдер как можно ближе к цели",
           style: LabelTextStyle.bodyText1(context),
         ),
         Padding(

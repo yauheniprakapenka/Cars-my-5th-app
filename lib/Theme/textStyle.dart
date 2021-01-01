@@ -14,7 +14,7 @@ class TargetTextStyle {
   static TextStyle headline3(BuildContext context) {
     return Theme.of(context).textTheme.headline3.copyWith(
           fontWeight: FontWeight.bold,
-          color: Colors.yellow,
+          color: Colors.white,
         );
   }
 }

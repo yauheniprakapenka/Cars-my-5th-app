@@ -1,4 +1,5 @@
 import 'package:BullsEye/Model/gameModel.dart';
+import 'package:BullsEye/Theme/colorStyle.dart';
 import 'package:flutter/material.dart';
 
 class TargetSlider extends StatefulWidget {
@@ -13,7 +14,8 @@ class _TargetSliderState extends State<TargetSlider> {
   Widget build(BuildContext context) {
     return SliderTheme(
       data: SliderTheme.of(context).copyWith(
-          inactiveTrackColor: Colors.white, thumbColor: Color(0xffDCE04C)),
+          inactiveTrackColor: Colors.white,
+          thumbColor: ColorStyle.primaryColor),
       child: Slider(
         value: gameModel.sliderCurrent.toDouble(),
         min: 1.0,
