@@ -1,10 +1,10 @@
 import 'package:BullsEye/Controls/hitmeButton.dart';
 import 'package:BullsEye/Model/gameModel.dart';
+import 'package:BullsEye/Controls/targetSlider.dart';
 import 'package:BullsEye/Views/alertDialog.dart';
 import 'package:BullsEye/utils/randomNumberGenerator.dart';
 import 'package:flutter/material.dart';
 
-import 'sliderControl.dart';
 import 'goal.dart';
 import 'score.dart';
 

@@ -38,18 +38,20 @@ class _SliderControlState extends State<SliderControl> {
   }
 
   _makeSlider(BuildContext context) {
-    return Slider(
-      value: gameModel.sliderCurrent.toDouble(),
-      min: 1.0,
-      max: 100.0,
-      label: _currentValue.round().toString(),
-      onChangeEnd: (double value) {},
-      onChanged: (double value) {
-        setState(() {
-          _currentValue = value;
-          gameModel.sliderCurrent = _currentValue.toInt();
-        });
-      },
+    return SliderTheme(
+      data: SliderTheme.of(context).copyWith(
+          inactiveTrackColor: Colors.white, thumbColor: Color(0xffDCE04C)),
+      child: Slider(
+        value: gameModel.sliderCurrent.toDouble(),
+        min: 1.0,
+        max: 100.0,
+        onChanged: (double value) {
+          setState(() {
+            _currentValue = value;
+            gameModel.sliderCurrent = _currentValue.toInt();
+          });
+        },
+      ),
     );
   }
 }

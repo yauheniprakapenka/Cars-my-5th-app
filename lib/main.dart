@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 
-import 'Pages/Pages/HomePage/HomePage.dart';
+import 'Pages/HomePage/homePage.dart';
 
 void main() => runApp(BullsEyeApp());
 
