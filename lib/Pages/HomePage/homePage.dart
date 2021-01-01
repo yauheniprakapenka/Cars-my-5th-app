@@ -1,12 +1,12 @@
 import 'package:BullsEye/Controls/hitmeButton.dart';
 import 'package:BullsEye/Model/gameModel.dart';
-import 'package:BullsEye/Controls/targetSlider.dart';
+import 'package:BullsEye/Pages/HomePage/sliderRow.dart';
 import 'package:BullsEye/Utils/ScoreForRound.dart';
 import 'package:BullsEye/Utils/targetNumberGenerator.dart';
 import 'package:BullsEye/Views/ResultAlertButton.dart';
 import 'package:flutter/material.dart';
 
-import 'goal.dart';
+import 'goalColumn.dart';
 import 'scoreRaw.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,15 +27,15 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
           color: Colors.white,
           image: DecorationImage(
-              image: AssetImage("images/bg.jpg"), fit: BoxFit.cover)),
+              image: AssetImage("assets/bg.jpg"), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Goal(),
-              SliderControl(),
+              GoalColumn(),
+              SliderRow(),
               Padding(
                 padding: EdgeInsets.all(16.0),
                 child: HitmeButton(

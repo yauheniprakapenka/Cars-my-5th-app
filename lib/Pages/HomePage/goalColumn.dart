@@ -2,7 +2,7 @@ import 'package:BullsEye/Model/gameModel.dart';
 import 'package:BullsEye/Theme/textstyles.dart';
 import 'package:flutter/material.dart';
 
-class Goal extends StatelessWidget {
+class GoalColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
