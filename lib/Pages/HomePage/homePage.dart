@@ -6,6 +6,7 @@ import 'package:BullsEye/Utils/targetNumberGenerator.dart';
 import 'package:BullsEye/Views/ResultAlertButton.dart';
 import 'package:flutter/material.dart';
 
+import '../../Constants/strings.dart';
 import 'goalColumn.dart';
 import 'scoreRaw.dart';
 
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.all(16.0),
                 child: HitmeButton(
-                  text: "Проверить!",
+                  text: Strings.homePageButtonVerify,
                   onPressed: () {
                     _hitmeButtonPressed();
                   },

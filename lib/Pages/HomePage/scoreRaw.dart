@@ -2,6 +2,7 @@ import 'package:BullsEye/Controls/circleButton.dart';
 import 'package:BullsEye/Model/gameModel.dart';
 import 'package:BullsEye/Pages/AboutPage/aboutPage.dart';
 import 'package:BullsEye/Theme/textStyle.dart';
+import 'package:BullsEye/Constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class ScoreRaw extends StatelessWidget {
@@ -17,10 +18,12 @@ class ScoreRaw extends StatelessWidget {
         _makeStartOverButton(context),
         Padding(
             padding: EdgeInsets.only(left: 32),
-            child: _makeText(context, "Очки:\n${gameModel.currentTotalScore}")),
+            child: _makeText(context,
+                "${Strings.homePageScores}${gameModel.currentTotalScore}")),
         Padding(
             padding: EdgeInsets.only(left: 32),
-            child: _makeText(context, "Раунд:\n${gameModel.currentRound}")),
+            child: _makeText(
+                context, "${Strings.homePageRound}${gameModel.currentRound}")),
         _makeInfoButton(context)
       ],
     );

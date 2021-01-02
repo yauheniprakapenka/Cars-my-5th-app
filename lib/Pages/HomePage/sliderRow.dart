@@ -2,6 +2,8 @@ import 'package:BullsEye/Controls/targetSlider.dart';
 import 'package:BullsEye/Theme/textStyle.dart';
 import 'package:flutter/material.dart';
 
+import '../../Constants/strings.dart';
+
 class SliderRow extends StatefulWidget {
   @override
   _SliderRowState createState() => _SliderRowState();
@@ -18,7 +20,7 @@ class _SliderRowState extends State<SliderRow> {
         Padding(
           padding: const EdgeInsets.only(left: _edgeInsets),
           child: Text(
-            "1",
+            Strings.homePageSlider1,
             style: LabelTextStyle.bodyText1(context),
           ),
         ),
@@ -28,7 +30,7 @@ class _SliderRowState extends State<SliderRow> {
         Padding(
           padding: const EdgeInsets.only(right: _edgeInsets),
           child: Text(
-            "100",
+            Strings.homePageSlider100,
             style: LabelTextStyle.bodyText1(context),
           ),
         )
